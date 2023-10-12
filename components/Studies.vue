@@ -10,7 +10,11 @@
           <p class="cv-studies__section-info">2011-2017</p>
           <p class="cv-studies__section-info">Universidad de Valladolid</p>
         </div>
-        <img class="cv-studies__section-image" src="/assets/pedro--first.svg" alt="Pedro in architecture" />
+        <img
+          class="cv-studies__section-image"
+          src="/assets/pedro--first.svg"
+          alt="Pedro in architecture"
+        />
       </div>
       <div class="cv-studies__section cv-studies__section--second">
         <div class="cv-studies__section-text">
@@ -20,7 +24,11 @@
           <p class="cv-studies__section-info">2017-2018</p>
           <p class="cv-studies__section-info">Escuela Superior de Diseño de Madrid</p>
         </div>
-        <img class="cv-studies__section-image" src="/assets/pedro--second.svg" alt="Pedro in design" />
+        <img
+          class="cv-studies__section-image"
+          src="/assets/pedro--second.svg"
+          alt="Pedro in design"
+        />
       </div>
       <div class="cv-studies__section cv-studies__section--third">
         <div class="cv-studies__section-text">
@@ -34,13 +42,16 @@
           </h3>
           <p class="cv-studies__section-info">2017-present</p>
         </div>
-        <img class="cv-studies__section-image" src="/assets/pedro--third.svg" alt="Pedro as programmer" />
+        <img
+          class="cv-studies__section-image"
+          src="/assets/pedro--third.svg"
+          alt="Pedro as programmer"
+        />
       </div>
     </div>
   </section>
 </template>
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 <style lang="scss" scoped>
   .cv-studies {
     $component-class: &;

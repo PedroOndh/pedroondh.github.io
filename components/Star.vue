@@ -1,6 +1,6 @@
 <template>
   <circle
-    :class="['cv-star-decoration', {'cv-star-decoration--animation': animation}]"
+    :class="['cv-star-decoration', { 'cv-star-decoration--animation': animation }]"
     :cx="topPosition"
     :cy="leftPosition"
     :r="radius"
@@ -9,13 +9,13 @@
 </template>
 
 <script lang="ts" setup>
-interface Props {
-  animation?: boolean;
-}
+  interface Props {
+    animation?: boolean;
+  }
 
-withDefaults(defineProps<Props>(), {
-  animation: false
-});
+  withDefaults(defineProps<Props>(), {
+    animation: false
+  });
 
   const topPosition = `${Math.random() * 100}%`;
   const leftPosition = `${Math.random() * 100}%`;

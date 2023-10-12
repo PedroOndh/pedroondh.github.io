@@ -8,7 +8,6 @@
 
 <style lang="scss" scoped>
 .cv-layout {
-  padding-top: rem(160px);
   text-align: center;
   overflow: hidden;
 
