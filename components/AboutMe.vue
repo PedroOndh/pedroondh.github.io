@@ -10,9 +10,11 @@
       and programming met.
     </p>
     <p>I am from Asturias, a beautiful and green area in the north of Spain.</p>
+    <!--
     <div class="cv-about-me__homeland">
       <img src="/assets/lakes.jpg" alt="lake image" />
     </div>
+    -->
   </section>
 </template>
 <script setup lang="ts"></script>

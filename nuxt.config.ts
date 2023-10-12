@@ -3,7 +3,21 @@ const path = require('path');
 export default defineNuxtConfig({
     app: {
         head: {
-            title: 'Pedro Ondiviela CV'
+            title: 'Pedro Ondiviela CV',
+            htmlAttrs: {
+                lang: 'en'
+            },
+            meta: [
+                { name: 'description', content: 'Front-end Developer with a strong focus on UX and animations' },
+                {
+                    property: 'og:site_name',
+                    content: 'Pedro Ondiviela CV'
+                },
+                {
+                    property: 'twitter:card',
+                    content: 'summary_large_image'
+                }
+            ]
         }
     },
     css: [
