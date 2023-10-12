@@ -159,7 +159,7 @@
     $component-class: &;
     position: relative;
     background: linear-gradient(0deg, $dark-blue 0%, $dark-black 100%);
-    padding-top: rem(100px);
+    padding-top: rem(40px);
     padding-bottom: rem(100px);
     overflow: hidden;
     &__background {

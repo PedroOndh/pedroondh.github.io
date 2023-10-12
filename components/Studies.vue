@@ -53,8 +53,7 @@
       $dark-black 66.66%,
       $dark-black 100%
     );
-    padding-top: rem(100px);
-    padding-bottom: rem(100px);
+    padding-top: rem(40px);
     &__wrapper {
       display: flex;
     }
@@ -62,7 +61,11 @@
       color: $white;
     }
     &__section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       width: 33.33%;
+      padding: 0 5%;
       &--first {
         #{$component-class} {
           &__section-title,
@@ -80,6 +83,10 @@
           }
         }
       }
+    }
+    &__section-image {
+      height: rem(500px);
+      margin-top: rem(40px);
     }
   }
 </style>
