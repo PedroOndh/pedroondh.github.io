@@ -1,0 +1,10 @@
+$breakpoint__desktop--min: 1440px;
+$breakpoint__small-desktop--max: $breakpoint__desktop--min - 1px;
+$breakpoint__small-desktop--min: 1024px;
+$breakpoint__tablet--max: $breakpoint__small-desktop--min - 1px;
+$breakpoint__tablet--min: 768px;
+$breakpoint__small-tablet--max: $breakpoint__tablet--min - 1px;
+$breakpoint__small-tablet--min: 425px;
+$breakpoint__mobile--max: $breakpoint__small-tablet--min - 1px;
+$breakpoint__mobile--min: 375px;
+$breakpoint__small-mobile--max: $breakpoint__mobile--min - 1px;

@@ -1,0 +1,15 @@
+@use "sass:math";
+
+$browser-context: 16px;
+
+@function rem($pixels) {
+  @return #{math.div($pixels, $browser-context)}rem;
+}
+
+@mixin just-safari {
+  /* Safari 9+ */
+
+  @supports (-webkit-hyphens:none) {
+    @content;
+  }
+}

@@ -1,0 +1,46 @@
+* {
+  font-family: $font-main;
+  color: $black;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: $font-size--medium-biggest;
+  font-weight: $font-weight--bold;
+  line-height: rem(61px);
+  letter-spacing: 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: $font-size--medium-bigger;
+  font-weight: $font-weight--medium;
+  line-height: rem(58px);
+  letter-spacing: 0;
+}
+
+p {
+  font-family: $font-main;
+  font-size: $font-size--small;
+}
+
+@media screen and (max-width: $breakpoint__small-desktop--max) {
+  h1 {
+    font-size: $font-size--medium-biggest;
+    line-height: rem(48px);
+  }
+
+  h2 {
+    font-size: rem(28px);
+    line-height: rem(40px);
+  }
+
+  p {
+    font-size: $font-size--tiny;
+    line-height: rem(24px);
+  }
+
+}

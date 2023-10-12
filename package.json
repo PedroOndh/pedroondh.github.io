@@ -1,0 +1,35 @@
+{
+  "name": "ui-rti-web",
+  "private": true,
+  "prettier": "@empathyco/eslint-plugin-x/prettier-config",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint \"**/**.{js,ts,vue}\"",
+    "prettier": "prettier --write \"{components,pages}/*.{js,ts,vue}\""
+  },
+  "devDependencies": {
+    "@empathyco/eslint-plugin-x": "^2.0.0-alpha.33",
+    "@nuxt/content": "^2.2.2",
+    "@types/node": "^18",
+    "eslint": "~8.32.0",
+    "lint-staged": "^12.4.0",
+    "node-sass": "^8.0.0",
+    "nuxt": "^3.4.2",
+    "prettier": "^2.8.7",
+    "sass": "^1.56.1",
+    "scss-loader": "0.0.1"
+  },
+  "lint-staged": {
+    "*.js|*.ts|*.vue": [
+      "prettier --write",
+      "eslint"
+    ]
+  },
+  "dependencies": {
+    "@hcaptcha/vue3-hcaptcha": "^1.2.1"
+  }
+}
