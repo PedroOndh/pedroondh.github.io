@@ -2,7 +2,7 @@
   <section class="cv-experience cv-section" id="experience">
     <div class="cv-experience__background">
       <svg class="cv-experience__star-wrapper" width="100%" height="100%">
-        <Star v-for="index in 1000" :animation="index % 20 === 0" :key="index" />
+        <Star v-for="index in 1000" :animation="index % 10 === 0" :key="index" />
       </svg>
       <img class="cv-experience__moon" src="/assets/moon.svg" alt="Moon" />
       <img class="cv-experience__earth" src="/assets/earth.svg" alt="Earth" />

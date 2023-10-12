@@ -95,8 +95,6 @@
     }
     @media screen and (max-width: $breakpoint__tablet--max) {
       &__menu {
-        margin: 0 rem(20px);
-        top: rem(20px);
         padding: 0 rem(20px) 0 rem(20px);
         height: rem(60px);
       }
@@ -114,9 +112,8 @@
         position: absolute;
         width: 100vw;
         height: 100vh;
-        top: rem(-20px);
         left: calc(200vw);
-        background-color: $black;
+        background-color: $dark-black;
         flex-direction: column;
         justify-content: flex-start;
         padding-top: rem(140px);
@@ -125,8 +122,8 @@
         transition-duration: 0.5s;
 
         &--opened {
-          top: rem(-20px);
-          left: rem(-20px);
+          top: 0;
+          left: 0;
         }
 
         .router-link-active {
