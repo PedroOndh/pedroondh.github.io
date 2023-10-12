@@ -1,7 +1,7 @@
 <template>
   <section class="cv-experience cv-section" id="experience">
     <div class="cv-experience__background">
-      <svg class="cv-experience__star-wrapper" viewBox="0 100 100" width="100%" height="100%">
+      <svg class="cv-experience__star-wrapper" width="100%" height="100%">
         <Star v-for="index in 1000" :animation="index % 20 === 0" :key="index" />
       </svg>
       <img class="cv-experience__moon" src="/assets/moon.svg" alt="Moon" />

@@ -1,7 +1,6 @@
 <template>
   <circle
     :class="['cv-star-decoration', {'cv-star-decoration--animation': animation}]"
-    fill="white"
     :cx="topPosition"
     :cy="leftPosition"
     :r="radius"
@@ -34,19 +33,20 @@ withDefaults(defineProps<Props>(), {
       }
       50% {
         opacity: 0.8;
+        fill: $light-blue;
         transform: scale3d(2, 2, 1);
       }
     }
     position: absolute;
-    background-color: $white;
+    fill: $white;
     border-radius: 50%;
     &--animation {
-      will-change: opacity, transform;
+      will-change: opacity, background-color, transform;
       animation: blinking;
       animation-duration: 4s;
       animation-iteration-count: infinite;
       transform-origin: var(--top-position) var(--left-position);
-      transition-property: opacity, transform;
+      transition-property: all;
       transition-duration: 0.5s;
     }
   }
