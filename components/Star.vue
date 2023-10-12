@@ -29,9 +29,9 @@
     background-color: $white;
     border-radius: 50%;
     will-change: opacity, transform;
-    animation: blinking;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
+    //animation: blinking;
+    //animation-duration: 4s;
+    //animation-iteration-count: infinite;
     transition-property: opacity, transform;
     transition-duration: 0.5s;
   }
