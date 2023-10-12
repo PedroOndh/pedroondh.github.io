@@ -88,5 +88,26 @@
       height: rem(500px);
       margin-top: rem(40px);
     }
+    @media screen and (max-width: $breakpoint__tablet--max) {
+      background: $grey;
+      &__wrapper {
+        flex-direction: column;
+      }
+      &__title {
+        color: $black;
+      }
+      &__section {
+        width: 100%;
+        &--first {
+          background-color: $grey;
+        }
+        &--second {
+          background-color: $dark-blue;
+        }
+        &--third {
+          background-color: $dark-black;
+        }
+      }
+    }
   }
 </style>
