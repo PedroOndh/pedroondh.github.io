@@ -9,7 +9,7 @@
     </a>
     <a
       class="cv-footer__media-link"
-      href="https://github.com/PedroOndh/cv-pedro"
+      href="https://github.com/PedroOndh/pedroondh.github.io"
       target="newwindow"
     >
       <img class="cv-footer__link-image" src="/assets/social/github.svg" alt="Github logo" />
