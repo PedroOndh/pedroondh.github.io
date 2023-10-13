@@ -4,6 +4,7 @@
     <Experience />
     <Studies />
     <!-- <Portfolio /> -->
+    <AboutThis />
   </main>
 </template>
 <style lang="scss" scoped>
