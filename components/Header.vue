@@ -57,7 +57,6 @@
       #{$component-class} {
         &__menu {
           background-color: $dark-black;
-          box-shadow: 0 10px 30px 0 rgba($light-black, 0.75);
         }
         &__link {
           color: $white;
