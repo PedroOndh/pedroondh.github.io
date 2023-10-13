@@ -1,5 +1,5 @@
 <template>
-  <header class="cv-header">
+  <header :class="['cv-header', { 'cv-header--scrolled': scrolled }]">
     <nav class="cv-header__menu rti-layout-wrapper">
       <NuxtLink class="cv-header__link cv-header__link--home" @click="toggleMenu(false)" to="/">
         Pedro
@@ -12,10 +12,6 @@
             Experience
           </NuxtLink>
           <NuxtLink class="cv-header__link" @click="toggleMenu()" to="#studies">Studies</NuxtLink>
-          <NuxtLink class="cv-header__link" @click="toggleMenu()" to="#portfolio">
-            Portfolio
-          </NuxtLink>
-          <NuxtLink class="cv-header__link" @click="toggleMenu()" to="#contact">Contact</NuxtLink>
         </div>
       </div>
       <div class="cv-header__burguer-menu-wrapper" @click="isMenuVisible = !isMenuVisible">
@@ -29,8 +25,19 @@
 
 <script lang="ts" setup>
   import { ref } from 'vue';
+  import { throttle } from '~/utils/custom';
 
   const isMenuVisible = ref(false);
+  const scrolled = ref(false);
+  const watchScroll: () => void = throttle(() => fixHeader(), 300);
+
+  onMounted(() => window.addEventListener('scroll', watchScroll));
+  onUnmounted(() => window.removeEventListener('scroll', watchScroll));
+
+  function fixHeader(): void {
+    const currentScroll: number = Math.abs(document.body.getBoundingClientRect().top);
+    scrolled.value = currentScroll > 0;
+  }
 
   const toggleMenu = (value: boolean = !isMenuVisible.value): void => {
     if (window.innerWidth <= 1023) {
@@ -41,22 +48,32 @@
 
 <style lang="scss" scoped>
   .cv-header {
+    $component-class: &;
     position: fixed;
     top: 0;
     width: 100vw;
-    background-color: $white;
     z-index: 999;
+    &--scrolled {
+      #{$component-class} {
+        &__menu {
+          background-color: $dark-black;
+          box-shadow: 0 10px 30px 0 rgba($light-black, 0.75);
+        }
+        &__link {
+          color: $white;
+        }
+      }
+    }
 
     &__menu {
       position: relative;
-      background-color: $dark-black;
-      color: $white;
       height: rem(80px);
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: rem(16px) rem(40px) rem(16px) rem(40px);
-      box-shadow: 0 10px 30px 0 rgba($light-black, 0.75);
+      transition-property: background-color, box-shadow;
+      transition-duration: 0.2s;
     }
 
     &__links {
@@ -73,7 +90,6 @@
 
     &__link {
       display: inline-block;
-      color: $white;
       margin: rem(20px);
       text-transform: uppercase;
       text-decoration: none;

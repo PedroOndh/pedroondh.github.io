@@ -1,6 +1,8 @@
 <template>
   <section class="cv-about-me cv-section" id="about-me">
-    <div class="cv-about-me__background" />
+    <div class="cv-about-me__background">
+      <div class="cv-about-me__background-waves" />
+    </div>
     <div class="cv-about-me__text">
       <h1>Pedro Ondiviela</h1>
       <p>
@@ -21,7 +23,10 @@
     height: 100vh;
     &__background,
     &__background:before,
-    &__background:after {
+    &__background:after,
+    &__background-waves,
+    &__background-waves:before,
+    &__background-waves:after {
       position: absolute;
       top: 0;
       left: 0;
@@ -29,8 +34,19 @@
       height: 100%;
     }
     &__background {
-      background: url('/assets/background-tile.svg');
+      background-color: $light-blue;
+      //background: url('/assets/background-tile.svg');
+      &:after {
+        content: '';
+        background: linear-gradient(40deg, rgba($light-blue, 0.7) 0%, rgba($white, 0.8) 100%);
+      }
+    }
+    &__background-waves {
       &:before {
+        content: '';
+        background: url('/assets/water-texture--blue.svg');
+      }
+      &:after {
         content: '';
         background: url('/assets/water-texture.svg');
         @keyframes water-moving {
@@ -52,10 +68,6 @@
         animation: water-moving;
         animation-duration: 10s;
         animation-iteration-count: infinite;
-      }
-      &:after {
-        content: '';
-        background: linear-gradient(40deg, rgba($light-blue, 0.7) 0%, rgba($white, 0.8) 100%);
       }
     }
     &__text {
