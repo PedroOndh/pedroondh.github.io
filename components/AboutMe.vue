@@ -4,13 +4,13 @@
     <div class="cv-about-me__text">
       <h1>Pedro Ondiviela</h1>
       <p>
-        Creative Developer (Front-end Developer, expert in complex interfaces and animations)
+        <b>Creative Developer</b>
+        (Front-end Developer, expert in complex interfaces and animations)
       </p>
     </div>
   </section>
 </template>
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 <style lang="scss" scoped>
   .cv-about-me {
     position: relative;
@@ -29,11 +29,29 @@
       height: 100%;
     }
     &__background {
-      background: url('/assets/water-texture.avif');
+      background: url('/assets/background-tile.svg');
       &:before {
         content: '';
-        filter: blur(2px);
-        background: url('/assets/background-tile.svg');
+        background: url('/assets/water-texture.svg');
+        @keyframes water-moving {
+          0%,
+          100% {
+            transform: scale(1.2, 1.2) rotate3d(0, 20, 0, 10deg);
+          }
+          30% {
+            transform: scale(1.2, 1.2) rotate3d(30, 2, 0, 10deg);
+          }
+          50% {
+            transform: scale(1.2, 1.2) rotate3d(2, 50, 0, 10deg);
+          }
+          70% {
+            transform: scale(1.2, 1.2) rotate3d(0, 0, 0, 10deg);
+          }
+        }
+        transform-origin: center;
+        animation: water-moving;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
       }
       &:after {
         content: '';
