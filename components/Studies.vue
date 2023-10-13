@@ -10,11 +10,13 @@
           <p class="cv-studies__section-info">2011-2017</p>
           <p class="cv-studies__section-info">Universidad de Valladolid</p>
         </div>
+        <!--
         <img
           class="cv-studies__section-image"
           src="/assets/pedro--first.svg"
           alt="Pedro in architecture"
         />
+        -->
       </div>
       <div class="cv-studies__section cv-studies__section--second">
         <div class="cv-studies__section-text">
@@ -24,11 +26,13 @@
           <p class="cv-studies__section-info">2017-2018</p>
           <p class="cv-studies__section-info">Escuela Superior de Diseño de Madrid</p>
         </div>
+        <!--
         <img
           class="cv-studies__section-image"
           src="/assets/pedro--second.svg"
           alt="Pedro in design"
         />
+        -->
       </div>
       <div class="cv-studies__section cv-studies__section--third">
         <div class="cv-studies__section-text">
@@ -42,52 +46,181 @@
           </h3>
           <p class="cv-studies__section-info">2017-present</p>
         </div>
+        <!--
         <img
           class="cv-studies__section-image"
           src="/assets/pedro--third.svg"
           alt="Pedro as programmer"
         />
+        -->
+      </div>
+      <div class="cv-studies__section cv-studies__section--fourth">
+        <div class="cv-studies__section-text">
+          <h3 class="cv-studies__section-title cv-studies__section-title--fourth">
+            Best Overall Enterprise DevPortal + Best Visual Design
+          </h3>
+          <p class="cv-studies__section-info">2022</p>
+          <p class="cv-studies__section-info">DevPortal Awards</p>
+        </div>
+        <!--
+        <img
+            class="cv-studies__section-image"
+            src="/assets/pedro--third.svg"
+            alt="Pedro as programmer"
+        />
+        -->
+      </div>
+      <div class="cv-studies__section cv-studies__section--fifth">
+        <div class="cv-studies__section-text">
+          <h3 class="cv-studies__section-title cv-studies__section-title--fifth">
+              Talk
+          </h3>
+          <p class="cv-studies__section-info">2023</p>
+          <p class="cv-studies__section-info">APIDays New York</p>
+        </div>
+        <!--
+        <img
+            class="cv-studies__section-image"
+            src="/assets/pedro--third.svg"
+            alt="Pedro as programmer"
+        />
+        -->
       </div>
     </div>
   </section>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 <style lang="scss" scoped>
   .cv-studies {
     $component-class: &;
-    background: $black;
+    @mixin neonAnimation($randomSeed: 1) {
+      @keyframes neon {
+        0%,
+        9%,
+        11%,
+        13%,
+        100% {
+          box-shadow:  0 0 3px $white,
+          0 0 5px $white,
+          0 0 10px $white,
+          0 0 21px $light-blue,
+          0 0 41px $light-blue,
+          0 0 46px $light-blue,
+          0 0 51px $light-blue,
+          0 0 75px $light-blue,
+          inset 0 0 3px $white,
+          inset 0 0 5px $white,
+          inset 0 0 10px $white,
+          inset 0 0 21px $light-blue,
+          inset 0 0 41px $light-blue,
+          inset 0 0 46px $light-blue,
+          inset 0 0 51px $light-blue,
+          inset 0 0 75px $light-blue;
+        }
+        10%,
+        12% {
+          box-shadow: none;
+        }
+      }
+      animation: neon;
+      animation-duration: 8s;
+      animation-delay: #{random($randomSeed) * -1s};
+      animation-iteration-count: infinite;
+    }
+    background: $dark-blue;
     padding-top: rem(40px);
     padding-bottom: rem(40px);
     &__wrapper {
       display: grid;
       grid-template-areas:
-        'first third'
-        'second third';
+        'second third fifth'
+        'first third fourth';
       grid-template-rows: 1fr 1fr;
-      grid-template-columns: 1fr 2fr;
-      gap: rem(40px);
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: rem(30px);
     }
     &__title {
       color: $white;
     }
     &__section {
+      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: rem(20px);
+      padding: rem(40px);
+      margin: rem(20px);
       border-radius: rem(20px);
       background: linear-gradient(145deg, $white, $grey);
+      text-align: left;
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        background-color: $white;
+        @include neonAnimation(1);
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: rem(-20px);
+        left: rem(-20px);
+        width: calc(100% + #{rem(40px)});
+        height: calc(100% + #{rem(40px)});
+        border: 1px solid $white;
+        border-radius: rem(20px);
+        @include neonAnimation(3);
+      }
       &--first {
         grid-area: first;
-        text-align: left;
+        &:before {
+          top: rem(-50px);
+          left: 50%;
+          width: 2px;
+          height: rem(30px);
+        }
+        &:after {
+          @include neonAnimation(4);
+        }
       }
       &--second {
         grid-area: second;
-        text-align: left;
+        &:before {
+          top: 50%;
+          right: rem(-50px);
+          width: rem(30px);
+          height: 2px;
+        }
+        &:after {
+          @include neonAnimation(5);
+        }
       }
       &--third {
         grid-area: third;
-        text-align: right;
+        &:before {
+          bottom: 25%;
+          right: rem(-50px);
+          width: rem(30px);
+          height: 2px;
+        }
+        &:after {
+          @include neonAnimation(6);
+        }
+      }
+      &--fourth {
+        grid-area: fourth;
+        &:before {
+          top: rem(-50px);
+          left: 50%;
+          width: 2px;
+          height: rem(30px);
+        }
+        &:after {
+          @include neonAnimation(7);
+        }
+      }
+      &--fifth {
+        grid-area: fifth;
       }
     }
     &__section-title,
@@ -100,23 +233,29 @@
       margin-top: rem(20px);
     }
     @media screen and (max-width: $breakpoint__tablet--max) {
-      background: $grey;
       &__wrapper {
-        flex-direction: column;
-      }
-      &__title {
-        color: $black;
+        grid-template-areas: 'first'
+        'second'
+        'third'
+        'forth'
+        'fifth';
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
       }
       &__section {
         width: 100%;
-        &--first {
-          background-color: $grey;
+        grid-area: auto;
+        &:before {
+          top: unset;
+          left: 50%;
+          bottom: rem(-50px);
+          right: unset;
+          width: 2px;
+          height: rem(60px);
         }
-        &--second {
-          background-color: $dark-blue;
-        }
-        &--third {
-          background-color: $dark-black;
+        &:after {
+          width: 90%;
+          left: 5%
         }
       }
     }
