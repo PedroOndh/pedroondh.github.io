@@ -10,9 +10,5 @@
 .cv-layout {
   text-align: center;
   overflow: hidden;
-
-  @media screen and (max-width: $breakpoint__tablet--max) {
-    padding-top: rem(90px);
-  }
 }
 </style>

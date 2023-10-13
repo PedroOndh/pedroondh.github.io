@@ -112,9 +112,11 @@
       &__menu {
         padding: 0 rem(20px) 0 rem(20px);
         height: rem(60px);
+        background-color: $dark-black;
       }
 
       &__link {
+        color: $white;
         &--home {
           z-index: 1;
           margin: 0;

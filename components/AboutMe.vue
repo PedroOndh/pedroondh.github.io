@@ -24,7 +24,6 @@
     &__background,
     &__background:before,
     &__background:after,
-    &__background-waves,
     &__background-waves:before,
     &__background-waves:after {
       position: absolute;
@@ -48,29 +47,36 @@
       &:after {
         content: '';
         background: url('/assets/water-texture.svg');
-        @keyframes water-moving {
-          0%,
-          100% {
-            transform: scale(1.2, 1.2) rotate3d(0, 20, 0, 10deg);
-          }
-          30% {
-            transform: scale(1.2, 1.2) rotate3d(30, 2, 0, 10deg);
-          }
-          50% {
-            transform: scale(1.2, 1.2) rotate3d(2, 50, 0, 10deg);
-          }
-          70% {
-            transform: scale(1.2, 1.2) rotate3d(0, 0, 0, 10deg);
-          }
-        }
-        transform-origin: center;
-        animation: water-moving;
-        animation-duration: 10s;
-        animation-iteration-count: infinite;
+        transform: scale(1.2, 1.2);
       }
     }
     &__text {
       position: relative;
+    }
+    @media screen and (min-width: $breakpoint__small-desktop--min) {
+      &__background-waves {
+        &:after {
+          @keyframes water-moving {
+            0%,
+            100% {
+              transform: scale(1.2, 1.2) rotate3d(0, 20, 0, 10deg);
+            }
+            30% {
+              transform: scale(1.2, 1.2) rotate3d(30, 2, 0, 10deg);
+            }
+            50% {
+              transform: scale(1.2, 1.2) rotate3d(2, 50, 0, 10deg);
+            }
+            70% {
+              transform: scale(1.2, 1.2) rotate3d(0, 0, 0, 10deg);
+            }
+          }
+          transform-origin: center;
+          animation: water-moving;
+          animation-duration: 10s;
+          animation-iteration-count: infinite;
+        }
+      }
     }
   }
 </style>

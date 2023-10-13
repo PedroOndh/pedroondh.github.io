@@ -61,8 +61,8 @@
     &__wrapper {
       display: grid;
       grid-template-areas:
-        "first third"
-        "second third";
+        'first third'
+        'second third';
       grid-template-rows: 1fr 1fr;
       grid-template-columns: 1fr 2fr;
       gap: rem(40px);
