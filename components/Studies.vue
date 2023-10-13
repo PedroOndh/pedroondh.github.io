@@ -1,5 +1,5 @@
 <template>
-  <section class="cv-studies" id="studies">
+  <section class="cv-studies cv-section" id="studies">
     <h2 class="cv-studies__title">Studies</h2>
     <div class="cv-studies__wrapper">
       <div class="cv-studies__section cv-studies__section--first">
@@ -55,18 +55,17 @@
 <style lang="scss" scoped>
   .cv-studies {
     $component-class: &;
-    background: linear-gradient(
-      100deg,
-      $grey 0%,
-      $grey 33.33%,
-      $dark-blue 33.33%,
-      $dark-blue 66.66%,
-      $dark-black 66.66%,
-      $dark-black 100%
-    );
+    background: $black;
     padding-top: rem(40px);
+    padding-bottom: rem(40px);
     &__wrapper {
-      display: flex;
+      display: grid;
+      grid-template-areas:
+        "first third"
+        "second third";
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 2fr;
+      gap: rem(40px);
     }
     &__title {
       color: $white;
@@ -75,29 +74,30 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: 33.33%;
-      padding: 0 5%;
+      padding: rem(20px);
+      border-radius: rem(20px);
+      background: linear-gradient(145deg, $white, $grey);
       &--first {
-        #{$component-class} {
-          &__section-title,
-          &__section-info {
-            color: $black;
-          }
-        }
+        grid-area: first;
+        text-align: left;
       }
-      &--second,
+      &--second {
+        grid-area: second;
+        text-align: left;
+      }
       &--third {
-        #{$component-class} {
-          &__section-title,
-          &__section-info {
-            color: $white;
-          }
-        }
+        grid-area: third;
+        text-align: right;
       }
     }
+    &__section-title,
+    &__section-info {
+      color: $black;
+    }
     &__section-image {
-      height: rem(500px);
-      margin-top: rem(40px);
+      width: rem(100px);
+      height: rem(100px);
+      margin-top: rem(20px);
     }
     @media screen and (max-width: $breakpoint__tablet--max) {
       background: $grey;

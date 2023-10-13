@@ -35,7 +35,6 @@
     }
     &__background {
       background-color: $light-blue;
-      //background: url('/assets/background-tile.svg');
       &:after {
         content: '';
         background: linear-gradient(40deg, rgba($light-blue, 0.7) 0%, rgba($white, 0.8) 100%);
