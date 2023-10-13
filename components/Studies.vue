@@ -72,9 +72,7 @@
       </div>
       <div class="cv-studies__section cv-studies__section--fifth">
         <div class="cv-studies__section-text">
-          <h3 class="cv-studies__section-title cv-studies__section-title--fifth">
-              Talk
-          </h3>
+          <h3 class="cv-studies__section-title cv-studies__section-title--fifth">Talk</h3>
           <p class="cv-studies__section-info">2023</p>
           <p class="cv-studies__section-info">APIDays New York</p>
         </div>
@@ -89,8 +87,7 @@
     </div>
   </section>
 </template>
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 <style lang="scss" scoped>
   .cv-studies {
     $component-class: &;
@@ -101,22 +98,11 @@
         11%,
         13%,
         100% {
-          box-shadow:  0 0 3px $white,
-          0 0 5px $white,
-          0 0 10px $white,
-          0 0 21px $light-blue,
-          0 0 41px $light-blue,
-          0 0 46px $light-blue,
-          0 0 51px $light-blue,
-          0 0 75px $light-blue,
-          inset 0 0 3px $white,
-          inset 0 0 5px $white,
-          inset 0 0 10px $white,
-          inset 0 0 21px $light-blue,
-          inset 0 0 41px $light-blue,
-          inset 0 0 46px $light-blue,
-          inset 0 0 51px $light-blue,
-          inset 0 0 75px $light-blue;
+          box-shadow: 0 0 3px $white, 0 0 5px $white, 0 0 10px $white, 0 0 21px $light-blue,
+            0 0 41px $light-blue, 0 0 46px $light-blue, 0 0 51px $light-blue, 0 0 75px $light-blue,
+            inset 0 0 3px $white, inset 0 0 5px $white, inset 0 0 10px $white,
+            inset 0 0 21px $light-blue, inset 0 0 41px $light-blue, inset 0 0 46px $light-blue,
+            inset 0 0 51px $light-blue, inset 0 0 75px $light-blue;
         }
         10%,
         12% {
@@ -128,7 +114,7 @@
       animation-delay: #{random($randomSeed) * -1s};
       animation-iteration-count: infinite;
     }
-    background: $dark-blue;
+    background: linear-gradient(0deg, $dark-blue 0%, $blue 100%);
     padding-top: rem(40px);
     padding-bottom: rem(40px);
     &__wrapper {
@@ -234,11 +220,12 @@
     }
     @media screen and (max-width: $breakpoint__tablet--max) {
       &__wrapper {
-        grid-template-areas: 'first'
-        'second'
-        'third'
-        'forth'
-        'fifth';
+        grid-template-areas:
+          'first'
+          'second'
+          'third'
+          'forth'
+          'fifth';
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
       }
@@ -255,7 +242,7 @@
         }
         &:after {
           width: 90%;
-          left: 5%
+          left: 5%;
         }
       }
     }
