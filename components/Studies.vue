@@ -10,13 +10,7 @@
           <p class="cv-studies__section-info">2011-2017</p>
           <p class="cv-studies__section-info">Universidad de Valladolid</p>
         </div>
-        <!--
-        <img
-          class="cv-studies__section-image"
-          src="/assets/pedro--first.svg"
-          alt="Pedro in architecture"
-        />
-        -->
+        <House class="cv-studies__section-image" />
       </div>
       <div class="cv-studies__section cv-studies__section--second">
         <div class="cv-studies__section-text">
@@ -73,18 +67,15 @@
           <p class="cv-studies__section-info">2022</p>
           <p class="cv-studies__section-info">DevPortal Awards</p>
         </div>
-        <!--
-        <img
-            class="cv-studies__section-image"
-            src="/assets/pedro--third.svg"
-            alt="Pedro as programmer"
-        />
-        -->
+        <Trophy class="cv-studies__section-image" />
       </div>
     </div>
   </section>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import House from '../assets/icons/house.svg?component';
+  import Trophy from '../assets/icons/trophy.svg?component';
+</script>
 <style lang="scss" scoped>
   .cv-studies {
     $component-class: &;
@@ -214,6 +205,9 @@
       width: rem(100px);
       height: rem(100px);
       margin-top: rem(20px);
+      path {
+        @include neonAnimation(2);
+      }
     }
     @media screen and (max-width: $breakpoint__tablet--max) {
       &__wrapper {

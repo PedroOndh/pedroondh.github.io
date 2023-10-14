@@ -1,4 +1,5 @@
 const path = require('path');
+import svgLoader from 'vite-svg-loader';
 
 export default defineNuxtConfig({
     app: {
@@ -30,6 +31,9 @@ export default defineNuxtConfig({
         payloadExtraction: false
     },
     vite: {
+        plugins: [
+            svgLoader()
+        ],
         css: {
             preprocessorOptions: {
                 scss: {
