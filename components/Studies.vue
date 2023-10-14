@@ -1,6 +1,6 @@
 <template>
   <section class="cv-studies cv-section" id="studies">
-    <h2 class="cv-studies__title">Studies</h2>
+    <h2 class="cv-studies__title">Studies & achievements</h2>
     <div class="cv-studies__wrapper">
       <div class="cv-studies__section cv-studies__section--first">
         <div class="cv-studies__section-text">
@@ -41,10 +41,6 @@
           </h3>
           <p class="cv-studies__section-info">2017-2018</p>
           <p class="cv-studies__section-info">Escuela Superior de Diseño de Madrid</p>
-          <h3 class="cv-studies__section-title cv-studies__section-title--third">
-            5+ years of Front-end experience
-          </h3>
-          <p class="cv-studies__section-info">2017-present</p>
         </div>
         <!--
         <img
@@ -57,10 +53,9 @@
       <div class="cv-studies__section cv-studies__section--fourth">
         <div class="cv-studies__section-text">
           <h3 class="cv-studies__section-title cv-studies__section-title--fourth">
-            Best Overall Enterprise DevPortal + Best Visual Design
+            5+ years of Front-end experience
           </h3>
-          <p class="cv-studies__section-info">2022</p>
-          <p class="cv-studies__section-info">DevPortal Awards</p>
+          <p class="cv-studies__section-info">2017-present</p>
         </div>
         <!--
         <img
@@ -72,9 +67,11 @@
       </div>
       <div class="cv-studies__section cv-studies__section--fifth">
         <div class="cv-studies__section-text">
-          <h3 class="cv-studies__section-title cv-studies__section-title--fifth">Talk</h3>
-          <p class="cv-studies__section-info">2023</p>
-          <p class="cv-studies__section-info">APIDays New York</p>
+          <h3 class="cv-studies__section-title cv-studies__section-title--fifth">
+            Best Overall Enterprise DevPortal + Best Visual Design
+          </h3>
+          <p class="cv-studies__section-info">2022</p>
+          <p class="cv-studies__section-info">DevPortal Awards</p>
         </div>
         <!--
         <img
@@ -121,7 +118,7 @@
       display: grid;
       grid-template-areas:
         'second third fifth'
-        'first third fourth';
+        'first fourth fourth';
       grid-template-rows: 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
       gap: rem(30px);
@@ -184,10 +181,10 @@
       &--third {
         grid-area: third;
         &:before {
-          bottom: 25%;
-          right: rem(-50px);
-          width: rem(30px);
-          height: 2px;
+          left: 50%;
+          bottom: rem(-50px);
+          width: 2px;
+          height: rem(30px);
         }
         &:after {
           @include neonAnimation(6);
@@ -197,7 +194,7 @@
         grid-area: fourth;
         &:before {
           top: rem(-50px);
-          left: 50%;
+          right: 25%;
           width: 2px;
           height: rem(30px);
         }
@@ -220,17 +217,13 @@
     }
     @media screen and (max-width: $breakpoint__tablet--max) {
       &__wrapper {
-        grid-template-areas:
-          'first'
-          'second'
-          'third'
-          'forth'
-          'fifth';
+        grid-template-areas: none;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
       }
       &__section {
-        width: 100%;
+        width: 80%;
+        margin: rem(20px) 10%;
         grid-area: auto;
         &:before {
           top: unset;
@@ -238,11 +231,14 @@
           bottom: rem(-50px);
           right: unset;
           width: 2px;
-          height: rem(60px);
+          height: rem(30px);
+        }
+        &:last-child:before {
+          display: none;
         }
         &:after {
-          width: 90%;
-          left: 5%;
+          width: 110%;
+          left: -5%;
         }
       }
     }
