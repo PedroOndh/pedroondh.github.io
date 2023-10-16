@@ -340,6 +340,14 @@
           left: -5%;
         }
       }
+      &__section-image {
+        &--laptop {
+          right: 8%;
+        }
+        &--net {
+          right: 10%;
+        }
+      }
     }
   }
 </style>
