@@ -75,7 +75,7 @@
         v-if="broken"
         @click="
           broken = false;
-          power = 5;
+          power = 6;
         "
       >
         Fix
@@ -92,7 +92,7 @@
   import Trophy from '../assets/icons/trophy.svg?component';
   import Lightning from '../assets/icons/lightning.svg?component';
 
-  const power = ref(5);
+  const power = ref(6);
   const broken = ref(false);
 
   watch(power, () => {
@@ -105,42 +105,19 @@
   .cv-studies {
     $component-class: &;
     @mixin neonAnimation($randomSeed: 1) {
-      @keyframes neon {
-        0%,
-        9%,
-        11%,
-        13%,
-        100% {
-          box-shadow: 0 0 calc(var(--power) * 0.5) $white, 0 0 var(--power) $white,
-            0 0 calc(var(--power) * 2) $white, 0 0 calc(var(--power) * 4) $light-blue,
-            0 0 calc(var(--power) * 8) $light-blue, 0 0 calc(var(--power) * 9) $light-blue,
-            0 0 calc(var(--power) * 10) $light-blue, 0 0 calc(var(--power) * 15) $light-blue,
-            inset 0 0 calc(var(--power) * 0.5) $white, inset 0 0 var(--power) $white,
-            inset 0 0 calc(var(--power) * 2) $white, inset 0 0 calc(var(--power) * 4) $light-blue,
-            inset 0 0 calc(var(--power) * 8) $light-blue,
-            inset 0 0 calc(var(--power) * 9) $light-blue,
-            inset 0 0 calc(var(--power) * 10) $light-blue,
-            inset 0 0 calc(var(--power) * 15) $light-blue;
-        }
-        10%,
-        12% {
-          box-shadow: none;
-        }
-      }
-      animation: neon;
-      animation-duration: 8s;
-      animation-delay: #{random($randomSeed) * -1s};
-      animation-iteration-count: infinite;
+      box-shadow: 0 0 calc(var(--power) * 0.5) $white, 0 0 calc(var(--power) * 2) $white,
+        0 0 calc(var(--power) * 4) $light-blue, 0 0 calc(var(--power) * 8) $light-blue,
+        0 0 calc(var(--power) * 10) $light-blue, inset 0 0 calc(var(--power) * 0.5) $white,
+        inset 0 0 calc(var(--power) * 2) $white, inset 0 0 calc(var(--power) * 4) $light-blue,
+        inset 0 0 calc(var(--power) * 8) $light-blue, inset 0 0 calc(var(--power) * 10) $light-blue;
     }
     @mixin neonSvg($color: $light-blue) {
       filter: drop-shadow(0 0 calc(var(--power) * 0.03) $white)
-        drop-shadow(0 0 calc(var(--power) * 0.06) $white)
         drop-shadow(0 0 calc(var(--power) * 0.125) $white)
         drop-shadow(0 0 calc(var(--power) * 0.25) $color)
         drop-shadow(0 0 calc(var(--power) * 0.5) $color)
         drop-shadow(0 0 calc(var(--power) * 0.625) $color)
-        drop-shadow(0 0 calc(var(--power) * 0.75) $color)
-        drop-shadow(0 0 calc(var(--power) * 0.86) $color);
+        drop-shadow(0 0 calc(var(--power) * 0.75) $color);
     }
     background: linear-gradient(0deg, $dark-blue 0%, $blue 100%);
     padding-top: rem(40px);
@@ -150,7 +127,7 @@
         &__section {
           &:before,
           &:after {
-            animation: none;
+            box-shadow: none;
           }
         }
         &__section-image {
