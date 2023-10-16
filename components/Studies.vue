@@ -1,5 +1,5 @@
 <template>
-  <section class="cv-studies cv-section" id="studies">
+  <section class="cv-studies cv-section" id="studies" :style="`--power: ${broken ? 0 : power}px;`">
     <h2 class="cv-studies__title">Studies & achievements</h2>
     <div class="cv-studies__wrapper">
       <div class="cv-studies__section cv-studies__section--first">
@@ -10,7 +10,7 @@
           <p class="cv-studies__section-info">2011-2017</p>
           <p class="cv-studies__section-info">Universidad de Valladolid</p>
         </div>
-        <House class="cv-studies__section-image" />
+        <House class="cv-studies__section-image cv-studies__section-image--house" />
       </div>
       <div class="cv-studies__section cv-studies__section--second">
         <div class="cv-studies__section-text">
@@ -67,14 +67,40 @@
           <p class="cv-studies__section-info">2022</p>
           <p class="cv-studies__section-info">DevPortal Awards</p>
         </div>
-        <Trophy class="cv-studies__section-image" />
+        <Trophy class="cv-studies__section-image cv-studies__section-image--trophy" />
       </div>
+    </div>
+    <div class="cv-studies__volume-wrapper">
+      <label class="cv-studies__volume-label" for="volume"><Lightning /></label>
+      <input
+        class="cv-studies__volume-range"
+        type="range"
+        id="power"
+        name="power"
+        v-model="power"
+        min="1"
+        max="12"
+      />
+      <span class="cv-studies__volume-measure">
+        {{ broken ? 'Broken' : power }}
+      </span>
     </div>
   </section>
 </template>
 <script setup lang="ts">
+  import { watch } from 'vue';
+  import Lightning from '../assets/icons/lightning.svg?component';
   import House from '../assets/icons/house.svg?component';
   import Trophy from '../assets/icons/trophy.svg?component';
+
+  const power = ref(5);
+  const broken = ref(false);
+
+  watch(power, () => {
+    if (power.value == 12) {
+      broken.value = true;
+    }
+  });
 </script>
 <style lang="scss" scoped>
   .cv-studies {
@@ -86,11 +112,16 @@
         11%,
         13%,
         100% {
-          box-shadow: 0 0 3px $white, 0 0 5px $white, 0 0 10px $white, 0 0 21px $light-blue,
-            0 0 41px $light-blue, 0 0 46px $light-blue, 0 0 51px $light-blue, 0 0 75px $light-blue,
-            inset 0 0 3px $white, inset 0 0 5px $white, inset 0 0 10px $white,
-            inset 0 0 21px $light-blue, inset 0 0 41px $light-blue, inset 0 0 46px $light-blue,
-            inset 0 0 51px $light-blue, inset 0 0 75px $light-blue;
+          box-shadow: 0 0 calc(var(--power) * 0.5) $white, 0 0 var(--power) $white,
+            0 0 calc(var(--power) * 2) $white, 0 0 calc(var(--power) * 4) $light-blue,
+            0 0 calc(var(--power) * 8) $light-blue, 0 0 calc(var(--power) * 9) $light-blue,
+            0 0 calc(var(--power) * 10) $light-blue, 0 0 calc(var(--power) * 15) $light-blue,
+            inset 0 0 calc(var(--power) * 0.5) $white, inset 0 0 var(--power) $white,
+            inset 0 0 calc(var(--power) * 2) $white, inset 0 0 calc(var(--power) * 4) $light-blue,
+            inset 0 0 calc(var(--power) * 8) $light-blue,
+            inset 0 0 calc(var(--power) * 9) $light-blue,
+            inset 0 0 calc(var(--power) * 10) $light-blue,
+            inset 0 0 calc(var(--power) * 15) $light-blue;
         }
         10%,
         12% {
@@ -101,6 +132,15 @@
       animation-duration: 8s;
       animation-delay: #{random($randomSeed) * -1s};
       animation-iteration-count: infinite;
+    }
+    @mixin neonSvg($color: $light-blue) {
+      filter: drop-shadow(0 0 calc(var(--power) * 0.125) $white)
+        drop-shadow(0 0 calc(var(--power) * 0.25) $white)
+        drop-shadow(0 0 calc(var(--power) * 0.5) $white) drop-shadow(0 0 var(--power) $color)
+        drop-shadow(0 0 calc(var(--power) * 2) $color)
+        drop-shadow(0 0 calc(var(--power) * 2.25) $color)
+        drop-shadow(0 0 calc(var(--power) * 2.5) $color)
+        drop-shadow(0 0 calc(var(--power) * 3.5) $color);
     }
     background: linear-gradient(0deg, $dark-blue 0%, $blue 100%);
     padding-top: rem(40px);
@@ -205,9 +245,28 @@
       width: rem(100px);
       height: rem(100px);
       margin-top: rem(20px);
-      path {
-        @include neonAnimation(2);
+      &--house {
+        @include neonSvg(red);
       }
+      &--trophy {
+        @include neonSvg(green);
+      }
+    }
+    &__volume-wrapper {
+      display: flex;
+      align-items: center;
+      padding: rem(40px) 0;
+      width: 100%;
+    }
+    &__volume-range {
+    }
+    &__volume-label {
+      margin-right: rem(20px);
+      @include neonSvg();
+    }
+    &__volume-measure {
+      margin-left: rem(20px);
+      color: $white;
     }
     @media screen and (max-width: $breakpoint__tablet--max) {
       &__wrapper {
