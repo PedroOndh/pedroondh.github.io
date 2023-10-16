@@ -10,7 +10,7 @@
         />
       </svg>
       <img class="cv-experience__moon" src="/assets/moon.svg" alt="Moon" />
-      <img class="cv-experience__earth" src="/assets/earth.svg" alt="Earth" />
+      <div class="cv-experience__earth" />
       <div class="cv-experience__sun" />
       <img
         class="cv-experience__cloud cv-experience__cloud--1"
@@ -255,6 +255,32 @@
       bottom: -55vw;
       left: 10vw;
       width: 80vw;
+      height: 80vw;
+      border-radius: 50%;
+      background-color: $dark-blue;
+      overflow: hidden;
+      &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: url('../public/assets/map.svg');
+        background-size: cover;
+        transition: background-position 0.5s ease;
+        @keyframes globeSpinning {
+          0% {
+            background-position: 0 0;
+          }
+
+          100% {
+            background-position: 288% 0;
+          }
+        }
+        animation: globeSpinning;
+        animation-duration: 300s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
     }
     &__sun {
       top: -35vw;
@@ -435,6 +461,7 @@
       &__earth {
         left: 5vw;
         width: 90vw;
+        height: 90vw;
       }
       &__list-item {
         flex-direction: column;
