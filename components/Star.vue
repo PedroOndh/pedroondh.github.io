@@ -1,6 +1,6 @@
 <template>
   <circle
-    :class="['cv-star-decoration', { 'cv-star-decoration--animation': animation }]"
+    :class="['cv-star-decoration', { 'cv-star-decoration--mobile': mobile }]"
     :cx="topPosition"
     :cy="leftPosition"
     :r="radius"
@@ -10,11 +10,11 @@
 
 <script lang="ts" setup>
   interface Props {
-    animation?: boolean;
+    mobile?: boolean;
   }
 
   withDefaults(defineProps<Props>(), {
-    animation: false
+    mobile: false
   });
 
   const topPosition = `${Math.random() * 100}%`;
@@ -32,7 +32,7 @@
     transition-property: transform;
     transition-duration: 0.5s;
     @media screen and (max-width: $breakpoint__tablet--max) {
-      &:not(&--animation) {
+      &:not(&--mobile) {
         display: none;
       }
     }

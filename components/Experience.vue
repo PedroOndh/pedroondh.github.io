@@ -5,7 +5,7 @@
         <Star
           v-for="index in 500"
           lass="cv-experience__star"
-          :animation="index % 5 === 0"
+          :mobile="index % 5 === 0"
           :key="index"
         />
       </svg>
