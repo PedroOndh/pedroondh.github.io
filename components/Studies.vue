@@ -56,10 +56,10 @@
         <Trophy class="cv-studies__section-image cv-studies__section-image--trophy" />
       </div>
     </div>
-    <div class="cv-studies__volume-wrapper">
-      <label class="cv-studies__volume-label" for="volume"><Lightning /></label>
+    <div class="cv-studies__power-wrapper">
+      <label class="cv-studies__power-label" for="volume"><Lightning /></label>
       <input
-        class="cv-studies__volume-range"
+        class="cv-studies__power-range"
         type="range"
         id="power"
         name="power"
@@ -67,8 +67,8 @@
         min="1"
         max="20"
       />
-      <span class="cv-studies__volume-measure">
-        {{ broken ? 'It broke' : power }}
+      <span class="cv-studies__power-measure">
+        {{ broken ? 'Overload!' : power }}
       </span>
       <div
         class="cv-studies__fix-button"
@@ -291,19 +291,39 @@
         @include neonSvg($highlight);
       }
     }
-    &__volume-wrapper {
+    &__power-wrapper {
       display: flex;
       align-items: center;
-      padding: rem(40px) 0;
+      padding: rem(100px) 0 rem(40px);
       width: 100%;
     }
-    &__volume-range {
+    &__power-range {
+      position: relative;
+      -webkit-appearance: none;
+      appearance: none;
+      background: linear-gradient(90deg, $dark-black 0%, $highlight 100%);
+      border-radius: rem(20px);
+      cursor: pointer;
+      width: rem(200px);
+      height: 5px;
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        background-color: $white;
+        height: rem(12px);
+        width: rem(12px);
+        border: none;
+        border-radius: 50%;
+        &:hover {
+          background-color: $light-blue;
+        }
+      }
     }
-    &__volume-label {
+    &__power-label {
       margin-right: rem(20px);
       @include neonSvg();
     }
-    &__volume-measure {
+    &__power-measure {
       margin-left: rem(20px);
       color: $white;
     }
@@ -347,6 +367,9 @@
         &--net {
           right: 10%;
         }
+      }
+      &__power-wrapper {
+        padding: rem(100px) 10% rem(40px);
       }
     }
   }
