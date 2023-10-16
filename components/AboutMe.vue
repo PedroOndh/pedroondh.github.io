@@ -2,6 +2,7 @@
   <section class="cv-about-me cv-section" id="about-me">
     <div class="cv-about-me__background">
       <div class="cv-about-me__background-waves" />
+      <div class="cv-about-me__background-sand" />
     </div>
     <div class="cv-about-me__text">
       <h1>Pedro Ondiviela</h1>
@@ -33,49 +34,80 @@
       height: 100%;
     }
     &__background {
-      background-color: $light-blue;
+      background: linear-gradient(180deg, $light-blue 0%, $highlight 200%);
       &:after {
         content: '';
-        background: linear-gradient(40deg, rgba($light-blue, 0.7) 0%, rgba($white, 0.8) 100%);
+        background: linear-gradient(40deg, rgba($light-blue, 0) 0%, rgba($white, 0.5) 100%);
       }
     }
     &__background-waves {
-      &:before {
-        content: '';
-        background: url('/assets/water-texture--blue.svg');
-      }
       &:after {
         content: '';
         background: url('/assets/water-texture.svg');
-        transform: scale(1.2, 1.2);
+        top: -50%;
+        height: 200%;
+        @keyframes water-moving {
+          0%,
+          100% {
+            transform: translate(0, -4%);
+          }
+          50% {
+            transform: scale(1, 0.9) translate(0, 0);
+          }
+        }
+        transform-origin: center;
+        animation: water-moving;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+      }
+    }
+    &__background-sand {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 90vw;
+      height: rem(300px);
+      background-color: $grey;
+      @keyframes seafoam1 {
+        0%,
+        100% {
+          clip-path: path('M 0 300 L 0 60 C 450 120 500 30 650 130 C 750 230 850 130 1200 330');
+        }
+        50% {
+          clip-path: path('M 0 300 L 0 120 C 450 200 500 60 650 160 C 750 240 850 120 1300 340');
+        }
+      }
+      animation: seafoam1;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $highlight;
+        @keyframes seafoam2 {
+          0%,
+          100% {
+            clip-path: path('M 0 300 L 0 100 C 450 125 500 50 650 150 C 750 250 850 150 1200 350');
+          }
+          50% {
+            clip-path: path('M 0 300 L 0 160 C 450 220 500 140 650 220 C 750 260 850 110 1200 350');
+          }
+        }
+        animation: seafoam2;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
       }
     }
     &__text {
       position: relative;
     }
-    @media screen and (min-width: $breakpoint__small-desktop--min) {
-      &__background-waves {
-        &:after {
-          @keyframes water-moving {
-            0%,
-            100% {
-              transform: scale(1.2, 1.2) rotate3d(0, 20, 0, 10deg);
-            }
-            30% {
-              transform: scale(1.2, 1.2) rotate3d(30, 2, 0, 10deg);
-            }
-            50% {
-              transform: scale(1.2, 1.2) rotate3d(2, 50, 0, 10deg);
-            }
-            70% {
-              transform: scale(1.2, 1.2) rotate3d(0, 0, 0, 10deg);
-            }
-          }
-          transform-origin: center;
-          animation: water-moving;
-          animation-duration: 10s;
-          animation-iteration-count: infinite;
-        }
+    @media screen and (max-width: $breakpoint__tablet--max) {
+      &__background-sand {
+        width: 100vw;
       }
     }
   }
