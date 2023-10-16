@@ -1,5 +1,9 @@
 <template>
-  <section class="cv-studies cv-section" id="studies" :style="`--power: ${broken ? 0 : power}px;`">
+  <section
+    :class="['cv-studies', 'cv-section', { 'cv-studies--broken': broken }]"
+    id="studies"
+    :style="`--power: ${power}px;`"
+  >
     <h2 class="cv-studies__title">Studies & achievements</h2>
     <div class="cv-studies__wrapper">
       <div class="cv-studies__section cv-studies__section--first">
@@ -20,29 +24,17 @@
           <p class="cv-studies__section-info">2017-2018</p>
           <p class="cv-studies__section-info">Escuela Superior de Diseño de Madrid</p>
         </div>
-        <!--
-        <img
-          class="cv-studies__section-image"
-          src="/assets/pedro--second.svg"
-          alt="Pedro in design"
-        />
-        -->
+        <Pallete class="cv-studies__section-image cv-studies__section-image--pallete" />
       </div>
       <div class="cv-studies__section cv-studies__section--third">
         <div class="cv-studies__section-text">
           <h3 class="cv-studies__section-title cv-studies__section-title--third">
-            Full stack Web Development Bootcamp
+            1 year Full stack Web Development Bootcamp
           </h3>
-          <p class="cv-studies__section-info">2017-2018</p>
-          <p class="cv-studies__section-info">Escuela Superior de Diseño de Madrid</p>
+          <p class="cv-studies__section-info">2018-2019</p>
+          <p class="cv-studies__section-info">KeepCoding</p>
         </div>
-        <!--
-        <img
-          class="cv-studies__section-image"
-          src="/assets/pedro--third.svg"
-          alt="Pedro as programmer"
-        />
-        -->
+        <Laptop class="cv-studies__section-image cv-studies__section-image--laptop" />
       </div>
       <div class="cv-studies__section cv-studies__section--fourth">
         <div class="cv-studies__section-text">
@@ -51,13 +43,7 @@
           </h3>
           <p class="cv-studies__section-info">2017-present</p>
         </div>
-        <!--
-        <img
-            class="cv-studies__section-image"
-            src="/assets/pedro--third.svg"
-            alt="Pedro as programmer"
-        />
-        -->
+        <Net class="cv-studies__section-image cv-studies__section-image--net" />
       </div>
       <div class="cv-studies__section cv-studies__section--fifth">
         <div class="cv-studies__section-text">
@@ -79,25 +65,38 @@
         name="power"
         v-model="power"
         min="1"
-        max="12"
+        max="20"
       />
       <span class="cv-studies__volume-measure">
-        {{ broken ? 'Broken' : power }}
+        {{ broken ? 'It broke' : power }}
       </span>
+      <div
+        class="cv-studies__fix-button"
+        v-if="broken"
+        @click="
+          broken = false;
+          power = 5;
+        "
+      >
+        Fix
+      </div>
     </div>
   </section>
 </template>
 <script setup lang="ts">
   import { watch } from 'vue';
-  import Lightning from '../assets/icons/lightning.svg?component';
   import House from '../assets/icons/house.svg?component';
+  import Pallete from '../assets/icons/pallete.svg?component';
+  import Laptop from '../assets/icons/laptop.svg?component';
+  import Net from '../assets/icons/net.svg?component';
   import Trophy from '../assets/icons/trophy.svg?component';
+  import Lightning from '../assets/icons/lightning.svg?component';
 
   const power = ref(5);
   const broken = ref(false);
 
   watch(power, () => {
-    if (power.value == 12) {
+    if (power.value == 20) {
       broken.value = true;
     }
   });
@@ -134,17 +133,31 @@
       animation-iteration-count: infinite;
     }
     @mixin neonSvg($color: $light-blue) {
-      filter: drop-shadow(0 0 calc(var(--power) * 0.125) $white)
-        drop-shadow(0 0 calc(var(--power) * 0.25) $white)
-        drop-shadow(0 0 calc(var(--power) * 0.5) $white) drop-shadow(0 0 var(--power) $color)
-        drop-shadow(0 0 calc(var(--power) * 2) $color)
-        drop-shadow(0 0 calc(var(--power) * 2.25) $color)
-        drop-shadow(0 0 calc(var(--power) * 2.5) $color)
-        drop-shadow(0 0 calc(var(--power) * 3.5) $color);
+      filter: drop-shadow(0 0 calc(var(--power) * 0.03) $white)
+        drop-shadow(0 0 calc(var(--power) * 0.06) $white)
+        drop-shadow(0 0 calc(var(--power) * 0.125) $white)
+        drop-shadow(0 0 calc(var(--power) * 0.25) $color)
+        drop-shadow(0 0 calc(var(--power) * 0.5) $color)
+        drop-shadow(0 0 calc(var(--power) * 0.625) $color)
+        drop-shadow(0 0 calc(var(--power) * 0.75) $color)
+        drop-shadow(0 0 calc(var(--power) * 0.86) $color);
     }
     background: linear-gradient(0deg, $dark-blue 0%, $blue 100%);
     padding-top: rem(40px);
     padding-bottom: rem(40px);
+    &--broken {
+      #{$component-class} {
+        &__section {
+          &:before,
+          &:after {
+            animation: none;
+          }
+        }
+        &__section-image {
+          filter: none;
+        }
+      }
+    }
     &__wrapper {
       display: grid;
       grid-template-areas:
@@ -242,14 +255,40 @@
       color: $black;
     }
     &__section-image {
+      position: absolute;
       width: rem(100px);
       height: rem(100px);
-      margin-top: rem(20px);
+      z-index: 2;
       &--house {
-        @include neonSvg(red);
+        bottom: rem(-50px);
+        right: 10%;
+        transform: rotate(10deg);
+        @include neonSvg($highlight);
+      }
+      &--pallete {
+        bottom: rem(-50px);
+        right: 10%;
+        @include neonSvg($highlight);
+      }
+      &--laptop {
+        bottom: rem(-50px);
+        right: 10%;
+        width: rem(120px);
+        height: rem(120px);
+        transform: rotate(10deg);
+        @include neonSvg($highlight);
+      }
+      &--net {
+        bottom: rem(-50px);
+        right: 20%;
+        transform: rotate(12deg);
+        @include neonSvg($highlight);
       }
       &--trophy {
-        @include neonSvg(green);
+        bottom: rem(-50px);
+        right: 10%;
+        transform: rotate(8deg);
+        @include neonSvg($highlight);
       }
     }
     &__volume-wrapper {
@@ -267,6 +306,13 @@
     &__volume-measure {
       margin-left: rem(20px);
       color: $white;
+    }
+    &__fix-button {
+      padding: rem(2px) rem(8px);
+      margin-left: rem(10px);
+      background-color: $white;
+      border-radius: rem(20px);
+      cursor: pointer;
     }
     @media screen and (max-width: $breakpoint__tablet--max) {
       &__wrapper {
