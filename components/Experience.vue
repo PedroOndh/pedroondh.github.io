@@ -1,12 +1,39 @@
 <template>
-  <section class="cv-experience cv-section" id="experience">
+  <section :class="['cv-experience', 'cv-section', { 'cv-experience--day': day }]" id="experience">
     <div class="cv-experience__background">
       <svg class="cv-experience__star-wrapper" width="100%" height="100%">
-        <Star v-for="index in 500" :animation="index % 5 === 0" :key="index" />
+        <Star
+          v-for="index in 500"
+          lass="cv-experience__star"
+          :animation="index % 5 === 0"
+          :key="index"
+        />
       </svg>
       <img class="cv-experience__moon" src="/assets/moon.svg" alt="Moon" />
       <img class="cv-experience__earth" src="/assets/earth.svg" alt="Earth" />
+      <div class="cv-experience__sun" />
+      <img
+        class="cv-experience__cloud cv-experience__cloud--1"
+        src="/assets/cloud-1.svg"
+        alt="Cloud"
+      />
+      <img
+        class="cv-experience__cloud cv-experience__cloud--2"
+        src="/assets/cloud-2.svg"
+        alt="Cloud"
+      />
+      <img
+        class="cv-experience__cloud cv-experience__cloud--3"
+        src="/assets/cloud-3.svg"
+        alt="Cloud"
+      />
+      <img
+        class="cv-experience__cloud cv-experience__cloud--4"
+        src="/assets/cloud-4.svg"
+        alt="Cloud"
+      />
     </div>
+    <div class="cv-experience__button" @click="day = !day">{{ day ? 'Night' : 'Day' }}</div>
     <h2 class="cv-experience__title">Experience</h2>
     <ul class="cv-experience__list">
       <li v-for="experience in experiences" class="cv-experience__list-item">
@@ -87,6 +114,7 @@
 <script setup lang="ts">
   import Star from '~/components/Star.vue';
 
+  const day = ref(false);
   const experiences = [
     {
       title: 'Front-end Engineer',
@@ -158,10 +186,49 @@
   .cv-experience {
     $component-class: &;
     position: relative;
-    background: linear-gradient(0deg, $dark-blue 0%, $dark-black 100%);
+    background: linear-gradient(0deg, $light-blue 0%, $blue 25%, $dark-blue 50%, $dark-black 100%);
+    background-size: 100% 200%;
+    background-position: 0 0;
     padding-top: rem(40px);
     padding-bottom: rem(100px);
+    transition: background-position 1s ease;
     overflow: hidden;
+    &--day {
+      background-position: 0 100%;
+      &:deep(circle) {
+        transform: scale(0);
+        animation: none;
+      }
+      #{$component-class} {
+        &__sun {
+          transform: rotate(0deg);
+        }
+        &__moon {
+          transform: rotate(90deg);
+        }
+        &__cloud {
+          &--1 {
+            left: rem(-50px);
+          }
+
+          &--2 {
+            left: 60%;
+          }
+
+          &--3 {
+            left: 10%;
+          }
+
+          &--4 {
+            left: 80%;
+          }
+        }
+        &__button {
+          color: $white;
+          background-color: $dark-black;
+        }
+      }
+    }
     &__background {
       width: 100%;
       height: 100%;
@@ -172,18 +239,68 @@
       left: 0;
     }
     &__moon,
-    &__earth {
+    &__earth,
+    &__sun,
+    &__cloud {
       position: absolute;
     }
     &__moon {
       top: 0;
       left: 60vw;
       width: 30vw;
+      transition: transform 1s ease;
+      transform-origin: -50% 250%;
     }
     &__earth {
       bottom: -55vw;
       left: 10vw;
       width: 80vw;
+    }
+    &__sun {
+      top: -35vw;
+      right: -10vw;
+      width: 50vw;
+      height: 50vw;
+      border-radius: 50%;
+      background-color: $highlight;
+      transform: rotate(-90deg);
+      transition: transform 1s ease;
+      transform-origin: -50% 250%;
+    }
+    &__cloud {
+      left: -100vw;
+      width: rem(300px);
+      height: rem(300px);
+      transition-property: top, left;
+      transition-duration: 1s;
+      &--1 {
+        top: 10%;
+      }
+      &--2 {
+        top: 20%;
+      }
+      &--3 {
+        top: 50%;
+      }
+      &--4 {
+        top: 60%;
+      }
+    }
+    &__button {
+      position: absolute;
+      top: rem(10px);
+      right: rem(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: rem(30px);
+      padding: rem(4px) rem(10px);
+      border-radius: rem(20px);
+      background-color: $highlight;
+      text-transform: uppercase;
+      transition-property: color, background-color;
+      transition-duration: 1s;
+      cursor: pointer;
     }
     &__title {
       position: relative;

@@ -40,15 +40,15 @@
     position: absolute;
     fill: $white;
     border-radius: 50%;
+    transform-origin: var(--top-position) var(--left-position);
+    transition-property: all;
+    transition-duration: 0.5s;
     @media screen and (min-width: $breakpoint__small-desktop--min) {
       &--animation {
         will-change: opacity, background-color, transform;
         animation: blinking;
         animation-duration: 4s;
         animation-iteration-count: infinite;
-        transform-origin: var(--top-position) var(--left-position);
-        transition-property: all;
-        transition-duration: 0.5s;
       }
     }
     @media screen and (max-width: $breakpoint__tablet--max) {

@@ -57,7 +57,7 @@
       </div>
     </div>
     <div class="cv-studies__power-wrapper">
-      <label class="cv-studies__power-label" for="volume"><Lightning /></label>
+      <label class="cv-studies__power-label" for="power"><Lightning /></label>
       <input
         class="cv-studies__power-range"
         type="range"
