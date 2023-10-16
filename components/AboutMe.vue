@@ -65,7 +65,7 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 90vw;
+      width: 100vw;
       height: rem(300px);
       background-color: $grey;
       @keyframes seafoam1 {
@@ -104,11 +104,6 @@
     }
     &__text {
       position: relative;
-    }
-    @media screen and (max-width: $breakpoint__tablet--max) {
-      &__background-sand {
-        width: 100vw;
-      }
     }
   }
 </style>
