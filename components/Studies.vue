@@ -127,11 +127,11 @@
         &__section {
           &:before,
           &:after {
-            box-shadow: none;
+            box-shadow: 0 0 8px $white, inset 0 0 8px $white;
           }
         }
         &__section-image {
-          filter: none;
+          filter: drop-shadow(0 0 8px $white);
         }
       }
     }
@@ -240,12 +240,12 @@
         bottom: rem(-50px);
         right: 10%;
         transform: rotate(10deg);
-        @include neonSvg($highlight);
+        @include neonSvg($red);
       }
       &--pallete {
         bottom: rem(-50px);
         right: 10%;
-        @include neonSvg($highlight);
+        @include neonSvg($green);
       }
       &--laptop {
         bottom: rem(-50px);
@@ -253,19 +253,19 @@
         width: rem(120px);
         height: rem(120px);
         transform: rotate(10deg);
-        @include neonSvg($highlight);
+        @include neonSvg($purple);
       }
       &--net {
         bottom: rem(-50px);
         right: 20%;
         transform: rotate(12deg);
-        @include neonSvg($highlight);
+        @include neonSvg($green);
       }
       &--trophy {
         bottom: rem(-50px);
         right: 10%;
         transform: rotate(8deg);
-        @include neonSvg($highlight);
+        @include neonSvg($red);
       }
     }
     &__power-wrapper {
