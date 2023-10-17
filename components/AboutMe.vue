@@ -87,7 +87,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: $highlight;
+        background: linear-gradient(200deg, #F5FCCD 0%, #ff7d66 300%);
         @keyframes seafoam2 {
           0%,
           100% {
