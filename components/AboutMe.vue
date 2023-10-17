@@ -238,5 +238,11 @@
     &__description {
       margin-bottom: 0;
     }
+    @media screen and (max-width: $breakpoint__mobile--max) {
+      &__text {
+        left: 5vw;
+        width: 90vw;
+      }
+    }
   }
 </style>
