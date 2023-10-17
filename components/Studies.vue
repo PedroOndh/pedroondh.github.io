@@ -104,7 +104,7 @@
 <style lang="scss" scoped>
   .cv-studies {
     $component-class: &;
-    @mixin neonAnimation($randomSeed: 1) {
+    @mixin neonElement() {
       box-shadow: 0 0 calc(var(--power) * 0.5) $white, 0 0 calc(var(--power) * 2) $white,
         0 0 calc(var(--power) * 4) $light-blue, 0 0 calc(var(--power) * 8) $light-blue,
         0 0 calc(var(--power) * 10) $light-blue, inset 0 0 calc(var(--power) * 0.5) $white,
@@ -157,12 +157,18 @@
       border-radius: rem(20px);
       background: linear-gradient(145deg, $white, $grey);
       text-align: left;
+      &:hover {
+        &:before,
+        &:after {
+          box-shadow: 0 0 8px $white, inset 0 0 8px $white;
+        }
+      }
       &:before {
         content: '';
         position: absolute;
         z-index: 2;
         background-color: $white;
-        @include neonAnimation(1);
+        @include neonElement();
       }
       &:after {
         content: '';
@@ -173,7 +179,7 @@
         height: calc(100% + #{rem(40px)});
         border: 1px solid $white;
         border-radius: rem(20px);
-        @include neonAnimation(3);
+        @include neonElement();
       }
       &--first {
         grid-area: first;
@@ -184,7 +190,7 @@
           height: rem(30px);
         }
         &:after {
-          @include neonAnimation(4);
+          @include neonElement();
         }
       }
       &--second {
@@ -196,7 +202,7 @@
           height: 2px;
         }
         &:after {
-          @include neonAnimation(5);
+          @include neonElement();
         }
       }
       &--third {
@@ -208,7 +214,7 @@
           height: rem(30px);
         }
         &:after {
-          @include neonAnimation(6);
+          @include neonElement();
         }
       }
       &--fourth {
@@ -220,7 +226,7 @@
           height: rem(30px);
         }
         &:after {
-          @include neonAnimation(7);
+          @include neonElement();
         }
       }
       &--fifth {

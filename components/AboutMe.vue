@@ -87,7 +87,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(200deg, #F5FCCD 0%, #ff7d66 300%);
+        background: linear-gradient(200deg, #f5fccd 0%, #ff7d66 300%);
         @keyframes seafoam2 {
           0%,
           100% {

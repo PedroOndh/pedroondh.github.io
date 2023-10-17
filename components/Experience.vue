@@ -33,7 +33,13 @@
         alt="Cloud"
       />
     </div>
-    <div class="cv-experience__button" @click="day = !day">{{ day ? 'Night' : 'Day' }}</div>
+    <button
+      :class="[
+        'cv-experience__button',
+        { 'cv-experience__button--day': day, 'cv-experience__button--night': !day }
+      ]"
+      @click="day = !day"
+    />
     <h2 class="cv-experience__title">Experience</h2>
     <ul class="cv-experience__list">
       <li v-for="experience in experiences" class="cv-experience__list-item">
@@ -264,7 +270,7 @@
         display: block;
         width: 100%;
         height: 100%;
-        background: url('../public/assets/map.svg');
+        background: url('/assets/map.svg');
         background-size: cover;
         transition: background-position 0.5s ease;
         @keyframes globeSpinning {
@@ -314,19 +320,51 @@
     }
     &__button {
       position: absolute;
-      top: rem(10px);
-      right: rem(10px);
+      top: rem(20px);
+      right: rem(20px);
       display: flex;
       justify-content: center;
       align-items: center;
+      width: rem(60px);
       height: rem(30px);
-      padding: rem(4px) rem(10px);
+      background: linear-gradient(90deg, $light-blue 0%, $blue 50%, $dark-black 100%);
+      background-size: 200% 100%;
       border-radius: rem(20px);
-      background-color: $highlight;
       text-transform: uppercase;
-      transition-property: color, background-color;
+      transition-property: background-position;
       transition-duration: 1s;
+      overflow: hidden;
       cursor: pointer;
+      &:after {
+        content: '';
+        width: rem(20px);
+        height: rem(20px);
+        border-radius: 50%;
+        background: linear-gradient(180deg, $red -100%, $highlight 50%, $light-black 100%);
+        background-size: 100% 200%;
+        transform-origin: center 200%;
+        transition-property: transform, background-position;
+        transition-duration: 1s;
+      }
+      &--day {
+        background-position: 0 0;
+        &:after {
+          transform: scale(1.5, 1.5) rotate(-35deg) translateY(60%);
+          background-position: 0 0;
+        }
+      }
+      &--night {
+        background-position: 100% 0;
+        &:after {
+          transform: rotate(45deg);
+          background-position: 0 100%;
+        }
+      }
+      &:hover {
+        &:after {
+          transform: none;
+        }
+      }
     }
     &__title {
       position: relative;
@@ -485,7 +523,10 @@
         width: 70vw;
       }
       &__earth {
-        bottom: 10vw;
+        left: -10vw;
+        bottom: -40vw;
+        width: 120vw;
+        height: 120vw;
       }
       &__list-item-text,
       &__technologies-wrapper {

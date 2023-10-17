@@ -1,6 +1,6 @@
 <template>
   <header :class="['cv-header', { 'cv-header--scrolled': scrolled }]">
-    <nav class="cv-header__menu rti-layout-wrapper">
+    <nav class="cv-header__menu">
       <NuxtLink class="cv-header__link cv-header__link--home" @click="toggleMenu(false)" to="/">
         Pedro
         <br />
@@ -83,7 +83,7 @@
 
     &__link-container {
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       width: 100%;
     }
 
