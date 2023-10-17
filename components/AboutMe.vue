@@ -1,19 +1,59 @@
 <template>
   <section class="cv-about-me cv-section" id="about-me">
-    <div class="cv-about-me__background">
+    <div class="cv-about-me__background" ref="background">
       <div class="cv-about-me__background-waves" />
+      <div
+        :class="[
+          'cv-about-me__splash',
+          {
+            'cv-about-me__splash--top': !verticalDirection,
+            'cv-about-me__splash--bottom': verticalDirection,
+            'cv-about-me__splash--right': horizontalDirection,
+            'cv-about-me__splash--left': !horizontalDirection
+          }
+        ]"
+        v-if="duck && !block"
+        :style="`top: ${mouseY}px; left: ${mouseX}px`"
+      />
+      <div
+        :class="['cv-about-me__cursor', { 'cv-about-me__cursor--right': horizontalDirection }]"
+        v-if="duck"
+        :style="`top: ${mouseY}px; left: ${mouseX}px`"
+      />
       <div class="cv-about-me__background-sand" />
     </div>
     <div class="cv-about-me__text">
-      <h1>Pedro Ondiviela</h1>
-      <p>
-        <b>Creative Developer</b>
-        (Front-end Developer, expert in complex interfaces and animations)
-      </p>
+      <h1 class="cv-about-me__title">Hi! I am Pedro Ondiviela</h1>
+      <b class="cv-about-me__subtitle">Creative Developer</b>
+      <p class="cv-about-me__description">and this is my CV-Playground</p>
     </div>
   </section>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  const background = ref(null);
+  const duck = ref(false);
+  const mouseX = ref(0);
+  const mouseY = ref(0);
+  const verticalDirection = ref(false);
+  const horizontalDirection = ref(false);
+  const block = ref(false);
+  onMounted(() => {
+    background.value.addEventListener('mouseenter', () => {
+      duck.value = true;
+    });
+    background.value.addEventListener('mousemove', (event: MouseEvent) => {
+      if (!block.value) {
+        console.log(event.movementX, event.movementY);
+        mouseX.value = event.offsetX;
+        mouseY.value = event.offsetY;
+        verticalDirection.value = event.movementY > 0;
+        horizontalDirection.value = event.movementX > 0;
+        block.value = true;
+        setTimeout(() => (block.value = false), 10);
+      }
+    });
+  });
+</script>
 <style lang="scss" scoped>
   .cv-about-me {
     position: relative;
@@ -61,6 +101,75 @@
         animation-iteration-count: infinite;
       }
     }
+    &__cursor {
+      position: absolute;
+      width: rem(40px);
+      height: rem(40px);
+      margin-top: rem(-30px);
+      margin-left: rem(-20px);
+      background: url('../assets/icons/duck.svg');
+      background-size: 100% 100%;
+      transition-property: top, left, transform;
+      transition-duration: 0.5s;
+      &:after {
+        content: '';
+        position: relative;
+        top: rem(40px);
+        display: block;
+        width: rem(40px);
+        height: rem(40px);
+        background: url('../assets/icons/duck.svg');
+        background-size: 100% 100%;
+        transform: scaleY(-1);
+        opacity: 0.4;
+      }
+      &--right {
+        transform: scaleX(-1);
+        &:after {
+          transform: scaleY(-1);
+        }
+      }
+    }
+    &__splash {
+      position: absolute;
+      width: rem(20px);
+      height: rem(20px);
+      margin-top: rem(-10px);
+      margin-left: rem(-10px);
+      border-radius: 50%;
+      &--top {
+        border-top: 1px solid $light-blue;
+      }
+      &--right {
+        border-right: 1px solid $light-blue;
+      }
+      &--bottom {
+        border-bottom: 1px solid $light-blue;
+      }
+      &--left {
+        border-left: 1px solid $light-blue;
+      }
+      @keyframes splash {
+        0% {
+          transform: scale(0.1, 0.1);
+        }
+        99% {
+          transform: scale(6, 4);
+          border-color: $grey;
+        }
+        100% {
+          transform: scale(6, 4);
+          border: 0px solid $grey;
+        }
+      }
+      animation: splash;
+      transition-property: top, left, width, margin-left, margin-top, border, transform;
+      transition-duration: 0.5s;
+      transition-timing-function: linear;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+      animation-duration: 1s;
+    }
     &__background-sand {
       position: absolute;
       bottom: 0;
@@ -103,7 +212,31 @@
       }
     }
     &__text {
-      position: relative;
+      position: absolute;
+      top: rem(90px);
+      left: rem(40px);
+      width: rem(400px);
+      padding: rem(10px);
+      border-radius: rem(20px);
+      background-color: $white;
+      &:after {
+        content: '';
+        position: absolute;
+        top: rem(-20px);
+        left: rem(40px);
+        width: 0;
+        height: 0;
+        border-left: rem(20px) solid transparent;
+        border-right: rem(20px) solid transparent;
+        border-bottom: rem(20px) solid $white;
+      }
+    }
+    &__title {
+      font-size: $font-size--medium-big;
+      margin: 0;
+    }
+    &__description {
+      margin-bottom: 0;
     }
   }
 </style>
