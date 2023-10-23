@@ -196,6 +196,7 @@
         height: calc(100% + #{rem(40px)});
         border: 1px solid $white;
         border-radius: rem(20px);
+        pointer-events: none;
         @include neonElement();
       }
       &--first {
