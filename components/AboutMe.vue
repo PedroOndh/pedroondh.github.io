@@ -15,12 +15,29 @@
         v-if="duck && !block"
         :style="`top: ${mouseY}px; left: ${mouseX}px`"
       />
+      <div class="cv-about-me__background-sand cv-about-me__background-sand--background" />
       <div
-        :class="['cv-about-me__cursor', { 'cv-about-me__cursor--right': horizontalDirection }]"
+        :class="[
+          'cv-about-me__duck',
+          'cv-about-me__duck--shadow',
+          { 'cv-about-me__duck--right': horizontalDirection }
+        ]"
         v-if="duck"
         :style="`top: ${mouseY}px; left: ${mouseX}px`"
       />
-      <div class="cv-about-me__background-sand" />
+      <div
+        class="cv-about-me__background-sand cv-about-me__background-sand--foreground"
+        ref="sand"
+      />
+      <div
+        :class="[
+          'cv-about-me__duck',
+          'cv-about-me__duck--body',
+          { 'cv-about-me__duck--right': horizontalDirection }
+        ]"
+        v-if="duck"
+        :style="`top: ${mouseY}px; left: ${mouseX}px`"
+      />
     </div>
     <div class="cv-about-me__text">
       <h1 class="cv-about-me__title">Hi! I am Pedro Ondiviela</h1>
@@ -31,6 +48,7 @@
 </template>
 <script setup lang="ts">
   const background = ref(null);
+  const sand = ref(null);
   const duck = ref(false);
   const mouseX = ref(0);
   const mouseY = ref(0);
@@ -43,19 +61,25 @@
     });
     background.value.addEventListener('mousemove', (event: MouseEvent) => {
       if (!block.value) {
-        console.log(event.movementX, event.movementY);
         mouseX.value = event.offsetX;
         mouseY.value = event.offsetY;
         verticalDirection.value = event.movementY > 0;
         horizontalDirection.value = event.movementX > 0;
         block.value = true;
-        setTimeout(() => (block.value = false), 10);
+        setTimeout(() => (block.value = false), 20);
       }
+    });
+    sand.value.addEventListener('mousemove', () => {
+      block.value = true;
+    });
+    sand.value.addEventListener('mouseout', () => {
+      block.value = false;
     });
   });
 </script>
 <style lang="scss" scoped>
   .cv-about-me {
+    $component-class: &;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -101,7 +125,7 @@
         animation-iteration-count: infinite;
       }
     }
-    &__cursor {
+    &__duck {
       position: absolute;
       width: rem(40px);
       height: rem(40px);
@@ -111,22 +135,19 @@
       background-size: 100% 100%;
       transition-property: top, left, transform;
       transition-duration: 0.5s;
-      &:after {
-        content: '';
-        position: relative;
-        top: rem(40px);
-        display: block;
-        width: rem(40px);
-        height: rem(40px);
-        background: url('../assets/icons/duck.svg');
-        background-size: 100% 100%;
-        transform: scaleY(-1);
+      &--body {
+        z-index: 1;
+        pointer-events: none;
+      }
+      &--shadow {
+        margin-top: rem(10px);
+        transform: scale(1, -1);
         opacity: 0.4;
       }
       &--right {
-        transform: scaleX(-1);
-        &:after {
-          transform: scaleY(-1);
+        transform: scale(-1, 1);
+        &#{$component-class}__duck--shadow {
+          transform: scale(-1, -1);
         }
       }
     }
@@ -176,26 +197,23 @@
       left: 0;
       width: 100vw;
       height: rem(300px);
-      background-color: $grey;
-      @keyframes seafoam1 {
-        0%,
-        100% {
-          clip-path: path('M 0 300 L 0 60 C 450 120 500 30 650 130 C 750 230 850 130 1200 330');
+      &--background {
+        background-color: $grey;
+        @keyframes seafoam1 {
+          0%,
+          100% {
+            clip-path: path('M 0 300 L 0 60 C 450 120 500 30 650 130 C 750 230 850 130 1200 330');
+          }
+          50% {
+            clip-path: path('M 0 300 L 0 120 C 450 200 500 60 650 160 C 750 240 850 120 1300 340');
+          }
         }
-        50% {
-          clip-path: path('M 0 300 L 0 120 C 450 200 500 60 650 160 C 750 240 850 120 1300 340');
-        }
+        animation: seafoam1;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
       }
-      animation: seafoam1;
-      animation-duration: 10s;
-      animation-iteration-count: infinite;
-      &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+      &--foreground {
+        z-index: 1;
         background: linear-gradient(200deg, #f5fccd 0%, #ff7d66 300%);
         @keyframes seafoam2 {
           0%,
