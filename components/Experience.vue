@@ -210,7 +210,7 @@
           transform: rotate(0deg);
         }
         &__moon {
-          transform: rotate(180deg);
+          transform: rotate(90deg);
         }
         &__cloud {
           &--1 {
@@ -256,7 +256,7 @@
       width: 30vw;
       transition-property: transform;
       transition-duration: 1s;
-      transform-origin: -100vw 100vh;
+      transform-origin: -50% 400%;
     }
     &__earth {
       bottom: -55vw;
