@@ -56,7 +56,7 @@
     &--scrolled {
       #{$component-class} {
         &__menu {
-          background-color: $dark-black;
+          background-color: $dark-blue;
         }
         &__link {
           color: $white;
@@ -112,7 +112,7 @@
       &__menu {
         padding: 0 rem(20px) 0 rem(20px);
         height: rem(60px);
-        background-color: $dark-black;
+        background-color: $dark-blue;
       }
 
       &__link {
@@ -130,7 +130,7 @@
         width: 100vw;
         height: 100vh;
         left: calc(200vw);
-        background-color: $dark-black;
+        background-color: $dark-blue;
         flex-direction: column;
         justify-content: flex-start;
         padding-top: rem(140px);
