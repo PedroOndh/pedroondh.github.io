@@ -99,11 +99,11 @@
     if (power.value == 20) {
       const interval = setInterval(() => {
         power.value = Number(power.value) + 10;
-        if (power.value > 200) {
+        if (power.value > 100) {
           clearInterval(interval);
           broken.value = true;
         }
-      }, 100);
+      }, 200);
     }
   });
 </script>
