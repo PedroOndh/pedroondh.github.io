@@ -191,6 +191,7 @@
 <style lang="scss" scoped>
   .cv-experience {
     $component-class: &;
+    --arrow: #{$blue};
     position: relative;
     background: linear-gradient(0deg, $light-blue 0%, $blue 25%, $dark-blue 50%, $dark-black 100%);
     background-size: 100% 200%;
@@ -200,6 +201,7 @@
     transition: background-position 1s ease;
     overflow: hidden;
     &--day {
+      --arrow: #{$light-blue};
       background-position: 0 100%;
       &:deep(circle) {
         transform: scale(0);
@@ -360,9 +362,11 @@
           background-position: 0 100%;
         }
       }
-      &:hover {
-        &:after {
-          transform: none;
+      @media screen and (min-width: $breakpoint__small-desktop--min) {
+        &:hover {
+          &:after {
+            transform: none;
+          }
         }
       }
     }
@@ -377,8 +381,15 @@
     &__list-item {
       position: relative;
       display: flex;
+      flex-wrap: wrap;
       list-style: none;
-      margin: rem(20px) 0;
+      width: 60%;
+      &:nth-child(odd) {
+        margin: rem(20px) calc(40% - 20px) rem(20px) 20px;
+      }
+      &:nth-child(even) {
+        margin: rem(20px) 20px rem(20px) calc(40% - 20px);
+      }
       &:first-child {
         #{$component-class}__list-item-duration {
           color: $white;
@@ -390,11 +401,51 @@
           content: '';
           position: absolute;
           z-index: 2;
-          bottom: rem(-30px);
-          left: rem(38px);
-          border-right: 2px dashed $white;
-          height: calc(100% - 15px);
-          //background-color: $white;
+          width: calc(60% - #{rem(24px)});
+          height: calc(100% - #{rem(4px)});
+          pointer-events: none;
+          transition: border 0.5s;
+        }
+        &:nth-child(odd) {
+          #{$component-class}__list-item-duration {
+            &:after {
+              content: '';
+              position: absolute;
+              bottom: rem(-10px);
+              border-left: rem(10px) solid transparent;
+              border-right: rem(10px) solid transparent;
+              border-bottom: rem(10px) solid var(--arrow);
+              transition: border 0.5s;
+            }
+          }
+          &:after {
+            left: rem(39px);
+            bottom: rem(-42px);
+            border-left: 2px dashed var(--arrow);
+            border-bottom: 2px dashed var(--arrow);
+            border-bottom-left-radius: rem(80px);
+          }
+        }
+        &:nth-child(even) {
+          #{$component-class}__list-item-duration {
+            &:after {
+              content: '';
+              position: absolute;
+              left: rem(-12px);
+              bottom: 0;
+              border-left: rem(10px) solid var(--arrow);
+              border-top: rem(10px) solid transparent;
+              border-bottom: rem(10px) solid transparent;
+              transition: border 0.5s;
+            }
+          }
+          &:after {
+            left: calc(-60% + #{rem(32px)});
+            bottom: rem(-30px);
+            border-top: 2px dashed var(--arrow);
+            border-left: 2px dashed var(--arrow);
+            border-top-left-radius: rem(400px);
+          }
         }
       }
     }
@@ -425,15 +476,12 @@
       border-radius: rem(15px);
       font-size: $font-size--tiny;
     }
-    &__list-item-text,
-    &__technologies-wrapper {
-      width: 50%;
-    }
     &__list-item-text {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
+      width: 90%;
       padding: rem(10px) rem(20px);
     }
     &__list-item-title {
@@ -444,7 +492,10 @@
     }
     &__technologies-wrapper {
       display: flex;
+      justify-content: center;
+      width: 90%;
       padding: rem(10px);
+      margin-left: 10%;
     }
     &__list-item-technology-wrapper {
       display: flex;
@@ -487,6 +538,9 @@
         margin-left: rem(20px);
         margin-right: rem(20px);
       }
+      &__list-item-text {
+        width: 80%;
+      }
       &__list-item-technology {
         padding: rem(1px) rem(6px);
         font-size: $font-size--tiny;
@@ -503,6 +557,11 @@
       }
       &__list-item {
         flex-direction: column;
+        width: 90%;
+        &:nth-child(odd),
+        &:nth-child(even) {
+          margin: rem(20px) 5%;
+        }
         &:after {
           display: none;
         }
@@ -513,6 +572,9 @@
       &__list-item-text,
       &__technologies-wrapper {
         width: 100%;
+      }
+      &__technologies-wrapper {
+        margin-left: 0;
       }
     }
     @media screen and (max-width: $breakpoint__mobile--max) {
