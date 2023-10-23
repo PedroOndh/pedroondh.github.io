@@ -231,6 +231,7 @@
     }
     &__text {
       position: absolute;
+      z-index: 2;
       top: rem(90px);
       left: rem(40px);
       width: rem(400px);
