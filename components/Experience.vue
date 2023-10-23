@@ -212,7 +212,7 @@
           transform: rotate(0deg);
         }
         &__moon {
-          transform: rotate(90deg);
+          transform: rotate(180deg);
         }
         &__cloud {
           &--1 {
@@ -256,8 +256,9 @@
       top: 0;
       left: 60vw;
       width: 30vw;
-      transition: transform 1s ease;
-      transform-origin: -50% 250%;
+      transition-property: transform;
+      transition-duration: 1s;
+      transform-origin: -100vw 100vh;
     }
     &__earth {
       bottom: -55vw;
@@ -298,7 +299,8 @@
       border-radius: 50%;
       background-color: $highlight;
       transform: rotate(-90deg);
-      transition: transform 1s ease;
+      transition-property: transform;
+      transition-duration: 1s;
       transform-origin: -50% 250%;
     }
     &__cloud {
@@ -401,8 +403,8 @@
           content: '';
           position: absolute;
           z-index: 2;
-          width: calc(60% - #{rem(24px)});
-          height: calc(100% - #{rem(4px)});
+          width: calc(66.66% - #{rem(80px)});
+          height: calc(100% - #{rem(10px)});
           pointer-events: none;
           transition: border 0.5s;
         }
@@ -419,7 +421,7 @@
             }
           }
           &:after {
-            left: rem(39px);
+            left: rem(38px);
             bottom: rem(-42px);
             border-left: 2px dashed var(--arrow);
             border-bottom: 2px dashed var(--arrow);
@@ -431,8 +433,8 @@
             &:after {
               content: '';
               position: absolute;
-              left: rem(-12px);
-              bottom: 0;
+              left: rem(-20px);
+              bottom: rem(-6px);
               border-left: rem(10px) solid var(--arrow);
               border-top: rem(10px) solid transparent;
               border-bottom: rem(10px) solid transparent;
@@ -440,7 +442,7 @@
             }
           }
           &:after {
-            left: calc(-60% + #{rem(32px)});
+            left: calc(-66.66% + #{rem(80px)});
             bottom: rem(-30px);
             border-top: 2px dashed var(--arrow);
             border-left: 2px dashed var(--arrow);
@@ -568,6 +570,9 @@
       }
       &__list-item-duration {
         margin: rem(10px);
+        &:after {
+          display: none;
+        }
       }
       &__list-item-text,
       &__technologies-wrapper {
