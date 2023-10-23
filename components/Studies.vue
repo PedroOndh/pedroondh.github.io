@@ -116,6 +116,12 @@
         0 0 calc(var(--power) * 10) $light-blue, inset 0 0 calc(var(--power) * 0.5) $white,
         inset 0 0 calc(var(--power) * 2) $white, inset 0 0 calc(var(--power) * 4) $light-blue,
         inset 0 0 calc(var(--power) * 8) $light-blue, inset 0 0 calc(var(--power) * 10) $light-blue;
+      @media screen and (max-width: $breakpoint__tablet--max) {
+        box-shadow: 0 0 calc(var(--power) * 0.5) $white, 0 0 calc(var(--power) * 4) $light-blue,
+          0 0 calc(var(--power) * 10) $light-blue, inset 0 0 calc(var(--power) * 0.5) $white,
+          inset 0 0 calc(var(--power) * 4) $light-blue,
+          inset 0 0 calc(var(--power) * 10) $light-blue;
+      }
     }
     @mixin neonSvg($color: $light-blue) {
       filter: drop-shadow(0 0 calc(var(--power) * 0.03) $white)
@@ -124,6 +130,11 @@
         drop-shadow(0 0 calc(var(--power) * 0.5) $color)
         drop-shadow(0 0 calc(var(--power) * 0.625) $color)
         drop-shadow(0 0 calc(var(--power) * 0.75) $color);
+      @media screen and (max-width: $breakpoint__tablet--max) {
+        filter: drop-shadow(0 0 calc(var(--power) * 0.03) $white)
+          drop-shadow(0 0 calc(var(--power) * 0.5) $color)
+          drop-shadow(0 0 calc(var(--power) * 0.75) $color);
+      }
     }
     background: linear-gradient(0deg, $dark-blue 0%, $blue 100%);
     padding-top: rem(40px);
