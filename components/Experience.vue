@@ -126,7 +126,7 @@
       title: 'Front-end Engineer',
       start: 'mar 2021',
       end: 'present',
-      duration: '2y 8m',
+      duration: '2y 9m',
       months: 31,
       company: 'Empathy.co',
       description: 'Front-end Engineer leading tech in the Documentation and web teams (3-4 devs).',
@@ -201,7 +201,7 @@
     transition: background-position 1s ease;
     overflow: hidden;
     &--day {
-      --arrow: #{$light-blue};
+      --arrow: #{$dark-blue};
       background-position: 0 100%;
       &:deep(circle) {
         transform: scale(0);
