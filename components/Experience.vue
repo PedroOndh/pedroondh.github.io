@@ -191,7 +191,6 @@
 <style lang="scss" scoped>
   .cv-experience {
     $component-class: &;
-    --arrow: #{$blue};
     position: relative;
     background: linear-gradient(0deg, $light-blue 0%, $blue 25%, $dark-blue 50%, $dark-black 100%);
     background-size: 100% 200%;
@@ -201,7 +200,6 @@
     transition: background-position 1s ease;
     overflow: hidden;
     &--day {
-      --arrow: #{$dark-blue};
       background-position: 0 100%;
       &:deep(circle) {
         transform: scale(0);
@@ -403,50 +401,26 @@
           content: '';
           position: absolute;
           z-index: 2;
-          width: calc(66.66% - #{rem(80px)});
-          height: calc(100% - #{rem(10px)});
           pointer-events: none;
           transition: border 0.5s;
         }
         &:nth-child(odd) {
-          #{$component-class}__list-item-duration {
-            &:after {
-              content: '';
-              position: absolute;
-              bottom: rem(-10px);
-              border-left: rem(10px) solid transparent;
-              border-right: rem(10px) solid transparent;
-              border-bottom: rem(10px) solid var(--arrow);
-              transition: border 0.5s;
-            }
-          }
           &:after {
-            left: rem(38px);
-            bottom: rem(-42px);
-            border-left: 2px dashed var(--arrow);
-            border-bottom: 2px dashed var(--arrow);
+            left: rem(39px);
+            bottom: rem(-48px);
+            width: calc(66.66% - #{rem(80px)});
+            height: calc(100% + #{rem(3px)});
+            border-left: 2px dashed $white;
+            border-bottom: 2px dashed $white;
             border-bottom-left-radius: rem(80px);
           }
         }
         &:nth-child(even) {
-          #{$component-class}__list-item-duration {
-            &:after {
-              content: '';
-              position: absolute;
-              left: rem(-20px);
-              bottom: rem(-6px);
-              border-left: rem(10px) solid var(--arrow);
-              border-top: rem(10px) solid transparent;
-              border-bottom: rem(10px) solid transparent;
-              transition: border 0.5s;
-            }
-          }
           &:after {
-            left: calc(-66.66% + #{rem(80px)});
-            bottom: rem(-30px);
-            border-top: 2px dashed var(--arrow);
-            border-left: 2px dashed var(--arrow);
-            border-top-left-radius: rem(400px);
+            left: rem(39px);
+            bottom: rem(-20px);
+            height: calc(100% - #{rem(26px)});
+            border-left: 2px dashed $white;
           }
         }
       }
@@ -570,9 +544,6 @@
       }
       &__list-item-duration {
         margin: rem(10px);
-        &:after {
-          display: none;
-        }
       }
       &__list-item-text,
       &__technologies-wrapper {
