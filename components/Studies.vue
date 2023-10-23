@@ -97,7 +97,13 @@
 
   watch(power, () => {
     if (power.value == 20) {
-      broken.value = true;
+      const interval = setInterval(() => {
+        power.value = Number(power.value) + 10;
+        if (power.value > 200) {
+          clearInterval(interval);
+          broken.value = true;
+        }
+      }, 100);
     }
   });
 </script>
