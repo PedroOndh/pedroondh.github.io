@@ -96,7 +96,7 @@
   const broken = ref(false);
 
   watch(power, () => {
-    if (power.value == 20) {
+    if (power.value == 20 && !broken.value) {
       const interval = setInterval(() => {
         power.value = Number(power.value) + 10;
         if (power.value > 100) {
@@ -359,6 +359,9 @@
       }
       &__power-wrapper {
         padding: rem(100px) 10% rem(40px);
+      }
+      &__power-range {
+        width: 50%;
       }
     }
   }
