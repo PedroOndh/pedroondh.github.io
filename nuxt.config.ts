@@ -11,6 +11,15 @@ export default defineNuxtConfig({
             meta: [
                 { name: 'description', content: 'Front-end Developer with a strong focus on UX and animations' },
                 {
+                    name: 'image',
+                    property: 'og:image',
+                    content: 'https://pedro-ondiviela.com/thumbnail.png'
+                },
+                {
+                    name: 'twitter:image',
+                    content: 'https://pedro-ondiviela.com/thumbnail.png'
+                },
+                {
                     property: 'og:site_name',
                     content: 'Pedro Ondiviela CV'
                 },
