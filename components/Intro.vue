@@ -1,6 +1,11 @@
 <template>
   <section class="cv-about-me cv-section" id="about-me">
-    <div class="cv-about-me__background" ref="background">
+    <div
+      class="cv-about-me__background"
+      @mouseenter="backgroundMouseEnter"
+      @mousemove="backgroundMouseMove"
+      @mouseout="backgroundMouseOut"
+    >
       <div class="cv-about-me__background-waves" />
       <div
         :class="[
@@ -27,7 +32,8 @@
       />
       <div
         class="cv-about-me__background-sand cv-about-me__background-sand--foreground"
-        ref="sand"
+        @mousemove="sandMouseMove"
+        @mouseout="sandMouseOut"
       />
       <div
         :class="[
@@ -49,8 +55,6 @@
 <script setup lang="ts">
   import { throttle } from '~/utils/custom';
 
-  const background = ref(null);
-  const sand = ref(null);
   const duck = ref(false);
   const blocked = ref(false);
   const slept = ref(false);
@@ -59,43 +63,30 @@
   const mouseY = ref(0);
   const verticalDirection = ref(false);
   const horizontalDirection = ref(false);
-  onMounted(() => {
-    background.value.addEventListener(
-      'mouseenter',
-      throttle(() => {
-        duck.value = true;
-      }, 100)
-    );
-    background.value.addEventListener('mousemove', (event: MouseEvent) => {
-      slept.value = false;
-      if (!blocked.value) {
-        mouseX.value = event.offsetX;
-        mouseY.value = event.offsetY;
-        verticalDirection.value = event.movementY > 0;
-        horizontalDirection.value = event.movementX > 0;
-        blocked.value = true;
-        setTimeout(() => (blocked.value = false), 20);
-      }
-    });
-    background.value.addEventListener(
-      'mouseout',
-      throttle(() => {
-        slept.value = true;
-      }, 100)
-    );
-    sand.value.addEventListener(
-      'mousemove',
-      throttle(() => {
-        blocked.value = true;
-      }, 10)
-    );
-    sand.value.addEventListener(
-      'mouseout',
-      throttle(() => {
-        blocked.value = false;
-      }, 100)
-    );
-  });
+
+  const backgroundMouseEnter = throttle(() => {
+    duck.value = true;
+  }, 100);
+  const backgroundMouseMove = (event: MouseEvent) => {
+    slept.value = false;
+    if (!blocked.value) {
+      mouseX.value = event.offsetX;
+      mouseY.value = event.offsetY;
+      verticalDirection.value = event.movementY > 0;
+      horizontalDirection.value = event.movementX > 0;
+      blocked.value = true;
+      setTimeout(() => (blocked.value = false), 20);
+    }
+  };
+  const backgroundMouseOut = throttle(() => {
+    slept.value = true;
+  }, 100);
+  const sandMouseMove = throttle(() => {
+    blocked.value = true;
+  }, 10);
+  const sandMouseOut = throttle(() => {
+    blocked.value = false;
+  }, 100);
 </script>
 <style lang="scss" scoped>
   .cv-about-me {
