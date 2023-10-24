@@ -9,7 +9,7 @@ export default defineNuxtConfig({
                 lang: 'en'
             },
             meta: [
-                { name: 'description', content: 'Front-end Developer with a strong focus on UX and animations' },
+                { name: 'description', content: 'Creative Developer (Front-end Developer with a strong focus on UX and animations)' },
                 {
                     name: 'image',
                     property: 'og:image',

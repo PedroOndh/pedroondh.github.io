@@ -37,6 +37,7 @@
     &__link-image {
       color: $white;
       width: rem(40px);
+      height: rem(40px);
     }
   }
 </style>

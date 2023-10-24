@@ -38,6 +38,7 @@
         'cv-experience__button',
         { 'cv-experience__button--day': day, 'cv-experience__button--night': !day }
       ]"
+      :aria-label="day ? 'change to night version' : 'change to day version'"
       @click="day = !day"
     />
     <h2 class="cv-experience__title">Experience</h2>
@@ -214,11 +215,11 @@
         }
         &__cloud {
           &--1 {
-            left: rem(-50px);
+            left: 65%;
           }
 
           &--2 {
-            left: 60%;
+            left: rem(-50px);
           }
 
           &--3 {
@@ -308,7 +309,7 @@
       transition-property: top, left;
       transition-duration: 1s;
       &--1 {
-        top: 10%;
+        top: 12%;
       }
       &--2 {
         top: 20%;
