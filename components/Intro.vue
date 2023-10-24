@@ -22,28 +22,36 @@
       />
       <div class="cv-about-me__background-sand cv-about-me__background-sand--background" />
       <div
-        :class="[
-          'cv-about-me__duck',
-          'cv-about-me__duck--shadow',
-          { 'cv-about-me__duck--slept': slept, 'cv-about-me__duck--right': horizontalDirection }
-        ]"
-        v-if="duck"
-        :style="`top: ${mouseY}px; left: ${mouseX}px`"
-      />
+        class="cv-about-me__duck-wrapper"
+        :style="`transform: translate3d(${mouseX}px, ${mouseY}px, 0)`"
+      >
+        <div
+          :class="[
+            'cv-about-me__duck',
+            'cv-about-me__duck--shadow',
+            { 'cv-about-me__duck--slept': slept, 'cv-about-me__duck--right': horizontalDirection }
+          ]"
+          v-if="duck"
+        />
+      </div>
       <div
         class="cv-about-me__background-sand cv-about-me__background-sand--foreground"
         @mousemove="sandMouseMove"
         @mouseout="sandMouseOut"
       />
       <div
-        :class="[
-          'cv-about-me__duck',
-          'cv-about-me__duck--body',
-          { 'cv-about-me__duck--slept': slept, 'cv-about-me__duck--right': horizontalDirection }
-        ]"
-        v-if="duck"
-        :style="`top: ${mouseY}px; left: ${mouseX}px`"
-      />
+        class="cv-about-me__duck-wrapper cv-about-me__duck-wrapper--body"
+        :style="`transform: translate3d(${mouseX}px, ${mouseY}px, 0)`"
+      >
+        <div
+          :class="[
+            'cv-about-me__duck',
+            'cv-about-me__duck--body',
+            { 'cv-about-me__duck--slept': slept, 'cv-about-me__duck--right': horizontalDirection }
+          ]"
+          v-if="duck"
+        />
+      </div>
     </div>
     <div class="cv-about-me__text">
       <h1 class="cv-about-me__title">Hi! I am Pedro Ondiviela</h1>
@@ -68,14 +76,15 @@
     duck.value = true;
   }, 100);
   const backgroundMouseMove = (event: MouseEvent) => {
+    console.log(event);
     slept.value = false;
     if (!blocked.value) {
-      mouseX.value = event.offsetX;
-      mouseY.value = event.offsetY;
+      mouseX.value = event.pageX;
+      mouseY.value = event.pageY;
       verticalDirection.value = event.movementY > 0;
       horizontalDirection.value = event.movementX > 0;
       blocked.value = true;
-      setTimeout(() => (blocked.value = false), 20);
+      setTimeout(() => (blocked.value = false), 50);
     }
   };
   const backgroundMouseOut = throttle(() => {
@@ -110,6 +119,7 @@
     }
     &__background {
       background: linear-gradient(180deg, $light-blue 0%, $highlight 200%);
+      overflow: hidden;
       &:after {
         content: '';
         background: linear-gradient(40deg, rgba($light-blue, 0) 0%, rgba($white, 0.5) 100%);
@@ -136,22 +146,27 @@
         animation-iteration-count: infinite;
       }
     }
-    &__duck {
+    &__duck-wrapper {
       position: absolute;
-      width: rem(40px);
-      height: rem(40px);
-      margin-top: rem(-30px);
-      margin-left: rem(-20px);
-      background: url('../assets/icons/duck.svg');
-      background-size: 100% 100%;
-      transition-property: top, left, transform;
+      top: rem(-30px);
+      left: rem(-20px);
+      transition-property: transform;
       transition-duration: 0.5s;
       &--body {
         z-index: 1;
         pointer-events: none;
       }
+    }
+    &__duck {
+      position: relative;
+      width: rem(40px);
+      height: rem(40px);
+      background: url('../assets/icons/duck.svg');
+      background-size: 100% 100%;
+      transition-property: transform;
+      transition-duration: 0.5s;
       &--shadow {
-        margin-top: rem(10px);
+        top: rem(40px);
         transform: scale(1, -1);
         opacity: 0.4;
       }

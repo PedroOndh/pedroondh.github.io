@@ -363,13 +363,6 @@
           background-position: 0 100%;
         }
       }
-      @media screen and (min-width: $breakpoint__small-desktop--min) {
-        &:hover {
-          &:after {
-            transform: none;
-          }
-        }
-      }
     }
     &__title {
       position: relative;
