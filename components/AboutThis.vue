@@ -11,7 +11,9 @@
 
 <style scoped lang="scss">
   .cv-about-this {
+    width: 90%;
     padding-top: rem(40px);
     padding-bottom: rem(40px);
+    margin: 0 5%;
   }
 </style>

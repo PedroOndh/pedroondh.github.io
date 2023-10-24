@@ -162,6 +162,8 @@
       gap: rem(30px);
     }
     &__title {
+      margin-left: rem(20px);
+      margin-right: rem(20px);
       color: $white;
     }
     &__section {
