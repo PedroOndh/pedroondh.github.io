@@ -20,7 +20,7 @@
         :class="[
           'cv-about-me__duck',
           'cv-about-me__duck--shadow',
-          { 'cv-about-me__duck--right': horizontalDirection }
+          { 'cv-about-me__duck--slept': slept, 'cv-about-me__duck--right': horizontalDirection }
         ]"
         v-if="duck"
         :style="`top: ${mouseY}px; left: ${mouseX}px`"
@@ -33,7 +33,7 @@
         :class="[
           'cv-about-me__duck',
           'cv-about-me__duck--body',
-          { 'cv-about-me__duck--right': horizontalDirection }
+          { 'cv-about-me__duck--slept': slept, 'cv-about-me__duck--right': horizontalDirection }
         ]"
         v-if="duck"
         :style="`top: ${mouseY}px; left: ${mouseX}px`"
@@ -50,16 +50,19 @@
   const background = ref(null);
   const sand = ref(null);
   const duck = ref(false);
+  const block = ref(false);
+  const slept = ref(false);
+
   const mouseX = ref(0);
   const mouseY = ref(0);
   const verticalDirection = ref(false);
   const horizontalDirection = ref(false);
-  const block = ref(false);
   onMounted(() => {
     background.value.addEventListener('mouseenter', () => {
       duck.value = true;
     });
     background.value.addEventListener('mousemove', (event: MouseEvent) => {
+      slept.value = false;
       if (!block.value) {
         mouseX.value = event.offsetX;
         mouseY.value = event.offsetY;
@@ -68,6 +71,9 @@
         block.value = true;
         setTimeout(() => (block.value = false), 20);
       }
+    });
+    background.value.addEventListener('mouseout', () => {
+      slept.value = true;
     });
     sand.value.addEventListener('mousemove', () => {
       block.value = true;
@@ -144,10 +150,40 @@
         transform: scale(1, -1);
         opacity: 0.4;
       }
+      &--slept {
+        background: url('../assets/icons/duck--slept.svg');
+        background-size: 100% 100%;
+        &:after {
+          content: 'Z';
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-weight: $font-weight--bold;
+          @keyframes sleeping {
+            0% {
+              transform: translate3d(-5px, -5px, 0) rotate(-10deg) scale(0.1);
+              opacity: 1;
+            }
+            100% {
+              transform: translate3d(-10px, -30px, 0) rotate(20deg) scale(1);
+              opacity: 0;
+            }
+          }
+          transition: opacity 2s ease;
+          animation: sleeping;
+          animation-iteration-count: infinite;
+          animation-duration: 2s;
+        }
+      }
       &--right {
         transform: scale(-1, 1);
         &#{$component-class}__duck--shadow {
           transform: scale(-1, -1);
+        }
+        &#{$component-class}__duck--slept {
+          &:after {
+            content: '𑪽';
+          }
         }
       }
     }
