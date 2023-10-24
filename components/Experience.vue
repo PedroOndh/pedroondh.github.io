@@ -400,9 +400,9 @@
         }
         &:nth-child(odd) {
           &:after {
-            left: rem(39px);
-            bottom: rem(-48px);
-            width: calc(66.66% - #{rem(80px)});
+            left: rem(49px);
+            bottom: rem(-58px);
+            width: calc(66.66% - #{rem(90px)});
             height: calc(100% + #{rem(3px)});
             border-left: 2px dashed $white;
             border-bottom: 2px dashed $white;
@@ -411,7 +411,7 @@
         }
         &:nth-child(even) {
           &:after {
-            left: rem(39px);
+            left: rem(49px);
             bottom: rem(-20px);
             height: calc(100% - #{rem(26px)});
             border-left: 2px dashed $white;
@@ -439,7 +439,7 @@
       align-items: center;
       min-width: rem(60px);
       height: fit-content;
-      margin: rem(10px) 0 0 rem(10px);
+      margin: rem(20px) 0 0 rem(20px);
       padding: rem(10px);
       color: $black;
       background-color: $white;
@@ -451,14 +451,19 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      width: 90%;
-      padding: rem(10px) rem(20px);
+      width: 80%;
+      padding: rem(20px) rem(20px) rem(10px);
     }
     &__list-item-title {
       margin: 0 0 rem(10px);
     }
+    &__list-item-time {
+      margin-top: rem(10px);
+      font-size: $font-size--smaller;
+    }
     &__list-item-description {
       text-align: left;
+      margin-bottom: 0;
     }
     &__technologies-wrapper {
       display: flex;
@@ -507,9 +512,6 @@
       &__list-item {
         margin-left: rem(20px);
         margin-right: rem(20px);
-      }
-      &__list-item-text {
-        width: 80%;
       }
       &__list-item-technology {
         padding: rem(1px) rem(6px);

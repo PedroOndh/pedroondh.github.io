@@ -11,7 +11,7 @@
           <h3 class="cv-studies__section-title cv-studies__section-title--second">
             Bachelor in architecture
           </h3>
-          <p class="cv-studies__section-info">2011-2017</p>
+          <p class="cv-studies__section-info cv-studies__section-info--time">2011-2017</p>
           <p class="cv-studies__section-info">Universidad de Valladolid</p>
         </div>
         <House class="cv-studies__section-image cv-studies__section-image--house" />
@@ -21,7 +21,7 @@
           <h3 class="cv-studies__section-title cv-studies__section-title--third">
             Master's degree in Interactive Design
           </h3>
-          <p class="cv-studies__section-info">2017-2018</p>
+          <p class="cv-studies__section-info cv-studies__section-info--time">2017-2018</p>
           <p class="cv-studies__section-info">Escuela Superior de Diseño de Madrid</p>
         </div>
         <Pallete class="cv-studies__section-image cv-studies__section-image--pallete" />
@@ -31,7 +31,7 @@
           <h3 class="cv-studies__section-title cv-studies__section-title--third">
             1 year Full stack Web Development Bootcamp
           </h3>
-          <p class="cv-studies__section-info">2018-2019</p>
+          <p class="cv-studies__section-info cv-studies__section-info--time">2018-2019</p>
           <p class="cv-studies__section-info">KeepCoding</p>
         </div>
         <Laptop class="cv-studies__section-image cv-studies__section-image--laptop" />
@@ -41,7 +41,7 @@
           <h3 class="cv-studies__section-title cv-studies__section-title--fourth">
             5+ years of Front-end experience
           </h3>
-          <p class="cv-studies__section-info">2017-present</p>
+          <p class="cv-studies__section-info cv-studies__section-info--time">2017-present</p>
         </div>
         <Net class="cv-studies__section-image cv-studies__section-image--net" />
       </div>
@@ -50,7 +50,7 @@
           <h3 class="cv-studies__section-title cv-studies__section-title--fifth">
             Best Overall Enterprise DevPortal + Best Visual Design
           </h3>
-          <p class="cv-studies__section-info">2022</p>
+          <p class="cv-studies__section-info cv-studies__section-info--time">2022</p>
           <p class="cv-studies__section-info">DevPortal Awards</p>
         </div>
         <Trophy class="cv-studies__section-image cv-studies__section-image--trophy" />
@@ -164,6 +164,7 @@
     &__title {
       margin-left: rem(20px);
       margin-right: rem(20px);
+      margin-bottom: rem(20px);
       color: $white;
     }
     &__section {
@@ -256,6 +257,12 @@
     &__section-title,
     &__section-info {
       color: $black;
+    }
+    &__section-info {
+      margin: 0 0 rem(10px);
+      &--time {
+        font-size: $font-size--smaller;
+      }
     }
     &__section-image {
       position: absolute;
@@ -362,6 +369,9 @@
           width: 110%;
           left: -5%;
         }
+      }
+      &__section-info {
+        font-size: $font-size--smaller;
       }
       &__section-image {
         &--laptop {

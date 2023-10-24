@@ -1,62 +1,62 @@
 <template>
-  <section class="cv-about-me cv-section" id="about-me">
+  <section class="cv-intro cv-section" id="about-me">
     <div
-      class="cv-about-me__background"
+      class="cv-intro__background"
       @mouseenter="backgroundMouseEnter"
       @mousemove="backgroundMouseMove"
       @mouseout="backgroundMouseOut"
     >
-      <div class="cv-about-me__background-waves" />
+      <div class="cv-intro__background-waves" />
       <div
         :class="[
-          'cv-about-me__splash',
+          'cv-intro__splash',
           {
-            'cv-about-me__splash--top': !verticalDirection,
-            'cv-about-me__splash--bottom': verticalDirection,
-            'cv-about-me__splash--right': horizontalDirection,
-            'cv-about-me__splash--left': !horizontalDirection
+            'cv-intro__splash--top': !verticalDirection,
+            'cv-intro__splash--bottom': verticalDirection,
+            'cv-intro__splash--right': horizontalDirection,
+            'cv-intro__splash--left': !horizontalDirection
           }
         ]"
         v-if="duck && !blocked"
         :style="`top: ${mouseY}px; left: ${mouseX}px`"
       />
-      <div class="cv-about-me__background-sand cv-about-me__background-sand--background" />
+      <div class="cv-intro__background-sand cv-intro__background-sand--background" />
       <div
-        class="cv-about-me__duck-wrapper"
+        class="cv-intro__duck-wrapper"
         :style="`transform: translate3d(${mouseX}px, ${mouseY}px, 0)`"
       >
         <div
           :class="[
-            'cv-about-me__duck',
-            'cv-about-me__duck--shadow',
-            { 'cv-about-me__duck--slept': slept, 'cv-about-me__duck--right': horizontalDirection }
+            'cv-intro__duck',
+            'cv-intro__duck--shadow',
+            { 'cv-intro__duck--slept': slept, 'cv-intro__duck--right': horizontalDirection }
           ]"
           v-if="duck"
         />
       </div>
       <div
-        class="cv-about-me__background-sand cv-about-me__background-sand--foreground"
+        class="cv-intro__background-sand cv-intro__background-sand--foreground"
         @mousemove="sandMouseMove"
         @mouseout="sandMouseOut"
       />
       <div
-        class="cv-about-me__duck-wrapper cv-about-me__duck-wrapper--body"
+        class="cv-intro__duck-wrapper cv-intro__duck-wrapper--body"
         :style="`transform: translate3d(${mouseX}px, ${mouseY}px, 0)`"
       >
         <div
           :class="[
-            'cv-about-me__duck',
-            'cv-about-me__duck--body',
-            { 'cv-about-me__duck--slept': slept, 'cv-about-me__duck--right': horizontalDirection }
+            'cv-intro__duck',
+            'cv-intro__duck--body',
+            { 'cv-intro__duck--slept': slept, 'cv-intro__duck--right': horizontalDirection }
           ]"
           v-if="duck"
         />
       </div>
     </div>
-    <div class="cv-about-me__text">
-      <h1 class="cv-about-me__title">Hi! I am Pedro Ondiviela</h1>
-      <b class="cv-about-me__subtitle">Creative Developer</b>
-      <p class="cv-about-me__description">and this is my CV-Playground</p>
+    <div class="cv-intro__text">
+      <h1 class="cv-intro__title">Hi! I am Pedro Ondiviela</h1>
+      <b class="cv-intro__subtitle">Creative Developer</b>
+      <p class="cv-intro__description">and this is my CV-Playground</p>
     </div>
   </section>
 </template>
@@ -76,7 +76,6 @@
     duck.value = true;
   }, 100);
   const backgroundMouseMove = (event: MouseEvent) => {
-    console.log(event);
     slept.value = false;
     if (!blocked.value) {
       mouseX.value = event.pageX;
@@ -98,7 +97,7 @@
   }, 100);
 </script>
 <style lang="scss" scoped>
-  .cv-about-me {
+  .cv-intro {
     $component-class: &;
     position: relative;
     display: flex;
@@ -291,7 +290,7 @@
       top: rem(90px);
       left: rem(40px);
       width: rem(400px);
-      padding: rem(10px);
+      padding: rem(20px);
       border-radius: rem(20px);
       background-color: $white;
       &:after {
@@ -308,6 +307,7 @@
     }
     &__title {
       font-size: $font-size--medium-big;
+      line-height: 2;
       margin: 0;
     }
     &__description {
@@ -317,6 +317,12 @@
       &__text {
         left: 5vw;
         width: 90vw;
+        padding: rem(10px);
+      }
+      &__title {
+        font-size: $font-size--medium-big;
+        line-height: 1.5;
+        margin-bottom: rem(10px);
       }
     }
   }
