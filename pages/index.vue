@@ -1,6 +1,6 @@
 <template>
   <main class="cv-main">
-    <AboutMe />
+    <Intro />
     <Experience />
     <Studies />
     <!-- <Portfolio /> -->

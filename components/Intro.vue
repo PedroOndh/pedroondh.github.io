@@ -12,7 +12,7 @@
             'cv-about-me__splash--left': !horizontalDirection
           }
         ]"
-        v-if="duck && !block"
+        v-if="duck && !blocked"
         :style="`top: ${mouseY}px; left: ${mouseX}px`"
       />
       <div class="cv-about-me__background-sand cv-about-me__background-sand--background" />
@@ -50,7 +50,7 @@
   const background = ref(null);
   const sand = ref(null);
   const duck = ref(false);
-  const block = ref(false);
+  const blocked = ref(false);
   const slept = ref(false);
 
   const mouseX = ref(0);
@@ -63,23 +63,23 @@
     });
     background.value.addEventListener('mousemove', (event: MouseEvent) => {
       slept.value = false;
-      if (!block.value) {
+      if (!blocked.value) {
         mouseX.value = event.offsetX;
         mouseY.value = event.offsetY;
         verticalDirection.value = event.movementY > 0;
         horizontalDirection.value = event.movementX > 0;
-        block.value = true;
-        setTimeout(() => (block.value = false), 20);
+        blocked.value = true;
+        setTimeout(() => (blocked.value = false), 20);
       }
     });
     background.value.addEventListener('mouseout', () => {
       slept.value = true;
     });
     sand.value.addEventListener('mousemove', () => {
-      block.value = true;
+      blocked.value = true;
     });
     sand.value.addEventListener('mouseout', () => {
-      block.value = false;
+      blocked.value = false;
     });
   });
 </script>
