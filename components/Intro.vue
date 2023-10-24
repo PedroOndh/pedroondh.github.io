@@ -47,6 +47,8 @@
   </section>
 </template>
 <script setup lang="ts">
+  import { throttle } from '~/utils/custom';
+
   const background = ref(null);
   const sand = ref(null);
   const duck = ref(false);
@@ -58,9 +60,12 @@
   const verticalDirection = ref(false);
   const horizontalDirection = ref(false);
   onMounted(() => {
-    background.value.addEventListener('mouseenter', () => {
-      duck.value = true;
-    });
+    background.value.addEventListener(
+      'mouseenter',
+      throttle(() => {
+        duck.value = true;
+      }, 100)
+    );
     background.value.addEventListener('mousemove', (event: MouseEvent) => {
       slept.value = false;
       if (!blocked.value) {
@@ -72,15 +77,24 @@
         setTimeout(() => (blocked.value = false), 20);
       }
     });
-    background.value.addEventListener('mouseout', () => {
-      slept.value = true;
-    });
-    sand.value.addEventListener('mousemove', () => {
-      blocked.value = true;
-    });
-    sand.value.addEventListener('mouseout', () => {
-      blocked.value = false;
-    });
+    background.value.addEventListener(
+      'mouseout',
+      throttle(() => {
+        slept.value = true;
+      }, 100)
+    );
+    sand.value.addEventListener(
+      'mousemove',
+      throttle(() => {
+        blocked.value = true;
+      }, 10)
+    );
+    sand.value.addEventListener(
+      'mouseout',
+      throttle(() => {
+        blocked.value = false;
+      }, 100)
+    );
   });
 </script>
 <style lang="scss" scoped>
