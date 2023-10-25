@@ -13,11 +13,11 @@ export default defineNuxtConfig({
                 {
                     name: 'image',
                     property: 'og:image',
-                    content: 'https://pedro-ondiviela.com/thumbnail.png'
+                    content: 'https://pedro-ondiviela.com/thumbnail.gif'
                 },
                 {
                     name: 'twitter:image',
-                    content: 'https://pedro-ondiviela.com/thumbnail.png'
+                    content: 'https://pedro-ondiviela.com/thumbnail.gif'
                 },
                 {
                     property: 'og:site_name',
