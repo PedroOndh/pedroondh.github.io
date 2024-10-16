@@ -85,12 +85,12 @@
 </template>
 <script setup lang="ts">
   import { watch } from 'vue';
-  import House from '../assets/icons/house.svg?component';
-  import Pallete from '../assets/icons/pallete.svg?component';
-  import Laptop from '../assets/icons/laptop.svg?component';
-  import Net from '../assets/icons/net.svg?component';
-  import Trophy from '../assets/icons/trophy.svg?component';
-  import Lightning from '../assets/icons/lightning.svg?component';
+  import House from 'assets/icons/house.svg?component';
+  import Pallete from 'assets/icons/pallete.svg?component';
+  import Laptop from 'assets/icons/laptop.svg?component';
+  import Net from 'assets/icons/net.svg?component';
+  import Trophy from 'assets/icons/trophy.svg?component';
+  import Lightning from 'assets/icons/lightning.svg?component';
 
   const power = ref(6);
   const broken = ref(false);

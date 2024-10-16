@@ -1,35 +1,31 @@
 <template>
-  <main class="cv-main">
-    <Intro />
-    <Experience />
-    <Studies />
-    <!-- <Portfolio /> -->
-    <AboutThis />
+  <main class="home">
+    <header class="header">
+      <svg xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' viewBox='-15 0 178 175' style="font-family: 'Archivo Black'; font-size: 90px; font-weight: 600;">
+        <text class="p" x="2" y="75" fill="#FFF" style="transform: skewX(20deg);">P</text>
+        <text class="o" x="50" y="100" fill="#FFF" style="transform: skewX(20deg);">O</text>
+        <text class="n" x="38" y="140" fill="#FFF" style="transform: skewX(-20deg);">N</text>
+        <text class="d" x="101" y="162" fill="#FFF" style="transform: skewX(-20deg);">D</text>
+        <text class="dot" x="162" y="162" fill="#FFF" style="transform: skewX(-20deg);">.</text>
+      </svg>
+      <div class="header__links">
+        <a href="/cv">CV</a>
+      </div>
+    </header>
   </main>
 </template>
+
+<script setup lang="ts">
+</script>
 <style lang="scss" scoped>
-  .cv-main {
-    &__title-highlight {
-      color: $highlight;
-      display: block;
-      line-height: rem(86px);
-    }
-
-    &__title {
-      font-size: $font-size--big;
-      text-transform: uppercase;
-      font-weight: $font-weight--bolder;
-      line-height: rem(67px);
-      letter-spacing: 0;
-      text-align: center;
-      margin-top: 0;
-      margin-bottom: rem(30px);
-    }
-
-    @media screen and (max-width: $breakpoint__tablet--max) {
-      &__title {
-        margin-bottom: rem(20px);
-      }
-    }
-  }
+.home {
+  background-color: #000;
+  height: 100%;
+}
+.header {
+ display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
 </style>

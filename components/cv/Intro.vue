@@ -160,7 +160,7 @@
       position: relative;
       width: rem(40px);
       height: rem(40px);
-      background: url('../assets/icons/duck.svg');
+      background: url('../../assets/icons/duck.svg');
       background-size: 100% 100%;
       transition-property: transform;
       transition-duration: 0.5s;
@@ -170,7 +170,7 @@
         opacity: 0.4;
       }
       &--slept {
-        background: url('../assets/icons/duck--slept.svg');
+        background: url('../../assets/icons/duck--slept.svg');
         background-size: 100% 100%;
         &:after {
           content: 'Z';

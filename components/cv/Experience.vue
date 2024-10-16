@@ -119,7 +119,7 @@
   </section>
 </template>
 <script setup lang="ts">
-  import Star from '~/components/Star.vue';
+  import Star from '~/components/cv/Star.vue';
 
   const day = ref(false);
   const experiences = [
