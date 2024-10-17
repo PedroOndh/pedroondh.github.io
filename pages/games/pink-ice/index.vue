@@ -1,5 +1,6 @@
 <template>
   <GameLayout
+      class="game-layout"
       :level="level"
       :titleScreen="gameState === 'title'"
       @top="topFunction"
@@ -165,7 +166,6 @@ onBeforeUnmount(() => {
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
 @import "../../../assets/styles/games/pink-ice";
 
 html {
@@ -175,7 +175,7 @@ html {
   }
 }
 
-body {
+.game-layout {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -184,9 +184,11 @@ body {
   color: $white;
   background-color: $black;
   overflow: hidden;
-  font-family: "Archivo Black", sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
+  * {
+    font-family: "Archivo Black", sans-serif;
+  }
 }
 
 .game {
