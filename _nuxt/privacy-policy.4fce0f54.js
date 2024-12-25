@@ -1,0 +1,1 @@
+import{a as o,b as t,o as s,f as e}from"./entry.627a0cad.js";const c={},a=e("h1",null,"Privacy Policy for POND games",-1),n=e("p",null,"This game doesn't treat nor store any user data",-1),r=[a,n];function _(i,l){return s(),t("section",null,r)}const f=o(c,[["render",_]]);export{f as default};
