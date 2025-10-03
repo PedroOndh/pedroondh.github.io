@@ -24,6 +24,7 @@
 
 <script setup lang="ts">
   useSeoMeta({
+    title: 'Sara y Pedro - se casan',
     robots: 'noindex, nofollow'
   });
 </script>
