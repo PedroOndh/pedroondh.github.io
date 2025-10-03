@@ -1,4 +1,5 @@
 <template>
+  <Header />
   <main class="cv-main">
     <Intro />
     <Experience />
@@ -6,6 +7,7 @@
     <!-- <Portfolio /> -->
     <AboutThis />
   </main>
+  <Footer />
 </template>
 <style lang="scss" scoped>
   .cv-main {
