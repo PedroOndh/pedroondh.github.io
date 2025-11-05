@@ -1,7 +1,11 @@
 <template>
   <section class="wed-section wed-section__intro">
-    <h1>Sara y Pedro</h1>
-    <h2>Se casan</h2>
+    <h1>
+      <span class="sara">Sara</span>
+      <span class="ampersand">&</span>
+      <span class="pedro">Pedro</span>
+    </h1>
+    <h2>La Martona, Candas</h2>
   </section>
   <section class="wed-section wed-section__info">
     <h2>Información importante</h2>
@@ -27,14 +31,62 @@
     title: 'Sara y Pedro - se casan',
     robots: 'noindex, nofollow'
   });
+  useHead({
+    link: [
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Momo+Signature&family=Rozha+One&display=swap'
+      }
+    ]
+  });
 </script>
 
 <style lang="scss" scoped>
+  $font-title: 'Rozha One', system-ui;
+  $font-main: 'Momo Signature', cursive;
+
   $pink: #fd7a7b;
-  $orange: #fdd492;
-  $yellow: #fbe3c1;
-  $cyan: #66c6f3;
-  $blue: #c1cdff;
+  $white: #cbf2ec;
+  $blue: #76dcde;
+
+  h1 {
+    font-family: $font-title;
+  }
+  h2,
+  h3 {
+    font-family: $font-main;
+  }
+
+  h1 {
+    font-size: 10rem;
+    font-weight: 700;
+    color: $pink;
+    line-height: 0.9;
+    text-align: center;
+    margin: 0;
+    .sara,
+    .pedro {
+      font-size: 10rem;
+      color: $pink;
+      font-family: $font-title;
+    }
+    .sara {
+      position: relative;
+      //top: -3rem;
+    }
+    .pedro {
+      position: relative;
+      //top: 3rem;
+    }
+    .ampersand {
+      position: relative;
+      z-index: 1;
+      font-size: 8rem;
+      color: $pink;
+      font-family: $font-title;
+      filter: invert(1);
+    }
+  }
 
   .wed-section {
     width: 100%;
@@ -44,11 +96,15 @@
     align-items: start;
     padding: 2rem;
     &__intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       height: 100vh;
-      background-color: $yellow;
+      background-color: $white;
     }
     &__info {
-      background-color: $pink;
+      background-color: $blue;
     }
     &__info-content {
       display: flex;
