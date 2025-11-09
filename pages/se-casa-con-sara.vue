@@ -69,6 +69,15 @@
       </div>
     </div>
   </section>
+  <div
+    class="wed-envelope"
+    :class="{ 'wed-envelope--opened': opened }"
+    ref="envelope"
+    @click="opened = true"
+  >
+    <div class="wed-envelope__back"></div>
+    <div class="wed-envelope__front"><div class="wed-envelope__seal">S & P</div></div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -84,6 +93,8 @@
       }
     ]
   });
+
+  const opened = ref(false);
 </script>
 
 <style lang="scss" scoped>
@@ -91,7 +102,8 @@
   $font-main: 'Momo Signature', cursive;
 
   $pink: #fd7a7b;
-  $white: #cbf2ec;
+  $white: #ffffff;
+  $light-blue: #cbf2ec;
   $blue: #76dcde;
   $dark-blue: #159b9b;
 
@@ -149,7 +161,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: $white;
+      background-color: $light-blue;
     }
     &__intro-date {
       font-size: 1.5rem;
@@ -157,7 +169,7 @@
       margin: 0 0 -1rem 0;
     }
     &__info {
-      background-color: $blue;
+      background-color: $white;
     }
     &__info-content {
       display: flex;
@@ -200,6 +212,82 @@
       text-align: left;
       p {
         margin: 0.5rem 0;
+      }
+    }
+  }
+
+  .wed-envelope {
+    $component-class: &;
+    position: fixed;
+    z-index: 9;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    cursor: pointer;
+    &__back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      transition: transform 1s ease-in-out;
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 400vw;
+        height: 100vh;
+        background-color: $white;
+      }
+      &::before {
+        right: -200vw;
+        transform: rotate(-45deg);
+      }
+      &::after {
+        left: -200vw;
+        transform: rotate(45deg);
+      }
+    }
+    &__front {
+      position: absolute;
+      top: -50vh;
+      left: calc(50vw - 50vh);
+      width: 100vh;
+      height: 100vh;
+      background-color: $white;
+      border-radius: 0 0 2rem 0;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+      transform: rotate(45deg);
+      transition: transform 1s ease-in-out;
+    }
+    &__seal {
+      position: absolute;
+      bottom: -1rem;
+      right: -1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 6rem;
+      height: 6rem;
+      font-size: 2rem;
+      font-weight: bold;
+      color: rgba($white, 0.5);
+      background-color: $pink;
+      border-radius: 50%;
+      font-family: $font-title;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+      transform: rotate(-45deg);
+    }
+    &--opened {
+      #{$component-class} {
+        &__back {
+          transform: translateY(200vh);
+        }
+        &__front {
+          transform: rotate(45deg) translateX(-100vh) translateY(-100vh);
+        }
       }
     }
   }
