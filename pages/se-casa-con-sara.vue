@@ -257,19 +257,20 @@
       &::after {
         content: '';
         position: absolute;
-        top: -40vh;
-        width: 400vw;
+        top: 0;
+        width: 600vw;
         height: 100vh;
         background-color: $white;
-        transform-origin: center top;
       }
       &::before {
-        right: -200vw;
+        right: calc(-250vw - 66vh);
         transform: rotate(-45deg);
+        transform-origin: center top;
       }
       &::after {
-        left: -200vw;
+        left: calc(-250vw - 66vh);
         transform: rotate(45deg);
+        transform-origin: center top;
       }
     }
     &__front {
