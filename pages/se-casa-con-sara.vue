@@ -12,62 +12,74 @@
     <h2>Horario</h2>
     <div class="wed-section__info-content">
       <div class="wed-section__info-item">
+        <p class="wed-section__info-hour"><b>12:00</b></p>
         <div class="wed-section__info-icon"></div>
         <div class="wed-section__info-text">
           <p><b>Recepción</b></p>
-          <p><b>12:00</b></p>
           <p>Damos la bienvenida a todos los invitados</p>
         </div>
       </div>
       <div class="wed-section__info-item">
+        <p class="wed-section__info-hour"><b>12:30</b></p>
         <div class="wed-section__info-icon"></div>
         <div class="wed-section__info-text">
           <p><b>Ceremonia</b></p>
-          <p><b>12:30</b></p>
+
           <p>Iniciamos la ceremonia</p>
         </div>
       </div>
       <div class="wed-section__info-item">
+        <p class="wed-section__info-hour"><b>13:00</b></p>
         <div class="wed-section__info-icon"></div>
         <div class="wed-section__info-text">
           <p><b>Cocktail</b></p>
-          <p><b>13:00</b></p>
+
           <p>Un buen pinchoteo</p>
         </div>
       </div>
       <div class="wed-section__info-item">
+        <p class="wed-section__info-hour"><b>15:00</b></p>
         <div class="wed-section__info-icon"></div>
         <div class="wed-section__info-text">
           <p><b>Comida</b></p>
-          <p><b>15:00</b></p>
+
           <p>Comida</p>
         </div>
       </div>
       <div class="wed-section__info-item">
+        <p class="wed-section__info-hour"><b>17:00</b></p>
         <div class="wed-section__info-icon"></div>
         <div class="wed-section__info-text">
           <p><b>Comida</b></p>
-          <p><b>17:00</b></p>
+
           <p>Baile</p>
         </div>
       </div>
       <div class="wed-section__info-item">
+        <p class="wed-section__info-hour"><b>18:00</b></p>
         <div class="wed-section__info-icon"></div>
         <div class="wed-section__info-text">
           <p><b>Fiesta</b></p>
-          <p><b>18:00</b></p>
+
           <p>Baile</p>
         </div>
       </div>
       <div class="wed-section__info-item">
+        <p class="wed-section__info-hour"><b>21:00</b></p>
         <div class="wed-section__info-icon"></div>
         <div class="wed-section__info-text">
           <p><b>Cena</b></p>
-          <p><b>21:00</b></p>
+
           <p>Baile</p>
         </div>
       </div>
     </div>
+  </section>
+  <section class="wed-section wed-section__time">
+    <h2>Cuenta atras</h2>
+    <b>100 días</b>
+    <b>100 horas</b>
+    <b>100 minutos</b>
   </section>
   <div
     class="wed-envelope"
@@ -175,7 +187,7 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      max-width: 30rem;
+      max-width: 35rem;
       margin: 0 auto;
     }
     &__info-item {
@@ -188,6 +200,12 @@
         display: none;
       }
     }
+    &__info-hour {
+      font-size: 1rem;
+      color: $dark-blue;
+      margin: 0;
+      width: 4rem;
+    }
     &__info-icon {
       position: relative;
       width: 4rem;
@@ -198,10 +216,10 @@
       &::before {
         content: '';
         position: absolute;
-        bottom: -8rem;
+        bottom: -5rem;
         left: 2rem;
         width: 1px;
-        height: 8rem;
+        height: 5rem;
         background-color: $pink;
       }
     }
@@ -213,6 +231,9 @@
       p {
         margin: 0.5rem 0;
       }
+    }
+    &__time {
+      background-color: $light-blue;
     }
   }
 
@@ -236,10 +257,11 @@
       &::after {
         content: '';
         position: absolute;
-        top: 0;
+        top: -40vh;
         width: 400vw;
         height: 100vh;
         background-color: $white;
+        transform-origin: center top;
       }
       &::before {
         right: -200vw;
