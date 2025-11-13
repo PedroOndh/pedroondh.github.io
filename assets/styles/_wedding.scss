@@ -1,0 +1,74 @@
+$font-title: 'Rozha One', system-ui;
+$font-main: 'Momo Signature', cursive;
+
+$pink: #fd7a7b;
+$white: #ffffff;
+$light-blue: #cbf2ec;
+$blue: #76dcde;
+$dark-blue: #159b9b;
+
+h1 {
+  font-family: $font-title;
+}
+h2,
+h3 {
+  font-family: $font-main;
+  text-align: center;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 10rem;
+  font-weight: 700;
+  color: $pink;
+  line-height: 0.9;
+  text-align: center;
+  margin: 0;
+  .sara,
+  .pedro {
+    font-size: 10rem;
+    color: $pink;
+    font-family: $font-title;
+  }
+  .sara {
+    position: relative;
+    //top: -3rem;
+  }
+  .pedro {
+    position: relative;
+    //top: 3rem;
+  }
+  .ampersand {
+    position: relative;
+    z-index: 1;
+    font-size: 8rem;
+    color: $pink;
+    font-family: $font-title;
+    filter: invert(1);
+  }
+}
+
+.wed-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 2rem;
+}
+
+@media screen and (max-width: $breakpoint__tablet--max) {
+  h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.9;
+    .pedro,
+    .sara {
+      font-size: 6rem;
+    }
+    .ampersand {
+      font-size: 5rem;
+    }
+  }
+}

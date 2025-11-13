@@ -8,73 +8,7 @@
     </h1>
     <h2>La Martona, Candas</h2>
   </section>
-  <section class="wed-section wed-section__info">
-    <h2>Horario</h2>
-    <div class="wed-section__info-content">
-      <div class="wed-section__info-item">
-        <p class="wed-section__info-hour"><b>12:00</b></p>
-        <div class="wed-section__info-icon"></div>
-        <div class="wed-section__info-text">
-          <p><b>Recepción</b></p>
-          <p>Damos la bienvenida a todos los invitados</p>
-        </div>
-      </div>
-      <div class="wed-section__info-item">
-        <p class="wed-section__info-hour"><b>12:30</b></p>
-        <div class="wed-section__info-icon"></div>
-        <div class="wed-section__info-text">
-          <p><b>Ceremonia</b></p>
-
-          <p>Iniciamos la ceremonia</p>
-        </div>
-      </div>
-      <div class="wed-section__info-item">
-        <p class="wed-section__info-hour"><b>13:00</b></p>
-        <div class="wed-section__info-icon"></div>
-        <div class="wed-section__info-text">
-          <p><b>Cocktail</b></p>
-
-          <p>Un buen pinchoteo</p>
-        </div>
-      </div>
-      <div class="wed-section__info-item">
-        <p class="wed-section__info-hour"><b>15:00</b></p>
-        <div class="wed-section__info-icon"></div>
-        <div class="wed-section__info-text">
-          <p><b>Comida</b></p>
-
-          <p>Comida</p>
-        </div>
-      </div>
-      <div class="wed-section__info-item">
-        <p class="wed-section__info-hour"><b>17:00</b></p>
-        <div class="wed-section__info-icon"></div>
-        <div class="wed-section__info-text">
-          <p><b>Comida</b></p>
-
-          <p>Baile</p>
-        </div>
-      </div>
-      <div class="wed-section__info-item">
-        <p class="wed-section__info-hour"><b>18:00</b></p>
-        <div class="wed-section__info-icon"></div>
-        <div class="wed-section__info-text">
-          <p><b>Fiesta</b></p>
-
-          <p>Baile</p>
-        </div>
-      </div>
-      <div class="wed-section__info-item">
-        <p class="wed-section__info-hour"><b>21:00</b></p>
-        <div class="wed-section__info-icon"></div>
-        <div class="wed-section__info-text">
-          <p><b>Cena</b></p>
-
-          <p>Baile</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <TimetableSection />
   <section class="wed-section wed-section__time">
     <h2>Cuenta atras</h2>
     <b>100 días</b>
@@ -87,12 +21,26 @@
     ref="envelope"
     @click="opened = true"
   >
-    <div class="wed-envelope__back"></div>
-    <div class="wed-envelope__front"><div class="wed-envelope__seal">S & P</div></div>
+    <div class="wed-envelope__back">
+      <div v-if="$route.query.name" class="wed-envelope__back-text">
+        Sara y Pedro
+        <br />
+        te invitan a su boda
+      </div>
+    </div>
+    <div class="wed-envelope__front">
+      <div class="wed-envelope__front-text">
+        Querid@,
+        <br />
+        {{ $route.query.name }}
+      </div>
+      <div class="wed-envelope__seal">S & P</div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+  import TimetableSection from '@/components/wedding/TimetableSection.vue';
   useSeoMeta({
     title: 'Sara y Pedro - se casan',
     robots: 'noindex, nofollow'
@@ -110,63 +58,9 @@
 </script>
 
 <style lang="scss" scoped>
-  $font-title: 'Rozha One', system-ui;
-  $font-main: 'Momo Signature', cursive;
-
-  $pink: #fd7a7b;
-  $white: #ffffff;
-  $light-blue: #cbf2ec;
-  $blue: #76dcde;
-  $dark-blue: #159b9b;
-
-  h1 {
-    font-family: $font-title;
-  }
-  h2,
-  h3 {
-    font-family: $font-main;
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  h1 {
-    font-size: 10rem;
-    font-weight: 700;
-    color: $pink;
-    line-height: 0.9;
-    text-align: center;
-    margin: 0;
-    .sara,
-    .pedro {
-      font-size: 10rem;
-      color: $pink;
-      font-family: $font-title;
-    }
-    .sara {
-      position: relative;
-      //top: -3rem;
-    }
-    .pedro {
-      position: relative;
-      //top: 3rem;
-    }
-    .ampersand {
-      position: relative;
-      z-index: 1;
-      font-size: 8rem;
-      color: $pink;
-      font-family: $font-title;
-      filter: invert(1);
-    }
-  }
+  @import '../assets/styles/wedding.scss';
 
   .wed-section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    padding: 2rem;
     &__intro {
       display: flex;
       flex-direction: column;
@@ -179,58 +73,6 @@
       font-size: 1.5rem;
       color: $dark-blue;
       margin: 0 0 -1rem 0;
-    }
-    &__info {
-      background-color: $white;
-    }
-    &__info-content {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      max-width: 35rem;
-      margin: 0 auto;
-    }
-    &__info-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      margin-bottom: 2rem;
-      &:last-child .wed-section__info-icon::before {
-        display: none;
-      }
-    }
-    &__info-hour {
-      font-size: 1rem;
-      color: $dark-blue;
-      margin: 0;
-      width: 4rem;
-    }
-    &__info-icon {
-      position: relative;
-      width: 4rem;
-      height: 4rem;
-      background-color: $white;
-      border-radius: 50%;
-      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-      &::before {
-        content: '';
-        position: absolute;
-        bottom: -5rem;
-        left: 2rem;
-        width: 1px;
-        height: 5rem;
-        background-color: $pink;
-      }
-    }
-    &__info-text {
-      display: flex;
-      flex-grow: 1;
-      flex-direction: column;
-      text-align: left;
-      p {
-        margin: 0.5rem 0;
-      }
     }
     &__time {
       background-color: $light-blue;
@@ -273,6 +115,14 @@
         transform-origin: center top;
       }
     }
+    &__back-text {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      font-family: $font-main;
+      z-index: 1;
+    }
     &__front {
       position: absolute;
       top: -50vh;
@@ -284,6 +134,17 @@
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
       transform: rotate(45deg);
       transition: transform 1s ease-in-out;
+    }
+    &__front-text {
+      position: absolute;
+      bottom: 33.33%;
+      left: 45%;
+      font-size: 1.75rem;
+      font-family: $font-main;
+      font-weight: bold;
+      text-align: left;
+      transform: rotate(-45deg);
+      transform-origin: center;
     }
     &__seal {
       position: absolute;
