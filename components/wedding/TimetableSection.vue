@@ -2,7 +2,12 @@
   <section class="wed-section wed-section__info">
     <h2>Horario</h2>
     <div class="wed-section__info-content">
-      <div v-for="item in timetable" :key="item.hour" class="wed-section__info-item">
+      <div
+        v-for="(item, index) in timetable"
+        :key="item.hour"
+        class="wed-section__info-item"
+        :class="{ 'wed-section__info-item--odd': index % 2 === 0 }"
+      >
         <p class="wed-section__info-hour">
           <b>{{ item.hour }}</b>
         </p>
@@ -64,6 +69,7 @@
   @import '../../assets/styles/wedding.scss';
 
   .wed-section {
+    $component-class: &;
     &__info {
       background: linear-gradient(180deg, $white 0%, $light-blue 100%);
     }
@@ -78,10 +84,19 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 2rem;
+      gap: 1rem;
       margin-bottom: 2rem;
       &:last-child .wed-section__info-icon::before {
         display: none;
+      }
+      &--odd {
+        flex-direction: row-reverse;
+        #{$component-class}__info-text p {
+          text-align: right;
+        }
+        #{$component-class}__info-icon::before {
+          transform: rotate(45deg);
+        }
       }
     }
     &__info-hour {
@@ -92,19 +107,24 @@
     }
     &__info-icon {
       position: relative;
-      width: 4rem;
-      height: 4rem;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 10rem;
+      height: 10rem;
       background-color: $white;
       border-radius: 50%;
-      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
       &::before {
         content: '';
         position: absolute;
-        bottom: -5rem;
-        left: 2rem;
+        bottom: -15rem;
+        left: 5rem;
         width: 1px;
-        height: 5rem;
+        height: 15rem;
         background-color: $pink;
+        transform: rotate(-45deg);
+        transform-origin: center -5rem;
       }
     }
     &__info-text {
@@ -112,8 +132,9 @@
       flex-grow: 1;
       flex-direction: column;
       text-align: left;
+      width: 50%;
       p {
-        margin: 0.5rem 0;
+        margin: 0.25rem 0;
       }
     }
   }
