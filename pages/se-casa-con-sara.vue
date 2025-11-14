@@ -8,28 +8,53 @@
     </h1>
     <h2>La Martona, Candas</h2>
   </section>
+  <div>
+    <h2>Historia</h2>
+    <div>Moñada sobre nosotros con fotos y videos</div>
+  </div>
+  <CountdownSection />
+  <div>
+    <h2>Cuándo y dónde</h2>
+    <div>La Martona, Candás</div>
+    <div>Mapa de google maps</div>
+  </div>
+  <div>
+    <h2>Código de vestimenta</h2>
+    <div>Aqui explicado el rollo de la vestimenta y otras cosas</div>
+  </div>
   <TimetableSection />
-  <section class="wed-section wed-section__time">
-    <h2>Cuenta atras</h2>
-    <b>100 días</b>
-    <b>100 horas</b>
-    <b>100 minutos</b>
-  </section>
+  <div>
+    <h2>Alojamiento y transporte</h2>
+    <div>Aqui explicado el rollo de alojamiento y transporte</div>
+  </div>
+  <div>
+    <h2>Sobre Candás</h2>
+    <div>Ir al Pirata</div>
+  </div>
+  <div>
+    <h2>Album compartido</h2>
+    <div>Aqui un google drive con el album compartido</div>
+  </div>
+  <div>
+    <h2>Confirmación de asistencia</h2>
+    <div>Aqui iria un formulario de confirmación de asistencia</div>
+  </div>
   <div
+    v-if="!hideEnvelope"
     class="wed-envelope"
     :class="{ 'wed-envelope--opened': opened }"
     ref="envelope"
-    @click="opened = true"
+    @click="openEnvelope"
   >
     <div class="wed-envelope__back">
-      <div v-if="$route.query.name" class="wed-envelope__back-text">
+      <div class="wed-envelope__back-text">
         Sara y Pedro
         <br />
         te invitan a su boda
       </div>
     </div>
     <div class="wed-envelope__front">
-      <div class="wed-envelope__front-text">
+      <div v-if="$route.query.name" class="wed-envelope__front-text">
         Querid@,
         <br />
         {{ $route.query.name }}
@@ -41,6 +66,8 @@
 
 <script setup lang="ts">
   import TimetableSection from '@/components/wedding/TimetableSection.vue';
+  import CountdownSection from '@/components/wedding/CountdownSection.vue';
+
   useSeoMeta({
     title: 'Sara y Pedro - se casan',
     robots: 'noindex, nofollow'
@@ -55,6 +82,14 @@
   });
 
   const opened = ref(false);
+  const hideEnvelope = ref(false);
+
+  function openEnvelope() {
+    opened.value = true;
+    setTimeout(() => {
+      hideEnvelope.value = true;
+    }, 1000);
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -73,9 +108,6 @@
       font-size: 1.5rem;
       color: $dark-blue;
       margin: 0 0 -1rem 0;
-    }
-    &__time {
-      background-color: $light-blue;
     }
   }
 
