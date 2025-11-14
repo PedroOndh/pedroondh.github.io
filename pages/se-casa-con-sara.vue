@@ -8,17 +8,32 @@
     </h1>
     <h2>La Martona, Candas</h2>
   </section>
-  <div>
+  <div class="wed-section wed-section__story">
     <h2>Historia</h2>
     <div>Moñada sobre nosotros con fotos y videos</div>
+    <div>Somos muy guays y nos queremos mucho</div>
+    <div>Y ahora nos vamos a casar</div>
   </div>
   <CountdownSection />
-  <div>
+  <div class="wed-section wed-section__place">
     <h2>Cuándo y dónde</h2>
     <div>La Martona, Candás</div>
-    <div>Mapa de google maps</div>
+    <div class="wed-section__place-map">
+      <iframe
+        id="map-canvas"
+        class="map_part"
+        width="600"
+        height="400"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        biord
+        src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=La martona, Candas&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      ></iframe>
+    </div>
   </div>
-  <div>
+  <div class="wed-section wed-section__dress-code">
     <h2>Código de vestimenta</h2>
     <div>Aqui explicado el rollo de la vestimenta y otras cosas</div>
   </div>
@@ -102,12 +117,26 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: $light-blue;
+      background: linear-gradient(180deg, $light-blue 0%, $highlight 100%);
+    }
+    &__story {
+      background: linear-gradient(180deg, $highlight 0%, $light-blue 100%);
     }
     &__intro-date {
       font-size: 1.5rem;
       color: $dark-blue;
       margin: 0 0 -1rem 0;
+    }
+    &__place {
+      background: linear-gradient(180deg, $light-blue 0%, $light-pink 100%);
+    }
+    &__place-map {
+      border-radius: 1rem;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+    &__dress-code {
+      background: linear-gradient(180deg, $light-pink 0%, $white 100%);
     }
   }
 

@@ -65,7 +65,7 @@
 
   .wed-section {
     &__info {
-      background-color: $white;
+      background: linear-gradient(180deg, $white 0%, $light-blue 100%);
     }
     &__info-content {
       display: flex;

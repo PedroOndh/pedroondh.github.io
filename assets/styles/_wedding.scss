@@ -1,6 +1,7 @@
 $font-title: 'Rozha One', system-ui;
 $font-main: 'Momo Signature', cursive;
 
+$light-pink: #fec8c8;
 $pink: #fd7a7b;
 $white: #ffffff;
 $light-blue: #cbf2ec;
@@ -53,7 +54,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   padding: 2rem;
 }
 
