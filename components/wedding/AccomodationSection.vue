@@ -1,7 +1,7 @@
 <template>
   <section class="wed-section wed-section__accommodation">
     <h2>Hoteles recomendados</h2>
-    <div>Hablad con nosotros y os facilitaremos la reserva</div>
+    <div>Hablad con nosotros y os facilitaremos la reserva a los siguientes precios:</div>
     <div class="wed-section__accommodation-hotels">
       <NuxtLink
         to="https://share.google/KSYw9wzQokmOiJxQU"
