@@ -38,10 +38,7 @@
     <div>Aqui explicado el rollo de la vestimenta y otras cosas</div>
   </div>
   <TimetableSection />
-  <div class="wed-section wed-section__accommodation">
-    <h2>Alojamiento y transporte</h2>
-    <div>Aqui explicado el rollo de alojamiento y transporte</div>
-  </div>
+  <AccommodationSection />
   <div class="wed-section wed-section__about-candas">
     <h2>Sobre Candás</h2>
     <div>Ir al Pirata</div>
@@ -60,6 +57,7 @@
 <script setup lang="ts">
   import TimetableSection from '@/components/wedding/TimetableSection.vue';
   import CountdownSection from '@/components/wedding/CountdownSection.vue';
+  import AccommodationSection from '@/components/wedding/AccomodationSection.vue';
   import Envelope from '@/components/wedding/Envelope.vue';
 
   useSeoMeta({
@@ -106,9 +104,6 @@
     }
     &__dress-code {
       background: linear-gradient(180deg, $light-pink 0%, $white 100%);
-    }
-    &__accommodation {
-      background: linear-gradient(180deg, $light-blue 0%, $highlight 100%);
     }
     &__about-candas {
       background: linear-gradient(180deg, $highlight 0%, $light-pink 100%);
