@@ -2,23 +2,38 @@
   <section class="wed-section wed-section__info">
     <h2>Horario</h2>
     <div class="wed-section__info-content">
+      <svg
+        class="wed-section__info-lines"
+        width="10rem"
+        height="82rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M 10 110 C 20 140, 40 140, 50 110"
+          stroke="#fd7a7b"
+          stroke-width="2px"
+          fill="transparent"
+        />
+      </svg>
       <div
         v-for="(item, index) in timetable"
         :key="item.hour"
         class="wed-section__info-item"
         :class="{ 'wed-section__info-item--odd': index % 2 === 0 }"
       >
-        <p class="wed-section__info-hour">
-          <b>{{ item.hour }}</b>
-        </p>
-        <div class="wed-section__info-icon">
-          <img :src="`/images/wedding/icons/${item.icon}.svg`" :alt="item.title" />
+        <div class="wed-section__info-icon-wrapper">
+          <p class="wed-section__info-hour">
+            <b>{{ item.hour }}</b>
+          </p>
+          <div class="wed-section__info-icon">
+            <img :src="`/images/wedding/icons/${item.icon}.svg`" :alt="item.title" />
+          </div>
         </div>
         <div class="wed-section__info-text">
-          <p>
+          <p class="wed-section__info-title">
             <b>{{ item.title }}</b>
           </p>
-          <p>{{ item.description }}</p>
+          <p class="wed-section__info-description">{{ item.description }}</p>
         </div>
       </div>
     </div>
@@ -44,23 +59,19 @@
     },
     {
       hour: '15:00',
-      title: 'Comida',
-      description: 'Comida'
+      title: 'Comida'
     },
     {
       hour: '17:00',
-      title: 'Comida',
-      description: 'Baile'
+      title: 'Baile'
     },
     {
       hour: '18:00',
-      title: 'Fiesta',
-      description: 'Baile'
+      title: 'Fiesta'
     },
     {
       hour: '21:00',
-      title: 'Cena',
-      description: 'Baile'
+      title: 'Cena'
     }
   ];
 </script>
@@ -74,11 +85,17 @@
       background: linear-gradient(180deg, $white 0%, $light-blue 100%);
     }
     &__info-content {
+      position: relative;
       display: flex;
       flex-direction: column;
       width: 100%;
       max-width: 35rem;
       margin: 0 auto;
+    }
+    &__info-lines {
+      position: absolute;
+      top: 0;
+      left: calc(50% - 5rem);
     }
     &__info-item {
       display: flex;
@@ -91,6 +108,10 @@
       }
       &--odd {
         flex-direction: row-reverse;
+        #{$component-class}__info-icon-wrapper {
+          justify-content: start;
+          flex-direction: row-reverse;
+        }
         #{$component-class}__info-text p {
           text-align: right;
         }
@@ -98,6 +119,13 @@
           transform: rotate(45deg);
         }
       }
+    }
+    &__info-icon-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 0.5rem;
+      width: 50%;
     }
     &__info-hour {
       font-size: 1rem;
@@ -115,17 +143,6 @@
       height: 10rem;
       background-color: $white;
       border-radius: 50%;
-      &::before {
-        content: '';
-        position: absolute;
-        bottom: -15rem;
-        left: 5rem;
-        width: 1px;
-        height: 15rem;
-        background-color: $pink;
-        transform: rotate(-45deg);
-        transform-origin: center -5rem;
-      }
     }
     &__info-text {
       display: flex;
@@ -136,6 +153,12 @@
       p {
         margin: 0.25rem 0;
       }
+    }
+    &__info-title {
+      font-size: 1.25rem;
+    }
+    &__info-description {
+      font-size: 1rem;
     }
   }
 </style>
