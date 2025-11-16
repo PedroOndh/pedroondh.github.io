@@ -90,7 +90,7 @@
       display: flex;
       gap: 1rem;
       margin-top: 2rem;
-      width: 60rem;
+      width: 50rem;
     }
     &__accommodation-hotel {
       display: flex;
