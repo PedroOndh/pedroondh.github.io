@@ -9,7 +9,7 @@
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M 10 110 C 20 140, 40 140, 50 110"
+          d="M 160 80 C 160 80, 160 160, 0 240 C 0 240, 0 320, 160 400 C 160 400, 160 480, 0 560 C 0 560, 0 640, 160 720 C 160 720, 160 800, 0 880 C 0 880, 0 960, 160 1040"
           stroke="#fd7a7b"
           stroke-width="2px"
           fill="transparent"
@@ -102,7 +102,6 @@
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      margin-bottom: 2rem;
       &:last-child .wed-section__info-icon::before {
         display: none;
       }
