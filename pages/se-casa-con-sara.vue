@@ -47,10 +47,7 @@
     <h2>Album compartido</h2>
     <div>Aqui un google drive con el album compartido</div>
   </div>
-  <div class="wed-section wed-section__confirmation">
-    <h2>Confirmación de asistencia</h2>
-    <div>Aqui iria un formulario de confirmación de asistencia</div>
-  </div>
+  <ConfirmationSection />
   <Envelope />
 </template>
 
@@ -58,6 +55,7 @@
   import TimetableSection from '@/components/wedding/TimetableSection.vue';
   import CountdownSection from '@/components/wedding/CountdownSection.vue';
   import AccommodationSection from '@/components/wedding/AccomodationSection.vue';
+  import ConfirmationSection from '@/components/wedding/ConfirmationSection.vue';
   import Envelope from '@/components/wedding/Envelope.vue';
 
   useSeoMeta({
