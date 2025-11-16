@@ -9,7 +9,7 @@
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M 160 80 C 160 80, 160 160, 0 240 C 0 240, 0 320, 160 400 C 160 400, 160 480, 0 560 C 0 560, 0 640, 160 720 C 160 720, 160 800, 0 880 C 0 880, 0 960, 160 1040"
+          d="M 160 80 C 160 80, 160 180, 0 240 C 0 240, 0 350, 160 400 C 160 400, 160 520, 0 560 C 0 560, 160 640, 160 720 C 160 720, 160 840, 0 880 C 0 880, 160 940, 160 1040"
           stroke="#fd7a7b"
           stroke-width="2px"
           fill="transparent"
@@ -158,6 +158,29 @@
     }
     &__info-description {
       font-size: 1rem;
+    }
+    @media screen and (max-width: $breakpoint__tablet--max) {
+      &__info-lines {
+        transform-origin: center top;
+        transform: scale(0.75);
+      }
+      &__info-icon-wrapper {
+        gap: 0;
+      }
+      &__info-icon {
+        width: 7.5rem;
+        height: 7.5rem;
+      }
+      &__info-title {
+        font-size: 1rem;
+      }
+      &__info-description {
+        font-size: 0.8rem;
+      }
+      &__info-hour {
+        font-size: 0.8rem;
+        width: 3rem;
+      }
     }
   }
 </style>
