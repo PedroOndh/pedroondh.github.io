@@ -11,7 +11,7 @@
         <path
           d="M 160 80 C 160 80, 160 180, 0 240 C 0 240, 0 350, 160 400 C 160 400, 160 520, 0 560 C 0 560, 160 640, 160 720 C 160 720, 160 840, 0 880 C 0 880, 160 940, 160 1040"
           stroke="#fd7a7b"
-          stroke-width="2px"
+          stroke-width="0.2rem"
           fill="transparent"
         />
       </svg>
@@ -81,7 +81,7 @@
 
   @keyframes dash {
     from {
-      stroke-dashoffset: 1400;
+      stroke-dashoffset: 2800;
     }
     to {
       stroke-dashoffset: 0;
@@ -156,6 +156,7 @@
       height: 10rem;
       background-color: $white;
       border-radius: 50%;
+      outline: 1px solid $pink;
     }
     &__info-text {
       display: flex;
