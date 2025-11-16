@@ -2,8 +2,9 @@
   <div class="wed-section wed-section__about-candas">
     <h2>Sobre Candás</h2>
     <div>
-      Pequeña villa marinera, si no la conoceis, merece la pena darse un paseo por el centro y por
-      la playa.
+      Pequeña villa marinera.
+      <br />
+      Si no la conoceis, merece la pena darse un paseo por el centro y por la playa.
     </div>
     <div class="wed-section__about-candas-images">
       <img
