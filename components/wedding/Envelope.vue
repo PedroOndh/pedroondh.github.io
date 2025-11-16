@@ -14,10 +14,10 @@
       </div>
     </div>
     <div class="wed-envelope__front">
-      <div v-if="$route.query.name" class="wed-envelope__front-text">
-        Querid@,
+      <div v-if="guest" class="wed-envelope__front-text">
+        {{ greeting }},
         <br />
-        {{ $route.query.name }}
+        {{ guest?.name }}
       </div>
       <div class="wed-envelope__seal">S & P</div>
     </div>
@@ -25,8 +25,23 @@
 </template>
 
 <script setup lang="ts">
+  import guests from '../../utils/guests';
+  import { useRoute } from 'vue-router';
+
+  const route = useRoute();
+
+  const guest = guests.find(guest => guest.id === Number(route.query.id));
+
   const opened = ref(false);
   const hideEnvelope = ref(false);
+
+  const greeting = computed(() => {
+    if (!guest) return '';
+    if (guest?.guests > 1) {
+      return guest?.gender === 'male' ? 'Queridos' : 'Queridas';
+    }
+    return guest?.gender === 'male' ? 'Querido' : 'Querida';
+  });
 
   function openEnvelope() {
     opened.value = true;
