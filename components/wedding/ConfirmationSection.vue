@@ -80,7 +80,7 @@
 
   const route = useRoute();
 
-  const guest = guests.find(guest => guest.id === Number(route.query.id));
+  const guest = guests.find(guest => guest.id === (route.query.id as string));
 
   const form = ref({
     id: guest?.id || 0,
