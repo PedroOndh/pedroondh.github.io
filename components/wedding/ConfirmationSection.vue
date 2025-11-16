@@ -4,7 +4,7 @@
     <div class="wed-section__confirmation-form">
       <label for="name">Nombre</label>
       <input type="text" id="name" name="name" v-model="form.name" />
-      <label for="guests">Número de invitados</label>
+      <label for="guests">Asistentes</label>
       <select type="select" id="guests" name="guests" v-model="form.guests">
         <option value="0">No asistiré</option>
         <option v-for="i in guest?.guests" :key="i" :value="i">{{ i }}</option>
@@ -29,6 +29,7 @@
   const guest = guests.find(guest => guest.id === Number(route.query.id));
 
   const form = ref({
+    id: guest?.id || 0,
     name: guest?.name || '',
     guests: guest?.guests || 0,
     allergies: '',
