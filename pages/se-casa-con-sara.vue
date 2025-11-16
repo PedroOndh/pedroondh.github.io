@@ -13,7 +13,13 @@
   <PlaceSection />
   <div class="wed-section wed-section__dress-code">
     <h2>Código de vestimenta</h2>
-    <div>Aqui explicado el rollo de la vestimenta y otras cosas</div>
+    <div>
+      Elegante, pero cómodo.
+      <br />
+      Elige tu vestimenta o traje favorito y confirma tu asistencia.
+      <br />
+      Lo que más te guste y con lo que te sientas cómodo.
+    </div>
   </div>
   <TimetableSection />
   <AccommodationSection />

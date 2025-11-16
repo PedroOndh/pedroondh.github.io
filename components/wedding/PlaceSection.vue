@@ -1,7 +1,8 @@
 <template>
   <div class="wed-section wed-section__place">
     <h2>Cuándo y dónde</h2>
-    <div class="wed-section__place-date">9 de Mayo de 2026, 12:00</div>
+    <div class="wed-section__place-date">9 de Mayo de 2026, 12:30</div>
+    <div>Se ruega asistir con 20 minutos de antelación.</div>
     <div class="wed-section__place-location">La Martona, Candás</div>
     <div class="wed-section__place-map">
       <iframe
@@ -35,11 +36,13 @@
     }
     &__place-location {
       font-weight: bold;
+      margin: 0.5rem 0;
     }
     &__place-map {
       border-radius: 1rem;
       overflow: hidden;
       margin-top: 1rem;
+      max-width: 100%;
     }
   }
 </style>
