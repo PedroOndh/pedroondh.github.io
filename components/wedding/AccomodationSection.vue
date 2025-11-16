@@ -98,24 +98,22 @@
       align-items: center;
       gap: 1rem;
       width: 50%;
-      background: rgba($white, 0.5);
+      background: $white;
       text-decoration: none;
       padding: 1rem;
-      border-radius: 1rem;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
     &__accommodation-hotel-title {
-      font-size: 1.25rem;
+      font-size: 1rem;
       font-weight: bold;
     }
     &__accommodation-hotel-image {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 20rem;
+      width: 100%;
       height: 20rem;
       object-fit: cover;
-      border-radius: 1rem;
       overflow: hidden;
     }
     &__accommodation-hotel-price {
