@@ -48,6 +48,12 @@
       border: 0.5rem solid $white;
       border-bottom: 2rem solid $white;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      &:nth-child(odd) {
+        transform: rotate(-2deg);
+      }
+      &:nth-child(even) {
+        transform: rotate(2deg);
+      }
     }
     @media screen and (max-width: $breakpoint__tablet--max) {
       &__about-candas-images {

@@ -8,12 +8,7 @@
     </h1>
     <h2>La Martona, Candas</h2>
   </section>
-  <div class="wed-section wed-section__story">
-    <h2>Historia</h2>
-    <div>Moñada sobre nosotros con fotos y videos</div>
-    <div>Somos muy guays y nos queremos mucho</div>
-    <div>Y ahora nos vamos a casar</div>
-  </div>
+  <StorySection />
   <CountdownSection />
   <PlaceSection />
   <div class="wed-section wed-section__dress-code">
@@ -32,9 +27,10 @@
 </template>
 
 <script setup lang="ts">
-  import TimetableSection from '@/components/wedding/TimetableSection.vue';
+  import StorySection from '@/components/wedding/StorySection.vue';
   import CountdownSection from '@/components/wedding/CountdownSection.vue';
   import PlaceSection from '@/components/wedding/PlaceSection.vue';
+  import TimetableSection from '@/components/wedding/TimetableSection.vue';
   import AccommodationSection from '@/components/wedding/AccomodationSection.vue';
   import CandasSection from '@/components/wedding/CandasSection.vue';
   import ConfirmationSection from '@/components/wedding/ConfirmationSection.vue';
@@ -65,9 +61,6 @@
       align-items: center;
       height: 100vh;
       background: linear-gradient(180deg, $light-blue 0%, $highlight 100%);
-    }
-    &__story {
-      background: linear-gradient(180deg, $highlight 0%, $light-blue 100%);
     }
     &__intro-date {
       font-size: 1.5rem;
