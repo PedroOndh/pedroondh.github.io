@@ -79,6 +79,15 @@
 <style lang="scss" scoped>
   @import '../../assets/styles/wedding.scss';
 
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 1400;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
   .wed-section {
     $component-class: &;
     &__info {
@@ -96,6 +105,11 @@
       position: absolute;
       top: 0;
       left: calc(50% - 5rem);
+      path {
+        stroke-dasharray: 1400;
+        stroke-dashoffset: 1400;
+        animation: dash 5s linear infinite;
+      }
     }
     &__info-item {
       display: flex;
