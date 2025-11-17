@@ -46,11 +46,18 @@
       border: 0.5rem solid $white;
       border-bottom: 2rem solid $white;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
       &:nth-child(odd) {
         transform: rotate(-2deg);
+        &:hover {
+          transform: rotate(2deg) scale(1.1);
+        }
       }
       &:nth-child(even) {
         transform: rotate(2deg);
+        &:hover {
+          transform: rotate(-2deg) scale(1.1);
+        }
       }
     }
   }
