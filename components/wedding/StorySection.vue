@@ -35,7 +35,7 @@
       flex-wrap: wrap;
       width: 100%;
       max-width: 50rem;
-      margin: 2rem auto 0;
+      margin: 1rem auto 0;
     }
     &__story-image {
       width: 15rem;
