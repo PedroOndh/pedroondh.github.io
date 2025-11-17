@@ -7,11 +7,15 @@
       Nos gusta el mar, el rap y la CocaCola.
     </div>
     <div class="wed-section__story-images">
-      <img class="wed-section__story-image" src="/assets/wedding/story-1.jpg" alt="Sara y Pedro" />
-      <img class="wed-section__story-image" src="/assets/wedding/story-2.jpg" alt="Sara y Pedro" />
-      <img class="wed-section__story-image" src="/assets/wedding/story-3.jpg" alt="Sara y Pedro" />
-      <img class="wed-section__story-image" src="/assets/wedding/story-4.jpg" alt="Sara y Pedro" />
-      <img class="wed-section__story-image" src="/assets/wedding/story-5.jpg" alt="Sara y Pedro" />
+      <img class="wed-section__story-image" src="/assets/wedding/candas-1.jpg" alt="Sara y Pedro" />
+      <img class="wed-section__story-image" src="/assets/wedding/candas-2.jpg" alt="Sara y Pedro" />
+      <img
+        class="wed-section__story-image"
+        src="/assets/wedding/candas-3.webp"
+        alt="Sara y Pedro"
+      />
+      <img class="wed-section__story-image" src="/assets/wedding/candas-1.jpg" alt="Sara y Pedro" />
+      <img class="wed-section__story-image" src="/assets/wedding/candas-2.jpg" alt="Sara y Pedro" />
     </div>
   </div>
 </template>
