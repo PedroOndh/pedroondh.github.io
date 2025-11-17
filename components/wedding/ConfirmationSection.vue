@@ -172,6 +172,7 @@
     margin: 0 0.5rem 0 0;
     width: 1.4rem;
     height: 1.4rem;
+    accent-color: $dark-blue;
   }
 
   button {
