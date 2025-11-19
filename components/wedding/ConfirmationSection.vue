@@ -98,12 +98,12 @@
 
   const route = useRoute();
 
-  const guest = guests.find(guest => guest.id === (route.query.id as string));
+  const guest = computed(() => guests.find(guest => guest.id === (route.query.id as string)));
 
   const form = ref({
-    id: guest?.id || 0,
-    name: guest?.name || '',
-    guests: guest?.guests || 0,
+    id: guest?.value?.id || 0,
+    name: guest?.value?.name || '',
+    guests: guest?.value?.guests || 0,
     bus: false,
     busStop: undefined,
     busSites: undefined,
