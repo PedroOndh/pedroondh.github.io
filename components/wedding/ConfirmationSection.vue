@@ -8,6 +8,8 @@
       <b>1 de Febrero</b>
       .
     </div>
+    {{ previousForm }}
+    {{ form }}
     <div
       class="wed-section__confirmation-form"
       :class="{ 'wed-section__confirmation-form--disabled': previousForm?.length || !guest }"
