@@ -8,23 +8,7 @@
       <b>1 de Febrero</b>
       .
     </div>
-    {{ previousForm }}
-    <br />
-    --------------------------------
-    <br />
-    {{ form }}
-    <br />
-    --------------------------------
-    <br />
-    {{ guest }}
-    <br />
-    --------------------------------
-    <br />
-    {{ previousForm?.length || !guest }}
-    <div
-      class="wed-section__confirmation-form"
-      :class="{ 'wed-section__confirmation-form--disabled': previousForm?.length || !guest }"
-    >
+    <div class="wed-section__confirmation-form">
       <label for="name">Nombre*</label>
       <input type="text" id="name" name="name" v-model="form.name" />
       <label for="guests">Asistentes*</label>
