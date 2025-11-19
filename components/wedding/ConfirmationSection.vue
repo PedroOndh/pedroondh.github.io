@@ -9,7 +9,18 @@
       .
     </div>
     {{ previousForm }}
+    <br />
+    --------------------------------
+    <br />
     {{ form }}
+    <br />
+    --------------------------------
+    <br />
+    {{ guest }}
+    <br />
+    --------------------------------
+    <br />
+    {{ previousForm?.length || !guest }}
     <div
       class="wed-section__confirmation-form"
       :class="{ 'wed-section__confirmation-form--disabled': previousForm?.length || !guest }"
