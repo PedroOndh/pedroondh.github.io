@@ -29,5 +29,8 @@
       "prettier --write",
       "eslint"
     ]
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.83.0"
   }
 }

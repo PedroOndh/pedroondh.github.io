@@ -8,7 +8,10 @@
       <b>1 de Febrero</b>
       .
     </div>
-    <div class="wed-section__confirmation-form">
+    <div
+      class="wed-section__confirmation-form"
+      :class="{ 'wed-section__confirmation-form--disabled': previousForm?.length || !guest }"
+    >
       <label for="name">Nombre*</label>
       <input type="text" id="name" name="name" v-model="form.name" />
       <label for="guests">Asistentes*</label>
@@ -62,6 +65,7 @@
       <label for="message">Comentarios</label>
       <textarea id="message" name="message" rows="3" v-model="form.message"></textarea>
       <button
+        v-if="!previousForm?.length && guest"
         :class="{
           'wed-section__confirmation-form-button--disabled': disabled
         }"
@@ -71,12 +75,26 @@
         Enviar
       </button>
     </div>
+    <div v-if="!guest" class="wed-section__confirmation-form-created">
+      No se ha encontrado el invitado
+    </div>
+    <div v-if="previousForm?.length" class="wed-section__confirmation-form-created">
+      ¡Gracias por confirmar tu asistencia!
+    </div>
   </section>
 </template>
 
 <script setup lang="ts">
   import guests from '../../utils/guests';
   import { useRoute } from 'vue-router';
+  import { createClient } from '@supabase/supabase-js';
+
+  const supabaseUrl = 'https://ymzquqylsbbmyjuqksod.supabase.co';
+  const supabaseKey =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InltenF1cXlsc2JibXlqdXFrc29kIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MzU4NDUwNSwiZXhwIjoyMDc5MTYwNTA1fQ.w41WLd59-_NPXtoFnGMrwYGPa0KUdFJFH1iDadSC4EQ';
+  const supabase = createClient(supabaseUrl, supabaseKey);
+
+  const previousForm = ref();
 
   const route = useRoute();
 
@@ -97,12 +115,39 @@
   });
 
   const disabled = computed(() => {
-    console.log(form.value.bus && (!form.value.busStop || !form.value.busSites));
     return (
       !form.value.name ||
       form.value.guests === undefined ||
       (form.value.bus && (!form.value.busStop || !form.value.busSites))
     );
+  });
+
+  async function submitForm() {
+    try {
+      const { data, error } = await supabase
+        .from('Wedding guests')
+        .insert([{ ...form.value }])
+        .select();
+      if (error) {
+        console.error(error);
+      } else {
+        console.log('added data', data);
+        previousForm.value = [form.value];
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  onMounted(async () => {
+    let { data, error } = await supabase.from('Wedding guests').select('*').eq('id', form.value.id);
+    console.log('retrieved data', data);
+    if (error) {
+      console.error(error);
+    } else if (data?.length) {
+      previousForm.value = data || [];
+      form.value = previousForm.value[0];
+    }
   });
 </script>
 
@@ -123,6 +168,10 @@
       width: 100%;
       max-width: 35rem;
       margin: 2rem auto 0;
+      &--disabled {
+        opacity: 0.8;
+        pointer-events: none;
+      }
     }
     &__confirmation-form-bus-container,
     &__confirmation-form-allergies-container {
@@ -149,6 +198,17 @@
     }
     &__confirmation-form-allergies-textarea {
       margin: 0;
+    }
+    &__confirmation-form-created {
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: $light-pink;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+      width: 100%;
+      max-width: 35rem;
+      margin: 0 auto;
     }
   }
 
