@@ -8,6 +8,7 @@
       <b>1 de Febrero</b>
       .
     </div>
+    {{ disabledForm }}
     <div class="wed-section__confirmation-form">
       <label for="name">Nombre*</label>
       <input type="text" id="name" name="name" v-model="form.name" :disabled="disabledForm" />
