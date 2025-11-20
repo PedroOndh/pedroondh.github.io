@@ -156,7 +156,7 @@
   });
 
   const disabledForm = computed(() => {
-    return previousForm.value?.length || !guest.value;
+    return !!previousForm.value?.length || !guest.value;
   });
 
   const disabledSubmit = computed(() => {
