@@ -8,7 +8,6 @@
       <b>1 de Febrero</b>
       .
     </div>
-    {{ disabledForm }}
     <ClientOnly>
       <div class="wed-section__confirmation-form">
         <label for="name">Nombre*</label>
