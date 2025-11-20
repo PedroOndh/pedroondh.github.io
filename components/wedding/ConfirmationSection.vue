@@ -10,15 +10,21 @@
     </div>
     <div class="wed-section__confirmation-form">
       <label for="name">Nombre*</label>
-      <input type="text" id="name" name="name" v-model="form.name" />
+      <input type="text" id="name" name="name" v-model="form.name" :disabled="disabledForm" />
       <label for="guests">Asistentes*</label>
-      <select type="select" id="guests" name="guests" v-model="form.guests">
+      <select
+        type="select"
+        id="guests"
+        name="guests"
+        v-model="form.guests"
+        :disabled="disabledForm"
+      >
         <option value="0">No asistiré</option>
         <option v-for="i in guest?.guests" :key="i" :value="i">{{ i }}</option>
       </select>
       <div class="wed-section__confirmation-form-bus-container">
         <div class="flex">
-          <input type="checkbox" id="bus" name="bus" v-model="form.bus" />
+          <input type="checkbox" id="bus" name="bus" v-model="form.bus" :disabled="disabledForm" />
           <label for="bus">Utilizaré el autobus</label>
         </div>
         <div class="wed-section__confirmation-form-bus-note">
@@ -26,27 +32,57 @@
         </div>
         <template v-if="form.bus">
           <label for="busStop">Parada de autobus*</label>
-          <select type="select" id="busStop" name="busStop" v-model="form.busStop">
+          <select
+            type="select"
+            id="busStop"
+            name="busStop"
+            v-model="form.busStop"
+            :disabled="disabledForm"
+          >
             <option value="candas">Candás</option>
             <option value="gijon">Gijón</option>
           </select>
           <label for="busSites">Plazas de autobus*</label>
-          <select type="select" id="busSites" name="busSites" v-model="form.busSites">
+          <select
+            type="select"
+            id="busSites"
+            name="busSites"
+            v-model="form.busSites"
+            :disabled="disabledForm"
+          >
             <option v-for="i in guest?.guests" :key="i" :value="i">{{ i }}</option>
           </select>
         </template>
       </div>
       <div class="wed-section__confirmation-form-allergies-container">
         <div class="flex">
-          <input type="checkbox" id="vegan" name="vegan" v-model="form.vegan" />
+          <input
+            type="checkbox"
+            id="vegan"
+            name="vegan"
+            v-model="form.vegan"
+            :disabled="disabledForm"
+          />
           <label for="vegan">Vegetariano/Vegano</label>
         </div>
         <div class="flex">
-          <input type="checkbox" id="gluten" name="gluten" v-model="form.gluten" />
+          <input
+            type="checkbox"
+            id="gluten"
+            name="gluten"
+            v-model="form.gluten"
+            :disabled="disabledForm"
+          />
           <label for="gluten">Sin gluten</label>
         </div>
         <div class="flex">
-          <input type="checkbox" id="lactose" name="lactose" v-model="form.lactose" />
+          <input
+            type="checkbox"
+            id="lactose"
+            name="lactose"
+            v-model="form.lactose"
+            :disabled="disabledForm"
+          />
           <label for="lactose">Sin lactosa</label>
         </div>
         <label class="wed-section__confirmation-form-allergies-label" for="allergies">
@@ -57,17 +93,24 @@
           id="allergies"
           name="allergies"
           v-model="form.allergies"
+          :disabled="disabledForm"
         ></textarea>
       </div>
       <label for="message">Comentarios</label>
-      <textarea id="message" name="message" rows="3" v-model="form.message"></textarea>
+      <textarea
+        id="message"
+        name="message"
+        rows="3"
+        v-model="form.message"
+        :disabled="disabledForm"
+      ></textarea>
       <button
-        v-if="!previousForm?.length && guest"
+        v-if="!disabledForm"
         :class="{
-          'wed-section__confirmation-form-button--disabled': disabled
+          'wed-section__confirmation-form-button--disabled': disabledSubmit
         }"
         @click="submitForm"
-        :disabled="disabled"
+        :disabled="disabledSubmit"
       >
         Enviar
       </button>
@@ -111,7 +154,11 @@
     message: undefined
   });
 
-  const disabled = computed(() => {
+  const disabledForm = computed(() => {
+    return previousForm.value?.length || !guest.value;
+  });
+
+  const disabledSubmit = computed(() => {
     return (
       !form.value.name ||
       form.value.guests === undefined ||
