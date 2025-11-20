@@ -9,113 +9,121 @@
       .
     </div>
     {{ disabledForm }}
-    <div class="wed-section__confirmation-form">
-      <label for="name">Nombre*</label>
-      <input type="text" id="name" name="name" v-model="form.name" :disabled="disabledForm" />
-      <label for="guests">Asistentes*</label>
-      <select
-        type="select"
-        id="guests"
-        name="guests"
-        v-model="form.guests"
-        :disabled="disabledForm"
-      >
-        <option value="0">No asistiré</option>
-        <option v-for="i in guest?.guests" :key="i" :value="i">{{ i }}</option>
-      </select>
-      <div class="wed-section__confirmation-form-bus-container">
-        <div class="flex">
-          <input type="checkbox" id="bus" name="bus" v-model="form.bus" :disabled="disabledForm" />
-          <label for="bus">Utilizaré el autobus</label>
+    <ClientOnly>
+      <div class="wed-section__confirmation-form">
+        <label for="name">Nombre*</label>
+        <input type="text" id="name" name="name" v-model="form.name" :disabled="disabledForm" />
+        <label for="guests">Asistentes*</label>
+        <select
+          type="select"
+          id="guests"
+          name="guests"
+          v-model="form.guests"
+          :disabled="disabledForm"
+        >
+          <option value="0">No asistiré</option>
+          <option v-for="i in guest?.guests" :key="i" :value="i">{{ i }}</option>
+        </select>
+        <div class="wed-section__confirmation-form-bus-container">
+          <div class="flex">
+            <input
+              type="checkbox"
+              id="bus"
+              name="bus"
+              v-model="form.bus"
+              :disabled="disabledForm"
+            />
+            <label for="bus">Utilizaré el autobus</label>
+          </div>
+          <div class="wed-section__confirmation-form-bus-note">
+            Fletaremos un autobus Gijón - Candás - La Martona
+          </div>
+          <template v-if="form.bus">
+            <label for="busStop">Parada de autobus*</label>
+            <select
+              type="select"
+              id="busStop"
+              name="busStop"
+              v-model="form.busStop"
+              :disabled="disabledForm"
+            >
+              <option value="candas">Candás</option>
+              <option value="gijon">Gijón</option>
+            </select>
+            <label for="busSites">Plazas de autobus*</label>
+            <select
+              type="select"
+              id="busSites"
+              name="busSites"
+              v-model="form.busSites"
+              :disabled="disabledForm"
+            >
+              <option v-for="i in guest?.guests" :key="i" :value="i">{{ i }}</option>
+            </select>
+          </template>
         </div>
-        <div class="wed-section__confirmation-form-bus-note">
-          Fletaremos un autobus Gijón - Candás - La Martona
+        <div class="wed-section__confirmation-form-allergies-container">
+          <div class="flex">
+            <input
+              type="checkbox"
+              id="vegan"
+              name="vegan"
+              v-model="form.vegan"
+              :disabled="disabledForm"
+            />
+            <label for="vegan">Vegetariano/Vegano</label>
+          </div>
+          <div class="flex">
+            <input
+              type="checkbox"
+              id="gluten"
+              name="gluten"
+              v-model="form.gluten"
+              :disabled="disabledForm"
+            />
+            <label for="gluten">Sin gluten</label>
+          </div>
+          <div class="flex">
+            <input
+              type="checkbox"
+              id="lactose"
+              name="lactose"
+              v-model="form.lactose"
+              :disabled="disabledForm"
+            />
+            <label for="lactose">Sin lactosa</label>
+          </div>
+          <label class="wed-section__confirmation-form-allergies-label" for="allergies">
+            Otras alergias, condiciones alimentarias, etc.
+          </label>
+          <textarea
+            class="wed-section__confirmation-form-allergies-textarea"
+            id="allergies"
+            name="allergies"
+            v-model="form.allergies"
+            :disabled="disabledForm"
+          ></textarea>
         </div>
-        <template v-if="form.bus">
-          <label for="busStop">Parada de autobus*</label>
-          <select
-            type="select"
-            id="busStop"
-            name="busStop"
-            v-model="form.busStop"
-            :disabled="disabledForm"
-          >
-            <option value="candas">Candás</option>
-            <option value="gijon">Gijón</option>
-          </select>
-          <label for="busSites">Plazas de autobus*</label>
-          <select
-            type="select"
-            id="busSites"
-            name="busSites"
-            v-model="form.busSites"
-            :disabled="disabledForm"
-          >
-            <option v-for="i in guest?.guests" :key="i" :value="i">{{ i }}</option>
-          </select>
-        </template>
-      </div>
-      <div class="wed-section__confirmation-form-allergies-container">
-        <div class="flex">
-          <input
-            type="checkbox"
-            id="vegan"
-            name="vegan"
-            v-model="form.vegan"
-            :disabled="disabledForm"
-          />
-          <label for="vegan">Vegetariano/Vegano</label>
-        </div>
-        <div class="flex">
-          <input
-            type="checkbox"
-            id="gluten"
-            name="gluten"
-            v-model="form.gluten"
-            :disabled="disabledForm"
-          />
-          <label for="gluten">Sin gluten</label>
-        </div>
-        <div class="flex">
-          <input
-            type="checkbox"
-            id="lactose"
-            name="lactose"
-            v-model="form.lactose"
-            :disabled="disabledForm"
-          />
-          <label for="lactose">Sin lactosa</label>
-        </div>
-        <label class="wed-section__confirmation-form-allergies-label" for="allergies">
-          Otras alergias, condiciones alimentarias, etc.
-        </label>
+        <label for="message">Comentarios</label>
         <textarea
-          class="wed-section__confirmation-form-allergies-textarea"
-          id="allergies"
-          name="allergies"
-          v-model="form.allergies"
+          id="message"
+          name="message"
+          rows="3"
+          v-model="form.message"
           :disabled="disabledForm"
         ></textarea>
+        <button
+          v-if="!disabledForm"
+          :class="{
+            'wed-section__confirmation-form-button--disabled': disabledSubmit
+          }"
+          @click="submitForm"
+          :disabled="disabledSubmit"
+        >
+          Enviar
+        </button>
       </div>
-      <label for="message">Comentarios</label>
-      <textarea
-        id="message"
-        name="message"
-        rows="3"
-        v-model="form.message"
-        :disabled="disabledForm"
-      ></textarea>
-      <button
-        v-if="!disabledForm"
-        :class="{
-          'wed-section__confirmation-form-button--disabled': disabledSubmit
-        }"
-        @click="submitForm"
-        :disabled="disabledSubmit"
-      >
-        Enviar
-      </button>
-    </div>
+    </ClientOnly>
     <div v-if="!guest" class="wed-section__confirmation-form-created">
       No se ha encontrado el invitado
     </div>
