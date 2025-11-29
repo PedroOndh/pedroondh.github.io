@@ -1,5 +1,5 @@
 <template>
-  <section class="wed-section wed-section__info">
+  <section ref="timetableSection" class="wed-section wed-section__info">
     <h2>Horario</h2>
     <div class="wed-section__info-content">
       <svg
@@ -41,6 +41,10 @@
 </template>
 
 <script setup lang="ts">
+  import { throttle } from '../../utils/custom';
+
+  const timetableSection = ref<HTMLElement | null>(null);
+
   const timetable = [
     {
       hour: '12:00',
@@ -74,19 +78,51 @@
       title: 'Cena'
     }
   ];
+
+  function getSectionScrollPercentage(section) {
+    // Get the element if a selector string was passed
+    const el = typeof section === 'string' ? document.querySelector(section) : section;
+
+    if (!el) {
+      console.error('Section not found');
+      return 0;
+    }
+
+    // Get section position and dimensions
+    const rect = el.getBoundingClientRect();
+    const sectionTop = rect.top + window.scrollY;
+    const sectionHeight = rect.height;
+    const viewportHeight = window.innerHeight;
+
+    // Current scroll position
+    const scrollPos = window.scrollY;
+
+    // Calculate when section starts and ends being visible
+    const scrollStart = sectionTop - viewportHeight;
+    const scrollEnd = sectionTop + sectionHeight;
+
+    // Calculate percentage
+    const totalScrollDistance = scrollEnd - scrollStart - viewportHeight;
+    const currentScroll = scrollPos - scrollStart;
+    const percentage = (currentScroll / totalScrollDistance) * 100;
+
+    // Clamp between 0 and 100
+    const progress = Math.max(0, Math.min(100, percentage));
+    section.style = `--progress: ${progress}`;
+  }
+
+  onMounted(() => {
+    window.addEventListener(
+      'scroll',
+      throttle(() => {
+        getSectionScrollPercentage(timetableSection.value);
+      }, 100)
+    );
+  });
 </script>
 
 <style lang="scss" scoped>
   @import '../../assets/styles/wedding.scss';
-
-  @keyframes dash {
-    from {
-      stroke-dashoffset: 2800;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
 
   .wed-section {
     $component-class: &;
@@ -107,8 +143,8 @@
       left: calc(50% - 5rem);
       path {
         stroke-dasharray: 1400;
-        stroke-dashoffset: 1400;
-        animation: dash 5s linear infinite;
+        stroke-dashoffset: calc(2800 - calc(2800 * (var(--progress) / 100)));
+        transition: stroke-dashoffset 0.3s ease;
       }
     }
     &__info-item {
