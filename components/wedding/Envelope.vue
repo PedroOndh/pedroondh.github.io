@@ -10,7 +10,7 @@
       <div class="wed-envelope__back-text">
         Sara y Pedro
         <br />
-        te invitan a su boda
+        {{ guest?.guests > 1 ? 'os' : 'te' }} invitan a su boda
       </div>
     </div>
     <div class="wed-envelope__front">
@@ -114,9 +114,8 @@
       position: absolute;
       bottom: 33.33%;
       left: 45%;
-      font-size: 1.75rem;
+      font-size: 1.7rem;
       font-family: $font-main;
-      font-weight: bold;
       text-align: left;
       transform: rotate(-45deg);
       transform-origin: center;
