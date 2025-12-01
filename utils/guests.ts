@@ -384,8 +384,8 @@ const pedrosFriends = [
   {
     id: 'carmen',
     name: 'Carmen',
-    guests: 2,
-    gender: 'male'
+    guests: 1,
+    gender: 'female'
   },
   {
     id: 'rodrigo-e-ivan',
