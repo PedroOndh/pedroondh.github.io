@@ -205,6 +205,9 @@
         width: 100%;
         height: 100%;
       }
+      &__accommodation-transport-trip-item {
+        width: 6rem;
+      }
     }
   }
 </style>

@@ -232,8 +232,8 @@
         width: 7rem;
         height: 7rem;
         img {
-          width: 4rem;
-          height: 4rem;
+          width: 5rem;
+          height: 5rem;
         }
       }
       &__info-title {
