@@ -1,6 +1,11 @@
 <template>
   <div class="wed-section wed-section__place">
     <h2>Cuándo y dónde</h2>
+    <img
+      class="wed-section__place-icon"
+      src="/assets/wedding/icons/time.png"
+      alt="Cuándo y dónde"
+    />
     <div class="wed-section__place-date">9 de Mayo de 2026, 12:30</div>
     <div>Se ruega asistir con 20 minutos de antelación.</div>
     <div class="wed-section__place-location">La Martona, Candás</div>
@@ -27,6 +32,10 @@
   .wed-section {
     &__place {
       background: linear-gradient(180deg, $light-blue 0%, $light-pink 100%);
+    }
+    &__place-icon {
+      width: 6rem;
+      height: 6rem;
     }
     &__place-date {
       font-size: 1.5rem;

@@ -223,14 +223,18 @@
     @media screen and (max-width: $breakpoint__tablet--max) {
       &__info-lines {
         transform-origin: center top;
-        transform: scale(0.75);
+        transform: scale(0.7);
       }
       &__info-icon-wrapper {
         gap: 0;
       }
       &__info-icon {
-        width: 7.5rem;
-        height: 7.5rem;
+        width: 7rem;
+        height: 7rem;
+        img {
+          width: 4rem;
+          height: 4rem;
+        }
       }
       &__info-title {
         font-size: 1rem;
