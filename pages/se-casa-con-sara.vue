@@ -15,7 +15,7 @@
     <h2>Código de vestimenta</h2>
     <img
       class="wed-section__shared-album-icon"
-      src="@/assets/wedding/icons/suit.png"
+      src="/assets/wedding/icons/suit.png"
       alt="Código de vestimenta"
     />
     <div>
@@ -33,7 +33,7 @@
     <h2>Album compartido</h2>
     <img
       class="wed-section__shared-album-icon"
-      src="@/assets/wedding/icons/photo.png"
+      src="/assets/wedding/icons/photo.png"
       alt="Album compartido"
     />
     <div>Compartid vuestras fotos con nosotros, a través de este album:</div>
