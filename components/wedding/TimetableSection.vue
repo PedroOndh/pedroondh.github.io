@@ -26,7 +26,7 @@
             <b>{{ item.hour }}</b>
           </p>
           <div class="wed-section__info-icon">
-            <img :src="`/images/wedding/icons/${item.icon}.svg`" :alt="item.title" />
+            <img :src="item.icon" :alt="item.title" />
           </div>
         </div>
         <div class="wed-section__info-text">
@@ -54,12 +54,14 @@
     {
       hour: '12:30',
       title: 'Ceremonia',
-      description: 'Iniciamos la ceremonia'
+      description: 'Iniciamos la ceremonia',
+      icon: '/assets/wedding/icons/rings.png'
     },
     {
       hour: '13:00',
       title: 'Cocktail',
-      description: 'Un buen pinchoteo'
+      description: 'Un buen pinchoteo',
+      icon: '/assets/wedding/icons/cocktail.png'
     },
     {
       hour: '15:00',
@@ -67,15 +69,18 @@
     },
     {
       hour: '17:00',
-      title: 'Baile'
+      title: 'Baile',
+      icon: '/assets/wedding/icons/music.png'
     },
     {
       hour: '18:00',
-      title: 'Fiesta'
+      title: 'Fiesta',
+      icon: '/assets/wedding/icons/celebration.png'
     },
     {
       hour: '21:00',
-      title: 'Cena'
+      title: 'Cena',
+      icon: '/assets/wedding/icons/pizza.png'
     }
   ];
 
@@ -192,7 +197,10 @@
       height: 10rem;
       background-color: $white;
       border-radius: 50%;
-      outline: 1px solid $pink;
+      img {
+        width: 6rem;
+        height: 6rem;
+      }
     }
     &__info-text {
       display: flex;

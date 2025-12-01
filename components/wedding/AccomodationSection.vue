@@ -36,6 +36,11 @@
     </div>
     <div class="wed-section__accommodation-transport">
       <h2>Transporte</h2>
+      <img
+        class="wed-section__accommodation-transport-icon"
+        src="/assets/wedding/icons/bus.png"
+        alt="Transporte"
+      />
       <div>Necesitaremos confirmación para calcular el tamaño del autobús</div>
       <div
         class="wed-section__accommodation-transport-trip wed-section__accommodation-transport-trip--go"
@@ -126,6 +131,11 @@
       h2 {
         margin-top: 2rem;
       }
+    }
+    &__accommodation-transport-icon {
+      width: 8rem;
+      height: 8rem;
+      margin-top: -1rem;
     }
     &__accommodation-transport-trip {
       position: relative;

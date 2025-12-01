@@ -26,6 +26,11 @@
   <CandasSection />
   <div class="wed-section wed-section__shared-album">
     <h2>Album compartido</h2>
+    <img
+      class="wed-section__shared-album-icon"
+      src="@/assets/wedding/icons/photo.png"
+      alt="Album compartido"
+    />
     <div>Compartid vuestras fotos con nosotros, a través de este album:</div>
     <a
       class="wed-section__shared-album-link"
@@ -85,6 +90,11 @@
     }
     &__shared-album {
       background: linear-gradient(180deg, $light-pink 0%, $white 100%);
+    }
+    &__shared-album-icon {
+      width: 8rem;
+      height: 8rem;
+      margin-bottom: 1rem;
     }
     &__shared-album-link {
       text-decoration: none;
