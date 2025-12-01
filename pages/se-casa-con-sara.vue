@@ -26,7 +26,14 @@
   <CandasSection />
   <div class="wed-section wed-section__shared-album">
     <h2>Album compartido</h2>
-    <div>Aqui un google drive con el album compartido</div>
+    <div>Compartid vuestras fotos con nosotros, a través de este album:</div>
+    <a
+      class="wed-section__shared-album-link"
+      href="https://drive.google.com/drive/folders/16w3RP5b2lV7qrgman9mky7RYKruZJdwj?usp=drive_link"
+      target="_blank"
+    >
+      Comparte tus fotos
+    </a>
   </div>
   <ConfirmationSection />
   <Envelope />
@@ -78,6 +85,20 @@
     }
     &__shared-album {
       background: linear-gradient(180deg, $light-pink 0%, $white 100%);
+    }
+    &__shared-album-link {
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+      padding: 1rem 1.5rem;
+      border-radius: 0.5rem;
+      background-color: $dark-blue;
+      color: $white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: $pink;
+      }
     }
     &__confirmation {
       background: linear-gradient(180deg, $white 0%, $light-blue 100%);

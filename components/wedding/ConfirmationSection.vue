@@ -296,6 +296,7 @@
     border-radius: 0.5rem;
     cursor: pointer;
     text-transform: uppercase;
+    transition: background-color 0.3s ease;
     &:hover {
       background-color: $pink;
     }
