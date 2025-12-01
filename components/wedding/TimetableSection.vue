@@ -49,7 +49,8 @@
     {
       hour: '12:00',
       title: 'Recepción',
-      description: 'Damos la bienvenida a todos los invitados'
+      description: 'Damos la bienvenida a todos los invitados',
+      icon: '/assets/wedding/icons/hand.png'
     },
     {
       hour: '12:30',
@@ -65,7 +66,8 @@
     },
     {
       hour: '15:00',
-      title: 'Comida'
+      title: 'Comida',
+      icon: '/assets/wedding/icons/dish.png'
     },
     {
       hour: '17:00',

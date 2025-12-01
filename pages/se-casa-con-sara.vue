@@ -13,6 +13,11 @@
   <PlaceSection />
   <div class="wed-section wed-section__dress-code">
     <h2>Código de vestimenta</h2>
+    <img
+      class="wed-section__shared-album-icon"
+      src="@/assets/wedding/icons/suit.png"
+      alt="Código de vestimenta"
+    />
     <div>
       Elegante, pero cómodo.
       <br />
