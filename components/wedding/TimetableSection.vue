@@ -9,7 +9,7 @@
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M 160 80 C 160 80, 160 180, 0 240 C 0 240, 0 350, 160 400 C 160 400, 160 520, 0 560 C 0 560, 160 640, 160 720 C 160 720, 160 840, 0 880 C 0 880, 160 940, 160 1040"
+          d="M 160 80 C 160 80, 160 180, 0 240 C 0 240, 0 350, 160 400 C 160 400, 160 520, 0 560 C 0 560, 160 640, 160 720 C 160 720, 160 840, 0 880 C 0 880, 160 940, 160 1040 C 160 1040, 0 1100, 0 1200"
           stroke="#fd7a7b"
           stroke-width="0.2rem"
           fill="transparent"
@@ -150,8 +150,8 @@
       top: 0;
       left: calc(50% - 5rem);
       path {
-        stroke-dasharray: 1400;
-        stroke-dashoffset: calc(2800 - calc(2800 * (var(--progress) / 100)));
+        stroke-dasharray: 1600;
+        stroke-dashoffset: calc(3200 - calc(3200 * (var(--progress) / 100)));
         transition: stroke-dashoffset 0.3s ease;
       }
     }
