@@ -57,7 +57,7 @@
 
   .wed-section {
     &__time {
-      background-color: $light-blue;
+      background-color: $light-pink;
     }
     &__time-content {
       display: flex;

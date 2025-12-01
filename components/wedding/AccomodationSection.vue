@@ -31,6 +31,8 @@
           <div>56€ / noche (habitación doble)</div>
           <div>75€ / noche (habitación triple)</div>
           <div>44€ / noche (habitación individual)</div>
+          <br />
+          <div>¡Incluye desayuno!</div>
         </div>
       </NuxtLink>
     </div>

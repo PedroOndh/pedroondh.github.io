@@ -1,8 +1,8 @@
 <template>
   <div class="wed-section wed-section__story">
-    <h2>Historia</h2>
+    <h2>Nuestra historia</h2>
     <div class="wed-section__story-text">
-      Somos Sara y Pedro, nos conocimos en 2015 y somos los mejores.
+      Somos Sara y Pedro, nos conocimos en 2017 y nos casamos en 2026.
       <br />
       Nos gusta el mar, el rap y la CocaCola.
     </div>

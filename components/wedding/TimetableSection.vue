@@ -59,30 +59,31 @@
       icon: '/assets/wedding/icons/rings.png'
     },
     {
-      hour: '13:00',
       title: 'Cocktail',
       description: 'Un buen pinchoteo',
       icon: '/assets/wedding/icons/cocktail.png'
     },
     {
-      hour: '15:00',
       title: 'Comida',
       icon: '/assets/wedding/icons/dish.png'
     },
     {
-      hour: '17:00',
       title: 'Baile',
       icon: '/assets/wedding/icons/music.png'
     },
     {
-      hour: '18:00',
       title: 'Fiesta',
       icon: '/assets/wedding/icons/celebration.png'
     },
     {
-      hour: '21:00',
       title: 'Cena',
       icon: '/assets/wedding/icons/pizza.png'
+    },
+    {
+      hour: '01:00',
+      title: 'Fin de fiesta',
+      description: 'Un bus nos llevará de regreso a Candás/Gijón',
+      icon: '/assets/wedding/icons/bus.png'
     }
   ];
 
@@ -211,7 +212,7 @@
       text-align: left;
       width: 50%;
       p {
-        margin: 0.25rem 0;
+        margin: 0.15rem 0;
       }
     }
     &__info-title {
@@ -219,6 +220,7 @@
     }
     &__info-description {
       font-size: 1rem;
+      line-height: 1.5;
     }
     @media screen and (max-width: $breakpoint__tablet--max) {
       &__info-lines {

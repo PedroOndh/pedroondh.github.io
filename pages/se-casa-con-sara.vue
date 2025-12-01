@@ -9,17 +9,17 @@
     <h2>La Martona, Candas</h2>
   </section>
   <StorySection />
-  <CountdownSection />
   <PlaceSection />
+  <CountdownSection />
   <div class="wed-section wed-section__dress-code">
     <h2>Código de vestimenta</h2>
     <img
-      class="wed-section__shared-album-icon"
+      class="wed-section__dress-code-icon"
       src="/assets/wedding/icons/suit.png"
       alt="Código de vestimenta"
     />
     <div>
-      Elegante, pero cómodo.
+      Busca algo elegante.
       <br />
       Elige tu vestimenta o traje favorito y confirma tu asistencia.
       <br />
@@ -92,6 +92,11 @@
     }
     &__dress-code {
       background: linear-gradient(180deg, $light-pink 0%, $white 100%);
+    }
+    &__dress-code-icon {
+      width: 7rem;
+      height: 7rem;
+      margin-bottom: 1rem;
     }
     &__shared-album {
       background: linear-gradient(180deg, $light-pink 0%, $white 100%);
