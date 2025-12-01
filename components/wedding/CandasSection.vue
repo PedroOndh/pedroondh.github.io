@@ -1,10 +1,15 @@
 <template>
   <div class="wed-section wed-section__about-candas">
     <h2>Sobre Candás</h2>
-    <div>
-      Pequeña villa marinera.
+    <div class="text">
+      Pequeña villa marinera super conocida en Asturias.
       <br />
-      Si no la conoceis, merece la pena darse un paseo por el centro y por la playa.
+      <br />
+      Si todavía no habéis tenido el placer, merece la pena darse un paseo por el puerto, la playa y
+      el centro.
+      <br />
+      <br />
+      Ya sea para respirar el mar, comer en un buen asturiano o tomar unas copas de noche
     </div>
     <div class="wed-section__about-candas-images">
       <img

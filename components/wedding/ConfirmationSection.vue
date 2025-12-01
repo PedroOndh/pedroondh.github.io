@@ -1,12 +1,13 @@
 <template>
   <section class="wed-section wed-section__confirmation">
     <h2>Confirma tu asistencia</h2>
-    <div>
-      ¿Vas a acompañarnos en este día? Confirma tu asistencia.
+    <div class="text">
+      Nos sentiríamos muy afortunados de que nos acompañaseis en este día tan feliz para nosotros.
       <br />
-      Nos vendría bien saberlo antes del
-      <b>1 de Febrero</b>
-      .
+      <br />
+      Por favor confirma tu asistencia antes del
+      <b>1 de Abril</b>
+      para poder tenerlo todo organizado.
     </div>
     <ClientOnly>
       <div class="wed-section__confirmation-form">
@@ -36,7 +37,7 @@
           </div>
           <div class="wed-section__confirmation-form-bus-note">
             Para facilitaros la ida y sobre todo la vuelta, fletaremos un autobus Gijón - Candás -
-            La Martona
+            La Martona / La Martona - Candás - Gijón
           </div>
           <template v-if="form.bus">
             <label for="busStop">Parada de autobus*</label>

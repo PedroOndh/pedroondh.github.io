@@ -18,12 +18,12 @@
       src="/assets/wedding/icons/suit.png"
       alt="Código de vestimenta"
     />
-    <div>
-      Busca algo elegante.
+    <div class="text">
+      Vístete con tus mejores galas y ponte súper guapo para celebrar este día tan especial con
+      nosotros.
       <br />
-      Elige tu vestimenta o traje favorito y confirma tu asistencia.
       <br />
-      Lo que más te guste y con lo que te sientas cómodo.
+      Solo hay dos peticiones, ven elegante y no vengas de blanco ni de colores similares.
     </div>
   </div>
   <TimetableSection />
@@ -36,7 +36,13 @@
       src="/assets/wedding/icons/photo.png"
       alt="Album compartido"
     />
-    <div>Compartid vuestras fotos con nosotros, a través de este album:</div>
+    <div class="text">
+      ¿Nos ayudáis a crear un álbum muy especial?
+      <br />
+      <br />
+      Comparte con nosotros tus fotos y vídeos a través de este álbum y muéstranos nuestra boda
+      desde tu punto de vista!
+    </div>
     <a
       class="wed-section__shared-album-link"
       href="https://drive.google.com/drive/folders/16w3RP5b2lV7qrgman9mky7RYKruZJdwj?usp=drive_link"

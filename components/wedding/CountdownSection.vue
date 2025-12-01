@@ -1,6 +1,7 @@
 <template>
   <section class="wed-section wed-section__time">
     <h2>Cuenta atrás</h2>
+    <div>¡Tic Tac!</div>
     <div class="wed-section__time-content">
       <div class="wed-section__time-item">
         <div class="wed-section__time-item-number">{{ days }}</div>

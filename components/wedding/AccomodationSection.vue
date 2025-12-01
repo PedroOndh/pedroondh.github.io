@@ -1,7 +1,13 @@
 <template>
   <section class="wed-section wed-section__accommodation">
     <h2>Hoteles recomendados</h2>
-    <div>Hablad con nosotros y os facilitaremos la reserva a los siguientes precios:</div>
+    <div class="text">
+      Si necesitáis alojamiento, hemos hablado con dos hoteles de la zona para ofreceros un precio
+      fijo.
+      <br />
+      <br />
+      Si estáis interesados, habladnos y os facilitaremos la reserva a los siguientes precios:
+    </div>
     <div class="wed-section__accommodation-hotels">
       <NuxtLink
         to="https://share.google/KSYw9wzQokmOiJxQU"
@@ -43,7 +49,16 @@
         src="/assets/wedding/icons/bus.png"
         alt="Transporte"
       />
-      <div>Necesitaremos confirmación para calcular el tamaño del autobús</div>
+      <div class="text">
+        Para haceros la vida lo más fácil posible, habrá un autobús con el recorrido Gijón-Candas-La
+        Martona y viceversa.
+        <br />
+        <br />
+        Necesitaremos confirmación para calcular el tamaño del autobús.
+        <br />
+        <br />
+        Ya os avisaremos de los puntos de recogida a los interesados más adelante
+      </div>
       <div
         class="wed-section__accommodation-transport-trip wed-section__accommodation-transport-trip--go"
       >

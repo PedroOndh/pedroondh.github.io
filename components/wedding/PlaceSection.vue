@@ -7,17 +7,22 @@
       alt="Cuándo y dónde"
     />
     <div class="wed-section__place-date">9 de Mayo de 2026, 12:30</div>
-    <div>
-      La ceremonia dará comienzo a las 12:30.
-      <br />
-      Se ruega asistir mínimo con 20 minutos de antelación.
-
-      <br />
-      La ceremonia, el banquete y la fiesta tendran lugar en la finca
-      <b>La Martona, en Candás</b>
+    <div class="text">
+      La ceremonia dará comienzo a las
+      <b>12:30</b>
       .
+      <br />
+      <br />
+      Se ruega asistir minimo con 20 minutos de antelación. ¡Por favor no llegues tarde!
+      <br />
+      <br />
+      La ceremonia, el banquete y la fiesta tendrán lugar en la maravillosa finca
+      <b>La Martona en Candás</b>
+      .
+      <br />
+      <br />
+      ¡Os dejamos por aquí la dirección exacta!
     </div>
-    <div class="wed-section__place-location">La Martona, Candás</div>
     <div class="wed-section__place-map">
       <iframe
         id="map-canvas"
