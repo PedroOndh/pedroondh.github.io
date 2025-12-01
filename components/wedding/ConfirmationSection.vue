@@ -35,7 +35,8 @@
             <label for="bus">Utilizaré el autobus</label>
           </div>
           <div class="wed-section__confirmation-form-bus-note">
-            Fletaremos un autobus Gijón - Candás - La Martona
+            Para facilitaros la ida y sobre todo la vuelta, fletaremos un autobus Gijón - Candás -
+            La Martona
           </div>
           <template v-if="form.bus">
             <label for="busStop">Parada de autobus*</label>
@@ -65,16 +66,6 @@
           <div class="flex">
             <input
               type="checkbox"
-              id="vegan"
-              name="vegan"
-              v-model="form.vegan"
-              :disabled="disabledForm"
-            />
-            <label for="vegan">Vegetariano/Vegano</label>
-          </div>
-          <div class="flex">
-            <input
-              type="checkbox"
               id="gluten"
               name="gluten"
               v-model="form.gluten"
@@ -85,15 +76,16 @@
           <div class="flex">
             <input
               type="checkbox"
-              id="lactose"
-              name="lactose"
-              v-model="form.lactose"
+              id="vegan"
+              name="vegan"
+              v-model="form.vegan"
               :disabled="disabledForm"
             />
-            <label for="lactose">Sin lactosa</label>
+            <label for="vegan">Vegetariano/Vegano</label>
           </div>
+
           <label class="wed-section__confirmation-form-allergies-label" for="allergies">
-            Otras alergias, condiciones alimentarias, etc.
+            Alergias, intoleracias o cosas que creas que debamos saber:
           </label>
           <textarea
             class="wed-section__confirmation-form-allergies-textarea"
@@ -157,7 +149,6 @@
     busSites: undefined,
     vegan: false,
     gluten: false,
-    lactose: false,
     allergies: undefined,
     message: undefined
   });
@@ -240,6 +231,7 @@
     }
     &__confirmation-form-bus-note {
       font-size: 0.8rem;
+      text-align: left;
     }
     &__confirmation-form-button--disabled {
       opacity: 0.5;
