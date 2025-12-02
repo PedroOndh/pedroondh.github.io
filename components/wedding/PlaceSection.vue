@@ -6,7 +6,7 @@
       src="/assets/wedding/icons/time.png"
       alt="Cuándo y dónde"
     />
-    <div class="wed-section__place-date">9 de Mayo de 2026, 12:30</div>
+    <div class="wed-section__place-date">Sábado 9 de Mayo de 2026, 12:30</div>
     <div class="text">
       La ceremonia dará comienzo a las
       <b>12:30</b>
