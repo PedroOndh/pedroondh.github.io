@@ -3,7 +3,7 @@
     <h2>Hoteles recomendados</h2>
     <div class="text">
       Si necesitáis alojamiento, hemos hablado con dos hoteles de la zona para ofreceros un precio
-      fijo.
+      fijo
       <br />
       <br />
       Si estáis interesados, habladnos y os facilitaremos la reserva a los siguientes precios:
@@ -14,12 +14,12 @@
         target="_blank"
         class="wed-section__accommodation-hotel"
       >
-        <b class="wed-section__accommodation-hotel-title">Hotel Marsol, Candás</b>
         <div class="wed-section__accommodation-hotel-image">
           <img src="/assets/wedding/hotel-marsol.webp" alt="Hotel Marsol" />
         </div>
+        <b class="wed-section__accommodation-hotel-title">Hotel Marsol, Candás</b>
         <div class="wed-section__accommodation-hotel-price">
-          <div>70€ / noche (habitación doble)</div>
+          <div>70€ / noche (👤👤)</div>
         </div>
       </NuxtLink>
       <NuxtLink
@@ -27,18 +27,27 @@
         target="_blank"
         class="wed-section__accommodation-hotel"
       >
-        <b class="wed-section__accommodation-hotel-title">
-          Hotel Piedra, Perlora (a 1km de Candás)
-        </b>
         <div class="wed-section__accommodation-hotel-image">
           <img src="/assets/wedding/hotel-la-piedra.webp" alt="Hotel La Piedra" />
         </div>
-        <div class="wed-section__accommodation-hotel-price">
-          <div>56€ / noche (habitación doble)</div>
-          <div>75€ / noche (habitación triple)</div>
-          <div>44€ / noche (habitación individual)</div>
+        <b class="wed-section__accommodation-hotel-title">
+          Hotel Piedra, Perlora
           <br />
-          <div>¡Incluye desayuno!</div>
+          <span style="font-size: 1rem">(a 1km de Candás)</span>
+        </b>
+        <div class="wed-section__accommodation-hotel-price">
+          <div>
+            56€ / noche (👤👤)
+            <span class="coffee-icon">☕</span>
+          </div>
+          <div>
+            75€ / noche (👤👤👤)
+            <span class="coffee-icon">☕</span>
+          </div>
+          <div>
+            44€ / noche (👤)
+            <span class="coffee-icon">☕</span>
+          </div>
         </div>
       </NuxtLink>
     </div>
@@ -50,14 +59,14 @@
         alt="Transporte"
       />
       <div class="text">
-        Para haceros la vida lo más fácil posible, habrá un autobús con el recorrido Gijón-Candas-La
-        Martona y viceversa.
+        Para haceros la vida lo más fácil posible, habrá un autobús con el recorrido Gijón-Candás-La
+        Martona y viceversa
         <br />
         <br />
-        Necesitaremos confirmación para calcular el tamaño del autobús.
+        Necesitaremos confirmación para calcular el tamaño del autobús
         <br />
         <br />
-        Ya os avisaremos de los puntos de recogida a los interesados más adelante
+        Los puntos de recogida de Gijón y Candás se los comunicaremos a los interesados más adelante
       </div>
       <div
         class="wed-section__accommodation-transport-trip wed-section__accommodation-transport-trip--go"
@@ -100,6 +109,12 @@
 <style lang="scss" scoped>
   @import '../../assets/styles/wedding.scss';
 
+  .coffee-icon {
+    position: relative;
+    top: 0.2rem;
+    font-size: 1.5rem;
+  }
+
   .wed-section {
     $component-class: &;
     &__accommodation {
@@ -126,8 +141,9 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
     &__accommodation-hotel-title {
-      font-size: 1rem;
+      font-size: 1.2rem;
       font-weight: bold;
+      margin-bottom: 1rem;
     }
     &__accommodation-hotel-image {
       display: flex;
@@ -141,12 +157,14 @@
     &__accommodation-hotel-price {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       gap: 0.5rem;
       font-weight: bold;
+      height: 8rem;
     }
     &__accommodation-transport {
       h2 {
-        margin-top: 2rem;
+        margin-top: 3rem;
       }
     }
     &__accommodation-transport-icon {

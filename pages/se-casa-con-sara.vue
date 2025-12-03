@@ -19,18 +19,18 @@
       alt="Código de vestimenta"
     />
     <div class="text">
-      Vístete con tus mejores galas y ponte súper guapo para celebrar este día tan especial con
-      nosotros.
+      Vístete con tus mejores galas y ponte súper guapo/a para celebrar este día tan especial con
+      nosotros
       <br />
       <br />
-      Solo hay dos peticiones, ven elegante y no vengas de blanco ni de colores similares.
+      Solo tenemos dos peticiones para ti: ponte elegante y no vengas de blanco ni colores similares
     </div>
   </div>
   <TimetableSection />
   <AccommodationSection />
   <CandasSection />
   <div class="wed-section wed-section__shared-album">
-    <h2>Album compartido</h2>
+    <h2>Álbum compartido</h2>
     <img
       class="wed-section__shared-album-icon"
       src="/assets/wedding/icons/photo.png"
@@ -41,7 +41,7 @@
       <br />
       <br />
       Comparte con nosotros tus fotos y vídeos a través de este álbum y muéstranos nuestra boda
-      desde tu punto de vista!
+      desde tu punto de vista
     </div>
     <a
       class="wed-section__shared-album-link"
@@ -52,6 +52,7 @@
     </a>
   </div>
   <ConfirmationSection />
+  <EndSection />
   <Envelope />
 </template>
 
@@ -63,6 +64,7 @@
   import AccommodationSection from '@/components/wedding/AccomodationSection.vue';
   import CandasSection from '@/components/wedding/CandasSection.vue';
   import ConfirmationSection from '@/components/wedding/ConfirmationSection.vue';
+  import EndSection from '@/components/wedding/EndSection.vue';
   import Envelope from '@/components/wedding/Envelope.vue';
 
   useSeoMeta({

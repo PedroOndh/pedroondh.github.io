@@ -65,18 +65,22 @@
     },
     {
       title: 'Comida',
+      description: 'No llegueis muy llenos',
       icon: '/assets/wedding/icons/dish.png'
     },
     {
       title: 'Baile',
+      description: '¡Número musical!',
       icon: '/assets/wedding/icons/music.png'
     },
     {
       title: 'Fiesta',
+      description: 'Música y baile',
       icon: '/assets/wedding/icons/celebration.png'
     },
     {
       title: 'Cena',
+      description: 'Una cena de picoteo',
       icon: '/assets/wedding/icons/pizza.png'
     },
     {

@@ -2,12 +2,12 @@
   <section class="wed-section wed-section__confirmation">
     <h2>Confirma tu asistencia</h2>
     <div class="text">
-      Nos sentiríamos muy afortunados de que nos acompañaseis en este día tan feliz para nosotros.
+      Nos sentiríamos muy afortunados de que nos acompañaseis en este día tan feliz para nosotros
       <br />
       <br />
       Por favor confirma tu asistencia antes del
       <b>1 de Abril</b>
-      para poder tenerlo todo organizado.
+      para poder tenerlo todo organizado
     </div>
     <ClientOnly>
       <div class="wed-section__confirmation-form">
@@ -104,6 +104,10 @@
           v-model="form.message"
           :disabled="disabledForm"
         ></textarea>
+        <label class="wed-section__confirmation-form-song-label" for="song">
+          ¿Qué canción no puede faltar? ¡Piénsalo bien y elige solo una!
+        </label>
+        <input type="text" id="song" name="song" v-model="form.song" :disabled="disabledForm" />
         <button
           v-if="!disabledForm"
           :class="{
@@ -151,7 +155,8 @@
     vegan: false,
     gluten: false,
     allergies: undefined,
-    message: undefined
+    message: undefined,
+    song: undefined
   });
 
   const disabledForm = computed(() => {
@@ -243,6 +248,9 @@
     }
     &__confirmation-form-allergies-textarea {
       margin: 0;
+    }
+    &__confirmation-form-song-label {
+      text-align: left;
     }
     &__confirmation-form-created {
       font-size: 1rem;
