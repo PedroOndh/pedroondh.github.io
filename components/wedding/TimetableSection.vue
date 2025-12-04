@@ -87,7 +87,7 @@
       hour: '01:00',
       title: 'Fin de fiesta',
       description: 'Un bus nos llevará de regreso a Candás/Gijón',
-      icon: '/assets/wedding/icons/bus.png'
+      icon: '/assets/wedding/icons/pillow.png'
     }
   ];
 

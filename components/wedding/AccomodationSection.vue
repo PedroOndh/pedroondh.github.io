@@ -1,6 +1,11 @@
 <template>
   <section class="wed-section wed-section__accommodation">
     <h2>Hoteles recomendados</h2>
+    <img
+      class="wed-section__accommodation-hotel-icon"
+      src="/assets/wedding/icons/hotel.png"
+      alt="Hotel"
+    />
     <div class="text">
       Si necesitáis alojamiento, hemos hablado con dos hoteles de la zona para ofreceros un precio
       fijo
@@ -122,6 +127,10 @@
       h3 {
         margin: 2rem 0 1rem;
       }
+    }
+    &__accommodation-hotel-icon {
+      width: 8rem;
+      height: 8rem;
     }
     &__accommodation-hotels {
       display: flex;

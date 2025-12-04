@@ -1,6 +1,11 @@
 <template>
   <section class="wed-section wed-section__time">
     <h2>Cuenta atrás</h2>
+    <img
+      class="wed-section__time-icon"
+      src="/assets/wedding/icons/hourglass.png"
+      alt="Reloj de arena"
+    />
     <div>¡Tic Tac!</div>
     <div class="wed-section__time-content">
       <div class="wed-section__time-item">
@@ -59,6 +64,18 @@
   .wed-section {
     &__time {
       background-color: $light-pink;
+    }
+    &__time-icon {
+      width: 7rem;
+      height: 7rem;
+    }
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
     }
     &__time-content {
       display: flex;

@@ -1,6 +1,11 @@
 <template>
   <section class="wed-section wed-section__confirmation">
     <h2>Confirma tu asistencia</h2>
+    <img
+      class="wed-section__confirmation-icon"
+      src="/assets/wedding/icons/sign.png"
+      alt="Confirmación"
+    />
     <div class="text">
       Nos sentiríamos muy afortunados de que nos acompañaseis en este día tan feliz para nosotros
       <br />
@@ -207,6 +212,10 @@
     $component-class: &;
     &__confirmation {
       background: linear-gradient(180deg, $white 0%, $light-blue 100%);
+    }
+    &__confirmation-icon {
+      width: 8rem;
+      height: 8rem;
     }
     &__confirmation-form {
       display: flex;

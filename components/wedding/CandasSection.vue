@@ -1,6 +1,7 @@
 <template>
   <div class="wed-section wed-section__about-candas">
     <h2>Sobre Candás</h2>
+    <img class="wed-section__about-candas-icon" src="/assets/wedding/icons/boat.png" alt="Barco" />
     <div class="text">
       Pequeña villa marinera super conocida en Asturias
       <br />
@@ -25,6 +26,10 @@
   .wed-section {
     &__about-candas {
       background: linear-gradient(180deg, $highlight 0%, $light-pink 100%);
+    }
+    &__about-candas-icon {
+      width: 8rem;
+      height: 8rem;
     }
     &__about-candas-images {
       display: flex;

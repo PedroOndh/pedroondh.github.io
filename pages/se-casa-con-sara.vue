@@ -15,7 +15,7 @@
     <h2>Código de vestimenta</h2>
     <img
       class="wed-section__dress-code-icon"
-      src="/assets/wedding/icons/suit.png"
+      src="/assets/wedding/icons/dress-code.png"
       alt="Código de vestimenta"
     />
     <div class="text">
@@ -102,9 +102,8 @@
       background: linear-gradient(180deg, $light-pink 0%, $white 100%);
     }
     &__dress-code-icon {
-      width: 7rem;
-      height: 7rem;
-      margin-bottom: 1rem;
+      width: 8rem;
+      height: 8rem;
     }
     &__shared-album {
       background: linear-gradient(180deg, $light-pink 0%, $white 100%);
