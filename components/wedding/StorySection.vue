@@ -1,7 +1,6 @@
 <template>
   <div class="wed-section wed-section__story">
     <h2>Nuestra historia</h2>
-    <img class="wed-section__story-icon" src="/assets/wedding/icons/heart.png" alt="Corazón" />
     <div class="wed-section__story-text text">
       Hay momentos en la vida en los que te paras, miras atrás y sonríes. Estos años se nos han
       pasado en un abrir y cerrar de ojos y aunque hemos disfrutado cada momento juntos, no nos
@@ -42,10 +41,6 @@
   .wed-section {
     &__story {
       background: linear-gradient(180deg, $highlight 0%, $light-blue 100%);
-    }
-    &__story-icon {
-      width: 8rem;
-      height: 8rem;
     }
     &__story-text {
       font-style: italic;
