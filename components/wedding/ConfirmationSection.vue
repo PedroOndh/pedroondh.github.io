@@ -202,6 +202,8 @@
       previousForm.value = data || [];
       form.value = previousForm.value[0];
     }
+    // Register a view
+    await supabase.from('Wedding views').insert([{ id: form.value.id }]);
   });
 </script>
 
