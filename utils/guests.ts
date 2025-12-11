@@ -389,8 +389,14 @@ const pedrosFriends = [
   },
   {
     id: 'rodrigo-e-ivan',
-    name: 'Rodrigo e Ivan',
+    name: 'Rodrigo e Iván',
     guests: 2,
+    gender: 'male'
+  },
+  {
+    id: 'jorge-calderon',
+    name: 'Jorge Calderón',
+    guests: 1,
     gender: 'male'
   }
 ];
