@@ -401,7 +401,7 @@ const pedrosFriends = [
   }
 ];
 
-// Jorge? y Dani Bayon? y Dani? y Luis?
+// Dani Bayon? y Dani? y Luis?
 
 const guests = [...sarasFamily, ...sarasFriends, ...pedrosFamily, ...pedrosFriends];
 
