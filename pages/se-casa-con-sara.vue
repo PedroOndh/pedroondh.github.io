@@ -43,13 +43,7 @@
       Comparte con nosotros tus fotos y vídeos a través de este álbum y muéstranos nuestra boda
       desde tu punto de vista
     </div>
-    <a
-      class="wed-section__shared-album-link"
-      href="https://drive.google.com/drive/folders/16w3RP5b2lV7qrgman9mky7RYKruZJdwj?usp=drive_link"
-      target="_blank"
-    >
-      Comparte tus fotos
-    </a>
+    <a class="wed-section__shared-album-link" target="_blank">Disponible a partir del 9 de Mayo</a>
   </div>
   <ConfirmationSection />
   <EndSection />
@@ -121,8 +115,10 @@
       border-radius: 0.5rem;
       background-color: $dark-blue;
       color: $white;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      //cursor: pointer;
+      //transition: background-color 0.3s ease;
+      pointer-events: none;
+      filter: grayscale(100%);
       &:hover {
         background-color: $pink;
       }
