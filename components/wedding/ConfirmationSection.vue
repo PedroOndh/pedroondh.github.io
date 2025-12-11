@@ -203,7 +203,9 @@
       form.value = previousForm.value[0];
     }
     // Register a view
-    await supabase.from('Wedding views').insert([{ id: route.query.id as string }]);
+    if (route.query.id) {
+      await supabase.from('Wedding views').insert([{ id: route.query.id as string }]);
+    }
   });
 </script>
 
