@@ -14,7 +14,7 @@
       los días son mejores
       <br />
       <br />
-      Y aunque no teníamos ni idea del camino vamos de la mano y en la misma dirección, creciendo
+      Y aunque no teníamos ni idea del camino, vamos de la mano y en la misma dirección, creciendo
       juntos y eligiéndonos cada día
       <br />
       <br />
