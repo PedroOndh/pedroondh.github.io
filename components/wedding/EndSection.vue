@@ -2,8 +2,8 @@
   <div class="wed-section wed-section__end">
     <div class="wed-section__end-container">
       <div class="wed-section__end-images">
-        <img class="photo" src="/assets/wedding/candas-1.jpg" alt="Sara y Pedro" />
-        <img class="photo" src="/assets/wedding/candas-1.jpg" alt="Sara y Pedro" />
+        <img class="photo" src="/assets/wedding/story/story-39.jpg" alt="Sara y Pedro" />
+        <img class="photo" src="/assets/wedding/story/story-40.jpg" alt="Sara y Pedro" />
       </div>
       <div class="wed-section__end-text">
         Tenemos muchísimas ganas de celebrar nuestro "Sí Quiero" a tu lado.

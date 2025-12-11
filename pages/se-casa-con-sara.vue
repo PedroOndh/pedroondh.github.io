@@ -1,13 +1,5 @@
 <template>
-  <section class="wed-section wed-section__intro">
-    <h2 class="wed-section__intro-date">9 de Mayo de 2026</h2>
-    <h1>
-      <span class="sara">Sara</span>
-      <span class="ampersand">&</span>
-      <span class="pedro">Pedro</span>
-    </h1>
-    <h2>La Martona, Candas</h2>
-  </section>
+  <HeroSection />
   <StorySection />
   <PlaceSection />
   <CountdownSection />
@@ -51,6 +43,7 @@
 </template>
 
 <script setup lang="ts">
+  import HeroSection from '@/components/wedding/HeroSection.vue';
   import StorySection from '@/components/wedding/StorySection.vue';
   import CountdownSection from '@/components/wedding/CountdownSection.vue';
   import PlaceSection from '@/components/wedding/PlaceSection.vue';

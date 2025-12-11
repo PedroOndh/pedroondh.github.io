@@ -40,6 +40,22 @@
     @media screen and (max-width: $breakpoint__tablet--max) {
       &__about-candas-images {
         flex-direction: column;
+        gap: 0;
+      }
+    }
+    @media screen and (max-width: $breakpoint__small-tablet--max) {
+      &__about-candas-images {
+        margin-top: 3rem;
+        .photo {
+          position: relative;
+          margin-top: -1rem;
+          &:nth-child(odd) {
+            left: -1rem;
+          }
+          &:nth-child(even) {
+            right: -1rem;
+          }
+        }
       }
     }
   }

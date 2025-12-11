@@ -72,6 +72,14 @@ h1 {
   border: 0.5rem solid $white;
   border-bottom: 2rem solid $white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  filter: blur(0.1px);
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+
+.photo--animated {
   transition: transform 0.3s ease;
   &:nth-child(odd) {
     transform: rotate(-2deg);

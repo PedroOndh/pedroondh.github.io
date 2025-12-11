@@ -1,6 +1,23 @@
 <template>
   <div class="wed-section wed-section__story">
     <h2>Nuestra historia</h2>
+    <div class="wed-section__story-images">
+      <img
+        class="photo photo--animated"
+        src="/assets/wedding/story/story-5.jpg"
+        alt="Sara y Pedro"
+      />
+      <img
+        class="photo photo--animated"
+        src="/assets/wedding/story/story-6.jpg"
+        alt="Sara y Pedro"
+      />
+      <img
+        class="photo photo--animated"
+        src="/assets/wedding/story/story-9.jpg"
+        alt="Sara y Pedro"
+      />
+    </div>
     <div class="wed-section__story-text text">
       Hay momentos en la vida en los que te paras, miras atrás y sonríes. Estos años se nos han
       pasado en un abrir y cerrar de ojos y aunque hemos disfrutado cada momento juntos, no nos
@@ -12,8 +29,25 @@
       colas zero, mucho aprendizaje y decisiones importantes, un nuevo miembro gatuno en la familia,
       horas y horas en el mar y bastantes conciertos de rap. Lo que está claro es que juntos todos
       los días son mejores
-      <br />
-      <br />
+    </div>
+    <div class="wed-section__story-images">
+      <img
+        class="photo photo--animated"
+        src="/assets/wedding/story/story-8.jpg"
+        alt="Sara y Pedro"
+      />
+      <img
+        class="photo photo--animated"
+        src="/assets/wedding/story/story-12.jpg"
+        alt="Sara y Pedro"
+      />
+      <img
+        class="photo photo--animated"
+        src="/assets/wedding/story/story-14.jpg"
+        alt="Sara y Pedro"
+      />
+    </div>
+    <div class="wed-section__story-text text">
       Y aunque no teníamos ni idea del camino, vamos de la mano y en la misma dirección, creciendo
       juntos y eligiéndonos cada día
       <br />
@@ -26,11 +60,31 @@
       especial. Gracias por compartir con nosotros este camino y estar siempre
     </div>
     <div class="wed-section__story-images">
-      <img class="photo" src="/assets/wedding/candas-1.jpg" alt="Sara y Pedro" />
-      <img class="photo" src="/assets/wedding/candas-2.jpg" alt="Sara y Pedro" />
-      <img class="photo" src="/assets/wedding/candas-3.webp" alt="Sara y Pedro" />
-      <img class="photo" src="/assets/wedding/candas-1.jpg" alt="Sara y Pedro" />
-      <img class="photo" src="/assets/wedding/candas-2.jpg" alt="Sara y Pedro" />
+      <img
+        class="photo photo--animated"
+        src="/assets/wedding/story/story-28.jpg"
+        alt="Sara y Pedro"
+      />
+      <img
+        class="photo photo--animated"
+        src="/assets/wedding/story/story-33.jpg"
+        alt="Sara y Pedro"
+      />
+      <img
+        class="photo photo--animated"
+        src="/assets/wedding/story/story-34.jpg"
+        alt="Sara y Pedro"
+      />
+      <img
+        class="photo photo--animated"
+        src="/assets/wedding/story/story-37.jpg"
+        alt="Sara y Pedro"
+      />
+      <img
+        class="photo photo--animated"
+        src="/assets/wedding/story/story-38.jpg"
+        alt="Sara y Pedro"
+      />
     </div>
   </div>
 </template>
@@ -44,7 +98,7 @@
     }
     &__story-text {
       font-style: italic;
-      margin-bottom: 2rem;
+      margin: 2rem 0;
     }
     &__story-images {
       display: flex;
@@ -55,6 +109,26 @@
       width: 100%;
       max-width: 50rem;
       margin: 1rem auto 0;
+    }
+    @media screen and (max-width: $breakpoint__tablet--max) {
+      &__story-images {
+        gap: 0;
+      }
+    }
+    @media screen and (max-width: $breakpoint__small-tablet--max) {
+      &__story-images {
+        margin-top: 3rem;
+        .photo photo--animated {
+          position: relative;
+          margin: -1rem calc(50% - 6rem) 0;
+          &:nth-child(odd) {
+            left: -1rem;
+          }
+          &:nth-child(even) {
+            right: -1rem;
+          }
+        }
+      }
     }
   }
 </style>
