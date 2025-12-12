@@ -8,27 +8,27 @@
     </h1>
     <h2>La Martona, Candás</h2>
     <img
-      class="photo wed-section__intro-photo-1"
+      class="photo wed-section__intro-photo wed-section__intro-photo--1"
       src="/assets/wedding/story/story-16.jpg"
       alt="Sara y Pedro"
     />
     <img
-      class="photo wed-section__intro-photo-2"
+      class="photo wed-section__intro-photo wed-section__intro-photo--2"
       src="/assets/wedding/story/story-19.jpg"
       alt="Sara y Pedro"
     />
     <img
-      class="photo wed-section__intro-photo-3"
+      class="photo wed-section__intro-photo wed-section__intro-photo--3"
       src="/assets/wedding/story/story-20.jpg"
       alt="Sara y Pedro"
     />
     <img
-      class="photo wed-section__intro-photo-4"
+      class="photo wed-section__intro-photo wed-section__intro-photo--4"
       src="/assets/wedding/story/story-23.jpg"
       alt="Sara y Pedro"
     />
     <img
-      class="photo wed-section__intro-photo-5"
+      class="photo wed-section__intro-photo wed-section__intro-photo--5"
       src="/assets/wedding/story/story-26.jpg"
       alt="Sara y Pedro"
     />
@@ -57,30 +57,33 @@
       color: $dark-blue;
       margin: 0 0 -1rem 0;
     }
-    &__intro-photo-1 {
-      top: -3rem;
-      left: -1rem;
-      transform: rotate(-20deg);
-    }
-    &__intro-photo-2 {
-      top: -1rem;
-      right: calc(50% - 6rem);
-      transform: rotate(20deg);
-    }
-    &__intro-photo-3 {
-      top: -1rem;
-      right: 2rem;
-      transform: rotate(10deg);
-    }
-    &__intro-photo-4 {
-      top: calc(50% + 6rem);
-      left: calc(20% - 6rem);
-      transform: rotate(10deg);
-    }
-    &__intro-photo-5 {
-      top: calc(50% + 6rem);
-      right: calc(20% - 6rem);
-      transform: rotate(-15deg);
+    &__intro-photo {
+      position: absolute;
+      &--1 {
+        top: 0%;
+        left: 2%;
+        transform: rotate(-20deg);
+      }
+      &--2 {
+        top: 5%;
+        right: 2%;
+        transform: rotate(20deg);
+      }
+      &--3 {
+        top: -2rem;
+        right: calc(50% - 6rem);
+        transform: rotate(10deg);
+      }
+      &--4 {
+        bottom: 5%;
+        left: 2%;
+        transform: rotate(10deg);
+      }
+      &--5 {
+        bottom: 10%;
+        right: 2%;
+        transform: rotate(-15deg);
+      }
     }
   }
 
@@ -97,6 +100,55 @@
       .ampersand {
         font-size: 5rem;
       }
+    }
+    .wed-section__intro-date {
+      margin: 0;
+    }
+    .wed-section__intro-photo {
+      &--1 {
+        top: 0%;
+        left: -3rem;
+      }
+      &--2 {
+        top: -2%;
+        right: -2rem;
+      }
+      &--3 {
+        top: -2%;
+        right: calc(50% - 6rem);
+      }
+      &--4 {
+        bottom: 2%;
+        left: -1rem;
+      }
+      &--5 {
+        bottom: 2%;
+        right: -1rem;
+      }
+    }
+  }
+  @media screen and (max-width: $breakpoint__mobile--max) {
+    h1 {
+      .pedro,
+      .sara {
+        font-size: 5rem;
+      }
+      .ampersand {
+        font-size: 4rem;
+      }
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    .photo {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+  @media screen and (min-width: $breakpoint__small-desktop--min) and (max-height: 700px) {
+    .photo {
+      width: 12rem;
+      height: 12rem;
     }
   }
 </style>
