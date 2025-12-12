@@ -118,7 +118,7 @@
     @media screen and (max-width: $breakpoint__small-tablet--max) {
       &__story-images {
         margin-top: 3rem;
-        .photo photo--animated {
+        .photo {
           position: relative;
           margin: -1rem calc(50% - 6rem) 0;
           &:nth-child(odd) {

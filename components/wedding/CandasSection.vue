@@ -13,9 +13,9 @@
       Ya sea para respirar el mar, comer en un buen asturiano o tomar unas copas de noche
     </div>
     <div class="wed-section__about-candas-images">
-      <img class="photo" src="/assets/wedding/candas-1.jpg" alt="Candás" />
-      <img class="photo" src="/assets/wedding/candas-2.jpg" alt="Candás" />
-      <img class="photo" src="/assets/wedding/candas-3.webp" alt="Candás" />
+      <img class="photo photo--animated" src="/assets/wedding/candas-1.jpg" alt="Candás" />
+      <img class="photo photo--animated" src="/assets/wedding/candas-2.jpg" alt="Candás" />
+      <img class="photo photo--animated" src="/assets/wedding/candas-3.webp" alt="Candás" />
     </div>
   </div>
 </template>
