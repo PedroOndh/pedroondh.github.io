@@ -248,7 +248,7 @@ const pedrosFamily = [
   {
     id: 'noemi',
     name: 'Noemí',
-    guests: 2,
+    guests: 1,
     gender: 'female'
   },
   {
