@@ -208,7 +208,7 @@
       console.log('registering view', route.query.id);
       let { data: viewData, error: viewError } = await supabase
         .from('Wedding views')
-        .insert([{ id: route.query.id as string }])
+        .insert([{ guests: route.query.id as string }])
         .select();
       if (viewError) {
         console.error(viewError);
