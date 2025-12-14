@@ -46,7 +46,7 @@
     robots: 'noindex, nofollow',
     description:
       'Es un placer invitaros a nuestra boda. Nos casaremos el 9 de Mayo de 2026 en La Martona, Candás',
-    ogImage: '/assets/wedding/thumbnail.png'
+    ogImage: 'https://pedro-ondiviela.com/assets/wedding/thumbnail.png'
   });
   useHead({
     link: [
