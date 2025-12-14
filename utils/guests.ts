@@ -88,10 +88,7 @@ const sarasFamily = [
     name: 'Tía Pili',
     guests: 1,
     gender: 'female'
-  }
-];
-
-const leonFriends = [
+  },
   {
     id: 'laura-y-jorge',
     name: 'Laura y Jorge',
@@ -235,10 +232,7 @@ const leonFriends = [
     name: 'Aida y Anthony',
     guests: 2,
     gender: 'male'
-  }
-];
-
-const pedrosFamily = [
+  },
   {
     id: 'papa-mama-y-celia',
     name: 'Papá Enrique, Mamá Maite y Celia',
@@ -292,10 +286,7 @@ const pedrosFamily = [
     name: 'Alberto e Irina',
     guests: 2,
     gender: 'male'
-  }
-];
-
-const asturiasFriends = [
+  },
   {
     id: 'misa-y-marina',
     name: 'Misa y Marina',
@@ -327,8 +318,8 @@ const asturiasFriends = [
     gender: 'male'
   },
   {
-    id: 'adri',
-    name: 'Adri',
+    id: 'adri-y-judith',
+    name: 'Adri y Judith',
     guests: 2,
     gender: 'male'
   },
