@@ -1,13 +1,13 @@
 const sarasFamily = [
   {
     id: 'papa-y-mama-sara',
-    name: 'Papa y Mama',
+    name: 'Papá Jose Miguel y Mamá Merce',
     guests: 2,
     gender: 'male'
   },
   {
     id: 'angel',
-    name: 'Ángel',
+    name: 'Ángel y Adriana',
     guests: 2,
     gender: 'male'
   },
@@ -24,8 +24,8 @@ const sarasFamily = [
     gender: 'male'
   },
   {
-    id: 'aurora',
-    name: 'Aurora',
+    id: 'abuela-aurora',
+    name: 'Abuela Aurora',
     guests: 1,
     gender: 'female'
   },
@@ -37,13 +37,13 @@ const sarasFamily = [
   },
   {
     id: 'abuelos-sara',
-    name: 'Miguel y Toñi',
+    name: 'Güelitos',
     guests: 2,
     gender: 'male'
   },
   {
     id: 'goyito',
-    name: 'Goyito y trillizos',
+    name: 'Goyito, Natalia, Dani y Andrés',
     guests: 4,
     gender: 'male'
   },
@@ -72,8 +72,8 @@ const sarasFamily = [
     gender: 'male'
   },
   {
-    id: 'pati-y-john',
-    name: 'Pati y John',
+    id: 'paty-y-john',
+    name: 'Paty y John',
     guests: 2,
     gender: 'male'
   },
@@ -82,10 +82,16 @@ const sarasFamily = [
     name: 'Pilita',
     guests: 1,
     gender: 'female'
+  },
+  {
+    id: 'tia-pili',
+    name: 'Tía Pili',
+    guests: 1,
+    gender: 'female'
   }
 ];
 
-const sarasFriends = [
+const leonFriends = [
   {
     id: 'laura-y-jorge',
     name: 'Laura y Jorge',
@@ -124,7 +130,7 @@ const sarasFriends = [
   },
   {
     id: 'ivan',
-    name: 'Ivan',
+    name: 'Iván',
     guests: 1,
     gender: 'male'
   },
@@ -183,32 +189,32 @@ const sarasFriends = [
     gender: 'male'
   },
   {
-    id: 'quintas-y-silvia',
-    name: 'Quintas y Sylvia',
+    id: 'jaime-y-silvia',
+    name: 'Jaime y Silvia',
     guests: 2,
     gender: 'male'
   },
   {
-    id: 'verdejo',
-    name: 'Verdejo',
+    id: 'david-verdejo',
+    name: 'David Verdejo',
     guests: 1,
     gender: 'male'
   },
   {
-    id: 'barre',
-    name: 'Barre',
+    id: 'david-barreales',
+    name: 'David Barreales',
     guests: 1,
     gender: 'male'
   },
   {
-    id: 'ruben-y-nerea',
-    name: 'Ruben y Nerea',
+    id: 'nerea-y-ruben',
+    name: 'Nerea y Rubén',
     guests: 2,
     gender: 'male'
   },
   {
     id: 'angela-y-chavo',
-    name: 'Angela y Chavo',
+    name: 'Ángela y Chavo',
     guests: 2,
     gender: 'male'
   },
@@ -225,8 +231,8 @@ const sarasFriends = [
     gender: 'male'
   },
   {
-    id: 'aida',
-    name: 'Aida',
+    id: 'aida-y-anthony',
+    name: 'Aida y Anthony',
     guests: 2,
     gender: 'male'
   }
@@ -234,21 +240,15 @@ const sarasFriends = [
 
 const pedrosFamily = [
   {
-    id: 'papa-y-mama-pedro',
-    name: 'Papa y Mama',
-    guests: 2,
+    id: 'papa-mama-y-celia',
+    name: 'Papá Enrique, Mamá Maite y Celia',
+    guests: 3,
     gender: 'male'
   },
   {
     id: 'noemi',
-    name: 'Noemi',
+    name: 'Noemí',
     guests: 2,
-    gender: 'female'
-  },
-  {
-    id: 'celia',
-    name: 'Celia',
-    guests: 1,
     gender: 'female'
   },
   {
@@ -295,7 +295,7 @@ const pedrosFamily = [
   }
 ];
 
-const pedrosFriends = [
+const asturiasFriends = [
   {
     id: 'misa-y-marina',
     name: 'Misa y Marina',
@@ -310,7 +310,7 @@ const pedrosFriends = [
   },
   {
     id: 'dami',
-    name: 'Dami',
+    name: 'Damián',
     guests: 2,
     gender: 'male'
   },
@@ -403,6 +403,6 @@ const pedrosFriends = [
 
 // Dani Bayon? y Dani? y Luis?
 
-const guests = [...sarasFamily, ...sarasFriends, ...pedrosFamily, ...pedrosFriends];
+const guests = [...sarasFamily, ...leonFriends, ...pedrosFamily, ...asturiasFriends];
 
 export default guests;
