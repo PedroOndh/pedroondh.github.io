@@ -3,7 +3,7 @@
     <div class="wed-section__end-container">
       <div class="wed-section__end-images">
         <img class="photo" src="/assets/wedding/story/story-39.jpg" alt="Sara y Pedro" />
-        <img class="photo" src="/assets/wedding/story/story-5.jpg" alt="Sara y Pedro" />
+        <img class="photo" src="/assets/wedding/story/story-6.jpg" alt="Sara y Pedro" />
         <img class="photo" src="/assets/wedding/story/story-40.jpg" alt="Sara y Pedro" />
       </div>
       <div class="wed-section__end-text">
