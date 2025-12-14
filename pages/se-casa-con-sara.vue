@@ -3,21 +3,7 @@
   <StorySection />
   <PlaceSection />
   <CountdownSection />
-  <div class="wed-section wed-section__dress-code">
-    <h2>Código de vestimenta</h2>
-    <img
-      class="wed-section__dress-code-icon"
-      src="/assets/wedding/icons/dress-code.png"
-      alt="Código de vestimenta"
-    />
-    <div class="text">
-      Vístete con tus mejores galas y ponte súper guapo/a para celebrar este día tan especial con
-      nosotros
-      <br />
-      <br />
-      Solo tenemos dos peticiones para ti: ponte elegante y no vengas de blanco ni colores similares
-    </div>
-  </div>
+  <DressCodeSection />
   <TimetableSection />
   <AccommodationSection />
   <CandasSection />
@@ -46,6 +32,7 @@
   import HeroSection from '@/components/wedding/HeroSection.vue';
   import StorySection from '@/components/wedding/StorySection.vue';
   import CountdownSection from '@/components/wedding/CountdownSection.vue';
+  import DressCodeSection from '@/components/wedding/DressCodeSection.vue';
   import PlaceSection from '@/components/wedding/PlaceSection.vue';
   import TimetableSection from '@/components/wedding/TimetableSection.vue';
   import AccommodationSection from '@/components/wedding/AccomodationSection.vue';
@@ -72,26 +59,6 @@
   @import '../assets/styles/wedding.scss';
 
   .wed-section {
-    &__intro {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: linear-gradient(180deg, $light-blue 0%, $highlight 100%);
-    }
-    &__intro-date {
-      font-size: 1.5rem;
-      color: $dark-blue;
-      margin: 0 0 -1rem 0;
-    }
-    &__dress-code {
-      background: linear-gradient(180deg, $light-pink 0%, $white 100%);
-    }
-    &__dress-code-icon {
-      width: 8rem;
-      height: 8rem;
-    }
     &__shared-album {
       background: linear-gradient(180deg, $light-pink 0%, $white 100%);
     }
@@ -114,25 +81,6 @@
       filter: grayscale(100%);
       &:hover {
         background-color: $pink;
-      }
-    }
-    &__confirmation {
-      background: linear-gradient(180deg, $white 0%, $light-blue 100%);
-    }
-  }
-
-  @media screen and (max-width: $breakpoint__tablet--max) {
-    h1 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      line-height: 0.9;
-      .pedro,
-      .sara {
-        font-size: 6rem;
-      }
-      .ampersand {
-        font-size: 5rem;
       }
     }
   }

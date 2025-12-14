@@ -1,23 +1,6 @@
 <template>
   <div class="wed-section wed-section__story">
     <h2>Nuestra historia</h2>
-    <div class="wed-section__story-images">
-      <img
-        class="photo photo--animated"
-        src="/assets/wedding/story/story-5.jpg"
-        alt="Sara y Pedro"
-      />
-      <img
-        class="photo photo--animated"
-        src="/assets/wedding/story/story-6.jpg"
-        alt="Sara y Pedro"
-      />
-      <img
-        class="photo photo--animated"
-        src="/assets/wedding/story/story-9.jpg"
-        alt="Sara y Pedro"
-      />
-    </div>
     <div class="wed-section__story-text text">
       Hay momentos en la vida en los que te paras, miras atrás y sonríes. Estos años se nos han
       pasado en un abrir y cerrar de ojos y aunque hemos disfrutado cada momento juntos, no nos

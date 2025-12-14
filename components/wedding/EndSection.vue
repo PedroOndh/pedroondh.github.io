@@ -3,6 +3,7 @@
     <div class="wed-section__end-container">
       <div class="wed-section__end-images">
         <img class="photo" src="/assets/wedding/story/story-39.jpg" alt="Sara y Pedro" />
+        <img class="photo" src="/assets/wedding/story/story-5.jpg" alt="Sara y Pedro" />
         <img class="photo" src="/assets/wedding/story/story-40.jpg" alt="Sara y Pedro" />
       </div>
       <div class="wed-section__end-text">
@@ -51,11 +52,14 @@
       gap: 1rem;
       width: 30rem;
       .photo {
-        &:nth-child(odd) {
+        &:nth-child(1) {
           transform: translate(-1rem, 2rem) rotate(-2deg);
         }
-        &:nth-child(even) {
-          transform: translate(3rem, -4rem) rotate(2deg);
+        &:nth-child(2) {
+          transform: translate(3rem, -6rem) rotate(2deg);
+        }
+        &:nth-child(3) {
+          transform: translate(-3rem, -12rem) rotate(-2deg);
         }
       }
     }
@@ -71,6 +75,7 @@
       &__end-images {
         width: 100%;
         padding: 0;
+        margin-bottom: -10rem;
       }
     }
   }
