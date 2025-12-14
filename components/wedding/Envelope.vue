@@ -116,7 +116,7 @@
       left: 45%;
       font-size: 1.7rem;
       font-family: $font-main;
-      max-width: 70dvh;
+      max-width: 70dvw;
       text-align: left;
       transform: rotate(-45deg);
       transform-origin: center;
