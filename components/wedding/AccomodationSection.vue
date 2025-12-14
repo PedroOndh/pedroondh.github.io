@@ -20,7 +20,7 @@
         class="wed-section__accommodation-hotel"
       >
         <div class="wed-section__accommodation-hotel-image">
-          <img src="/assets/wedding/hotel-marsol.webp" alt="Hotel Marsol" />
+          <img src="/assets/wedding/hotel-marsol.jpg" alt="Hotel Marsol" />
         </div>
         <b class="wed-section__accommodation-hotel-title">Hotel Marsol, Candás</b>
         <div class="wed-section__accommodation-hotel-price">
@@ -160,8 +160,12 @@
       align-items: center;
       width: 100%;
       height: 20rem;
-      object-fit: cover;
-      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+      }
     }
     &__accommodation-hotel-price {
       display: flex;

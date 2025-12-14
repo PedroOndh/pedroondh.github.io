@@ -16,12 +16,12 @@
     <div class="wed-section__dress-code-images">
       <img
         class="photo photo--animated"
-        src="/assets/wedding/story/story-20.jpg"
+        src="/assets/wedding/story/story-9.jpg"
         alt="Código de vestimenta"
       />
       <img
         class="photo photo--animated"
-        src="/assets/wedding/story/story-9.jpg"
+        src="/assets/wedding/story/story-20.jpg"
         alt="Código de vestimenta"
       />
     </div>

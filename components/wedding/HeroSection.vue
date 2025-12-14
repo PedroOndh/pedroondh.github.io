@@ -14,7 +14,7 @@
     />
     <img
       class="photo wed-section__intro-photo wed-section__intro-photo--2"
-      src="/assets/wedding/story/story-19.jpg"
+      src="/assets/wedding/story/story-34.jpg"
       alt="Sara y Pedro"
     />
     <img

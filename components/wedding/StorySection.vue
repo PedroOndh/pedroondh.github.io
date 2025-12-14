@@ -55,7 +55,7 @@
       />
       <img
         class="photo photo--animated"
-        src="/assets/wedding/story/story-34.jpg"
+        src="/assets/wedding/story/story-19.jpg"
         alt="Sara y Pedro"
       />
       <img
