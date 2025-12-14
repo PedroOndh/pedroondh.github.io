@@ -19,7 +19,7 @@
     />
     <img
       class="photo wed-section__intro-photo wed-section__intro-photo--3"
-      src="/assets/wedding/story/story-5.jpg"
+      src="/assets/wedding/story/story-6.jpg"
       alt="Sara y Pedro"
     />
     <img
@@ -107,7 +107,7 @@
     .wed-section__intro-photo {
       &--1 {
         top: 0%;
-        left: -3rem;
+        left: -1rem;
       }
       &--2 {
         top: -2%;
