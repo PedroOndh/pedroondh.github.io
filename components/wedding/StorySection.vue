@@ -118,14 +118,15 @@
     @media screen and (max-width: $breakpoint__small-tablet--max) {
       &__story-images {
         margin-top: 3rem;
+        margin-bottom: 3rem;
         .photo {
           position: relative;
-          margin: -1rem calc(50% - 6rem) 0;
+          margin: -3rem calc(50% - 6rem);
           &:nth-child(odd) {
-            left: -1rem;
+            left: -4rem;
           }
           &:nth-child(even) {
-            right: -1rem;
+            right: -4rem;
           }
         }
       }

@@ -74,8 +74,8 @@ h1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   filter: blur(0.1px);
   @media screen and (max-width: $breakpoint__tablet--max) {
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
   }
 }
 

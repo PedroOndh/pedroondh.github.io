@@ -45,15 +45,16 @@
     }
     @media screen and (max-width: $breakpoint__small-tablet--max) {
       &__about-candas-images {
-        margin-top: 3rem;
+        margin-top: 6rem;
+        margin-bottom: 3rem;
         .photo {
           position: relative;
-          margin-top: -1rem;
+          margin: -3rem calc(50% - 6rem);
           &:nth-child(odd) {
-            left: -1rem;
+            left: -4rem;
           }
           &:nth-child(even) {
-            right: -1rem;
+            right: -4rem;
           }
         }
       }
