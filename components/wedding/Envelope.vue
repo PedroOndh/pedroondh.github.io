@@ -92,7 +92,7 @@
     }
     &__back-text {
       position: absolute;
-      bottom: 2rem;
+      bottom: 1rem;
       right: 1rem;
       font-size: 1.5rem;
       font-family: $font-main;
