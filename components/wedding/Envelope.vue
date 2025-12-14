@@ -61,7 +61,7 @@
     bottom: 0;
     right: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     cursor: pointer;
     &__back {
       position: absolute;
