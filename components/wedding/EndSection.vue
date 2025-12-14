@@ -60,8 +60,9 @@
       }
     }
     &__end-text {
+      padding: 0 1rem;
       font-style: italic;
-      text-align: left;
+      text-align: center;
     }
     @media screen and (max-width: $breakpoint__tablet--max) {
       &__end-container {
@@ -69,6 +70,7 @@
       }
       &__end-images {
         width: 100%;
+        padding: 0;
       }
     }
   }
