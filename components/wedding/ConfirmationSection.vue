@@ -203,7 +203,9 @@
       form.value = previousForm.value[0];
     }
     // Register a view
+    console.log('onMounted route query', route.query.id);
     if (route.query.id) {
+      console.log('registering view', route.query.id);
       let { data: viewData, error: viewError } = await supabase
         .from('Wedding views')
         .insert([{ id: route.query.id as string }])
