@@ -61,7 +61,7 @@
     bottom: 0;
     right: 0;
     width: 100vw;
-    height: calc(100dvh - env(safe-area-inset-bottom));
+    height: calc(100dvh - env(safe-area-inset-bottom) - env(safe-area-inset-top));
     cursor: pointer;
     &__back {
       position: absolute;
