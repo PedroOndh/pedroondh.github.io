@@ -53,7 +53,7 @@
       width: 30rem;
       .photo {
         &:nth-child(1) {
-          transform: translate(-1rem, 2rem) rotate(-2deg);
+          transform: translate(-4rem, 2rem) rotate(-2deg);
         }
         &:nth-child(2) {
           transform: translate(3rem, -6rem) rotate(2deg);
