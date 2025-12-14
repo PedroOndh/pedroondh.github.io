@@ -204,7 +204,15 @@
     }
     // Register a view
     if (route.query.id) {
-      await supabase.from('Wedding views').insert([{ id: route.query.id as string }]);
+      let { data: viewData, error: viewError } = await supabase
+        .from('Wedding views')
+        .insert([{ id: route.query.id as string }])
+        .select();
+      if (viewError) {
+        console.error(viewError);
+      } else {
+        console.log('added view', viewData);
+      }
     }
   });
 </script>
