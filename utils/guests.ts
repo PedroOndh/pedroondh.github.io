@@ -213,8 +213,8 @@ const leonFriends = [
     gender: 'male'
   },
   {
-    id: 'angela-y-chavo',
-    name: 'Ángela y Chavo',
+    id: 'angela-y-xavi',
+    name: 'Ángela y Xavi',
     guests: 2,
     gender: 'male'
   },
