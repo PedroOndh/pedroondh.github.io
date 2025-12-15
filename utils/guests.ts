@@ -359,7 +359,7 @@ const asturiasFriends = [
   },
   {
     id: 'salvita',
-    name: 'Salvita',
+    name: 'Jesús Salvi',
     guests: 1,
     gender: 'male'
   },
