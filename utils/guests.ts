@@ -37,7 +37,7 @@ const sarasFamily = [
   },
   {
     id: 'abuelos-sara',
-    name: 'Güelitos',
+    name: 'Güelitos Miguel y Toñi',
     guests: 2,
     gender: 'male'
   },
