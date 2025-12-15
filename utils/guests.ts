@@ -332,7 +332,7 @@ const asturiasFriends = [
     guests: 2,
     gender: 'male'
   },
-  { id: 'sasi', name: 'Sasi', guests: 1, gender: 'male' },
+  { id: 'sassi', name: 'Sassi', guests: 1, gender: 'male' },
   {
     id: 'jorge-y-may',
     name: 'Jorge y May',
