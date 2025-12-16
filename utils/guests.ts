@@ -371,7 +371,7 @@ const asturiasFriends = [
   },
   {
     id: 'migui',
-    name: 'Migui y Nico',
+    name: 'Migui y Niko',
     guests: 2,
     gender: 'male'
   },
