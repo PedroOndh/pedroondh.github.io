@@ -277,7 +277,7 @@ const pedrosFamily = [
   },
   {
     id: 'pispa',
-    name: 'Pispa',
+    name: 'Pispa y Natalia',
     guests: 2,
     gender: 'male'
   },
