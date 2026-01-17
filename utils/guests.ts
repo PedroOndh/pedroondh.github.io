@@ -398,6 +398,12 @@ const asturiasFriends = [
     name: 'Jorge Calderón',
     guests: 1,
     gender: 'male'
+  },
+  {
+    id: 'luis',
+    name: 'Luis y Miriam',
+    guests: 2,
+    gender: 'male'
   }
 ];
 
