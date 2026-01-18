@@ -400,7 +400,7 @@ const asturiasFriends = [
     gender: 'male'
   },
   {
-    id: 'luis',
+    id: 'luis-y-miriam',
     name: 'Luis y Miriam',
     guests: 2,
     gender: 'male'
